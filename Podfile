@@ -8,4 +8,9 @@ target 'WATCHA' do
   # Pods for WATCHA
 pod 'Cosmos'
 
+pod 'FBSDKCoreKit'
+pod 'FBSDKLoginKit'
+pod 'FBSDKShareKit'
+pod 'Alamofire'
+
 end
