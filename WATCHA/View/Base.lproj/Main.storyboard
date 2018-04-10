@@ -115,20 +115,28 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mIf-nR-hqN">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
+                            <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b2q-yX-VAz">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P1o-mN-ttO">
                                 <rect key="frame" x="114" y="412" width="159.5" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="이미 회원이세요? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dx8-sY-Znk">
                                         <rect key="frame" x="0.0" y="0.0" width="120.5" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="muR-im-0Rd">
                                         <rect key="frame" x="120.5" y="0.0" width="39" height="30"/>
-                                        <state key="normal" title="로그인"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="로그인">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -147,11 +155,19 @@
                             <constraint firstItem="mIf-nR-hqN" firstAttribute="top" secondItem="R7c-Tx-CaJ" secondAttribute="top" id="Eiv-go-IeU"/>
                             <constraint firstItem="mIf-nR-hqN" firstAttribute="trailing" secondItem="R7c-Tx-CaJ" secondAttribute="trailing" id="URz-Vz-AmD"/>
                             <constraint firstItem="mIf-nR-hqN" firstAttribute="bottom" secondItem="R7c-Tx-CaJ" secondAttribute="bottom" id="eh4-t2-MaT"/>
+                            <constraint firstItem="R7c-Tx-CaJ" firstAttribute="bottom" secondItem="b2q-yX-VAz" secondAttribute="bottom" id="fAe-5b-yUm"/>
+                            <constraint firstItem="b2q-yX-VAz" firstAttribute="top" secondItem="R7c-Tx-CaJ" secondAttribute="top" id="g07-rH-jvy"/>
                             <constraint firstItem="mIf-nR-hqN" firstAttribute="leading" secondItem="R7c-Tx-CaJ" secondAttribute="leading" id="kh2-db-C2l"/>
+                            <constraint firstItem="R7c-Tx-CaJ" firstAttribute="trailing" secondItem="b2q-yX-VAz" secondAttribute="trailing" id="oAw-Ef-QsC"/>
+                            <constraint firstItem="b2q-yX-VAz" firstAttribute="leading" secondItem="R7c-Tx-CaJ" secondAttribute="leading" id="sAo-jn-GHb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="R7c-Tx-CaJ"/>
                     </view>
                     <navigationItem key="navigationItem" id="SVi-0w-FXU"/>
+                    <connections>
+                        <outlet property="backgroundImg" destination="mIf-nR-hqN" id="lWh-ev-ViA"/>
+                        <outlet property="centerImg" destination="dao-eZ-6B4" id="Sxd-w3-7bi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z5q-Vk-m4r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

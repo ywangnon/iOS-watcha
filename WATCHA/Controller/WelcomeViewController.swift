@@ -12,6 +12,9 @@ import Alamofire
 
 class WelcomeViewController: UIViewController, FBSDKLoginButtonDelegate {
     
+    @IBOutlet weak var centerImg: UIImageView!
+    @IBOutlet weak var backgroundImg: UIImageView!
+    
     /// button을 사용하여 로그인 할 때 delegate에게 보냄
     ///
     /// - Parameters:
@@ -26,9 +29,9 @@ class WelcomeViewController: UIViewController, FBSDKLoginButtonDelegate {
             print("\n---------- [ User cancelled log in ] ----------\n")
         } else {
             print("\n---------- [ USER LOGGED IN ] ----------\n")
-            print(FBSDKAccessToken.current().tokenString)
+            print(FBSDKAccessToken.current())
             
-            var params: Parameters = [
+            let params: Parameters = [
                 "access_token": FBSDKAccessToken.current()
             ]
             
@@ -46,8 +49,6 @@ class WelcomeViewController: UIViewController, FBSDKLoginButtonDelegate {
                         print(error.localizedDescription)
                     }
             }
-            
-            
         }
     }
     
@@ -62,9 +63,17 @@ class WelcomeViewController: UIViewController, FBSDKLoginButtonDelegate {
    override func viewDidLoad() {
       super.viewDidLoad()
     
+    centerImg.image = #imageLiteral(resourceName: "watcha")
+    
+    let imgs = [#imageLiteral(resourceName: "book"),#imageLiteral(resourceName: "cinema"),#imageLiteral(resourceName: "film"),#imageLiteral(resourceName: "lake"),#imageLiteral(resourceName: "sky")]
+    backgroundImg.animationImages = imgs
+    backgroundImg.animationDuration = 10
+    backgroundImg.startAnimating()
+    
     let btnFBLogin = FBSDKLoginButton(frame: CGRect(x: 40, y: 487, width: 295, height: 50))
     btnFBLogin.delegate = self
     btnFBLogin.readPermissions = ["public_profile", "email"]
+    
     self.view.addSubview(btnFBLogin)
     
     if FBSDKAccessToken.current() != nil {
