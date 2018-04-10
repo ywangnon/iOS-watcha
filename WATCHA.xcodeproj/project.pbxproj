@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0190E543207B19D8009E1E53 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190E542207B19D8009E1E53 /* Constants.swift */; };
-		9DDA4026870096E11354E133 /* Pods_WATCHA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F6B09CAEAFD1EFEE4E619D9 /* Pods_WATCHA.framework */; };
+
+		836CC84DE1748B040F7F3256 /* Pods_WATCHA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB2897062E9C94DCF98D7ABF /* Pods_WATCHA.framework */; };
+
 		FE856779207B0FCD0031E2CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE856778207B0FCD0031E2CB /* AppDelegate.swift */; };
 		FE85677B207B0FCD0031E2CB /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85677A207B0FCD0031E2CB /* WelcomeViewController.swift */; };
 		FE85677E207B0FCD0031E2CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE85677C207B0FCD0031E2CB /* Main.storyboard */; };
@@ -30,9 +32,11 @@
 
 /* Begin PBXFileReference section */
 		0190E542207B19D8009E1E53 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		1523F0F35CC65F31460B36CE /* Pods-WATCHA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WATCHA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WATCHA/Pods-WATCHA.debug.xcconfig"; sourceTree = "<group>"; };
-		6F6B09CAEAFD1EFEE4E619D9 /* Pods_WATCHA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WATCHA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA7597C62B3DD6583AE06FCF /* Pods-WATCHA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WATCHA.release.xcconfig"; path = "Pods/Target Support Files/Pods-WATCHA/Pods-WATCHA.release.xcconfig"; sourceTree = "<group>"; };
+
+		988CA4811CC524384C33DC93 /* Pods-WATCHA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WATCHA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WATCHA/Pods-WATCHA.debug.xcconfig"; sourceTree = "<group>"; };
+		A5C39F096531800B40459C7F /* Pods-WATCHA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WATCHA.release.xcconfig"; path = "Pods/Target Support Files/Pods-WATCHA/Pods-WATCHA.release.xcconfig"; sourceTree = "<group>"; };
+		EB2897062E9C94DCF98D7ABF /* Pods_WATCHA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WATCHA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+
 		FE856775207B0FCC0031E2CB /* WATCHA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WATCHA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE856778207B0FCD0031E2CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE85677A207B0FCD0031E2CB /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -59,7 +63,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DDA4026870096E11354E133 /* Pods_WATCHA.framework in Frameworks */,
+
+				836CC84DE1748B040F7F3256 /* Pods_WATCHA.framework in Frameworks */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,21 +80,23 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
-		41EC0095B9CE7FBCD5106718 /* Pods */ = {
+
+		98D5976678E83CBDD2BAB917 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1523F0F35CC65F31460B36CE /* Pods-WATCHA.debug.xcconfig */,
-				DA7597C62B3DD6583AE06FCF /* Pods-WATCHA.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		7B581C71C2BD51320CBC2075 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				6F6B09CAEAFD1EFEE4E619D9 /* Pods_WATCHA.framework */,
+				EB2897062E9C94DCF98D7ABF /* Pods_WATCHA.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A830537523E3E6405A07D9E9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				988CA4811CC524384C33DC93 /* Pods-WATCHA.debug.xcconfig */,
+				A5C39F096531800B40459C7F /* Pods-WATCHA.release.xcconfig */,
+			);
+			name = Pods;
+
 			sourceTree = "<group>";
 		};
 		FE85676C207B0FCC0031E2CB = {
@@ -96,8 +104,10 @@
 			children = (
 				FE856777207B0FCC0031E2CB /* WATCHA */,
 				FE856776207B0FCC0031E2CB /* Products */,
-				41EC0095B9CE7FBCD5106718 /* Pods */,
-				7B581C71C2BD51320CBC2075 /* Frameworks */,
+
+				A830537523E3E6405A07D9E9 /* Pods */,
+				98D5976678E83CBDD2BAB917 /* Frameworks */,
+
 			);
 			sourceTree = "<group>";
 		};
@@ -174,12 +184,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FE85678A207B0FCE0031E2CB /* Build configuration list for PBXNativeTarget "WATCHA" */;
 			buildPhases = (
-				AE9B39BB1408479A1E0F7661 /* [CP] Check Pods Manifest.lock */,
+
+				CA8C3430BE6779483AF50E27 /* [CP] Check Pods Manifest.lock */,
 				FE856771207B0FCC0031E2CB /* Sources */,
 				FE856772207B0FCC0031E2CB /* Frameworks */,
 				FE856773207B0FCC0031E2CB /* Resources */,
-				A387E416C622F14AB5F1626B /* [CP] Embed Pods Frameworks */,
-				2567676446600D9E5FF160CE /* [CP] Copy Pods Resources */,
+				0C3EA2F40935FBA2FF28691C /* [CP] Embed Pods Frameworks */,
+
 			);
 			buildRules = (
 			);
@@ -238,40 +249,39 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2567676446600D9E5FF160CE /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WATCHA/Pods-WATCHA-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A387E416C622F14AB5F1626B /* [CP] Embed Pods Frameworks */ = {
+
+		0C3EA2F40935FBA2FF28691C /* [CP] Embed Pods Frameworks */ = {
+
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WATCHA/Pods-WATCHA-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
+
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WATCHA/Pods-WATCHA-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AE9B39BB1408479A1E0F7661 /* [CP] Check Pods Manifest.lock */ = {
+
+		CA8C3430BE6779483AF50E27 /* [CP] Check Pods Manifest.lock */ = {
+
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -451,7 +461,9 @@
 		};
 		FE85678B207B0FCE0031E2CB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1523F0F35CC65F31460B36CE /* Pods-WATCHA.debug.xcconfig */;
+
+			baseConfigurationReference = 988CA4811CC524384C33DC93 /* Pods-WATCHA.debug.xcconfig */;
+
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -470,7 +482,9 @@
 		};
 		FE85678C207B0FCE0031E2CB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA7597C62B3DD6583AE06FCF /* Pods-WATCHA.release.xcconfig */;
+
+			baseConfigurationReference = A5C39F096531800B40459C7F /* Pods-WATCHA.release.xcconfig */;
+
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
