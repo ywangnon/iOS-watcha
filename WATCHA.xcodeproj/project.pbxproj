@@ -25,7 +25,6 @@
 		FE85679F207B12970031E2CB /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85679E207B12970031E2CB /* MovieDetailViewController.swift */; };
 		FE8567A1207B129F0031E2CB /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8567A0207B129F0031E2CB /* SettingViewController.swift */; };
 		FE8567A5207B15090031E2CB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8567A4207B15090031E2CB /* User.swift */; };
-		FEBF9F65207C8DD700DD9C3B /* ready_player_one.png in Resources */ = {isa = PBXBuildFile; fileRef = FEBF9F64207C8DD700DD9C3B /* ready_player_one.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +50,6 @@
 		FE85679E207B12970031E2CB /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		FE8567A0207B129F0031E2CB /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		FE8567A4207B15090031E2CB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		FEBF9F64207C8DD700DD9C3B /* ready_player_one.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ready_player_one.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +115,6 @@
 				FE8567A3207B14A30031E2CB /* Model */,
 				FE85678D207B12130031E2CB /* Controller */,
 				FE8567A2207B147E0031E2CB /* View */,
-				FEBF9F63207C8DB500DD9C3B /* SampleData */,
 				FE856782207B0FCE0031E2CB /* Assets.xcassets */,
 				FE856787207B0FCE0031E2CB /* Info.plist */,
 			);
@@ -157,14 +154,6 @@
 				FE8567A4207B15090031E2CB /* User.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		FEBF9F63207C8DB500DD9C3B /* SampleData */ = {
-			isa = PBXGroup;
-			children = (
-				FEBF9F64207C8DD700DD9C3B /* ready_player_one.png */,
-			);
-			path = SampleData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,7 +217,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE856786207B0FCE0031E2CB /* LaunchScreen.storyboard in Resources */,
-				FEBF9F65207C8DD700DD9C3B /* ready_player_one.png in Resources */,
 				FE856783207B0FCE0031E2CB /* Assets.xcassets in Resources */,
 				FE85677E207B0FCD0031E2CB /* Main.storyboard in Resources */,
 			);
@@ -451,7 +439,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 944595JNCH;
 				INFOPLIST_FILE = WATCHA/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.seojaehyeong.WATCHA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -467,7 +458,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 944595JNCH;
 				INFOPLIST_FILE = WATCHA/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.seojaehyeong.WATCHA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
