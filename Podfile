@@ -6,7 +6,7 @@ target 'WATCHA' do
   use_frameworks!
 
   # Pods for WATCHA
-pod 'Cosmos'
+#pod 'Cosmos'
 
 pod 'FBSDKCoreKit'
 pod 'FBSDKLoginKit'

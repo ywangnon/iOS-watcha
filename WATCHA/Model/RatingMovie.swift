@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct RatingModel {
+struct RatingMovie{
    
-   var movieTitle: String = ""
-   var movieYear: String = ""
+   var movieTitle: String = "레디 플레이어 원"
+   var movieYear: String = "2018"
    var movieImage: String = "ready_player_one"
-   var movieRate: Int = 0
+   var movieRate: Double = 0.0
    
    var moviePk: String = ""
    var movieCategory: String = ""

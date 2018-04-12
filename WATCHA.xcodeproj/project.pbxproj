@@ -25,7 +25,9 @@
 		FE85679F207B12970031E2CB /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85679E207B12970031E2CB /* MovieDetailViewController.swift */; };
 		FE8567A1207B129F0031E2CB /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8567A0207B129F0031E2CB /* SettingViewController.swift */; };
 		FE8567A5207B15090031E2CB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8567A4207B15090031E2CB /* User.swift */; };
-		FEBF9F67207C93A900DD9C3B /* RatingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBF9F66207C93A900DD9C3B /* RatingModel.swift */; };
+		FE8777E1207CDC0C0096FCD8 /* CosmosDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8777E0207CDC0C0096FCD8 /* CosmosDistrib.swift */; };
+		FEBF9F67207C93A900DD9C3B /* RatingMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBF9F66207C93A900DD9C3B /* RatingMovie.swift */; };
+		FEBF9F6A207CBEB300DD9C3B /* RatingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBF9F68207CBEB300DD9C3B /* RatingTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +53,9 @@
 		FE85679E207B12970031E2CB /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		FE8567A0207B129F0031E2CB /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		FE8567A4207B15090031E2CB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		FEBF9F66207C93A900DD9C3B /* RatingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingModel.swift; sourceTree = "<group>"; };
+		FE8777E0207CDC0C0096FCD8 /* CosmosDistrib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmosDistrib.swift; sourceTree = "<group>"; };
+		FEBF9F66207C93A900DD9C3B /* RatingMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingMovie.swift; sourceTree = "<group>"; };
+		FEBF9F68207CBEB300DD9C3B /* RatingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				0190E542207B19D8009E1E53 /* Constants.swift */,
+				FE8777E0207CDC0C0096FCD8 /* CosmosDistrib.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 			children = (
 				FE856784207B0FCE0031E2CB /* LaunchScreen.storyboard */,
 				FE85677C207B0FCD0031E2CB /* Main.storyboard */,
+				FEBF9F68207CBEB300DD9C3B /* RatingTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -154,7 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				FE8567A4207B15090031E2CB /* User.swift */,
-				FEBF9F66207C93A900DD9C3B /* RatingModel.swift */,
+				FEBF9F66207C93A900DD9C3B /* RatingMovie.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -237,7 +243,6 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-WATCHA/Pods-WATCHA-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
-				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
@@ -246,7 +251,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
@@ -284,15 +288,17 @@
 				FE8567A5207B15090031E2CB /* User.swift in Sources */,
 				FE85678F207B12380031E2CB /* SignInViewController.swift in Sources */,
 				FE85679B207B12840031E2CB /* RatingViewController.swift in Sources */,
-				FEBF9F67207C93A900DD9C3B /* RatingModel.swift in Sources */,
+				FEBF9F67207C93A900DD9C3B /* RatingMovie.swift in Sources */,
 				FE856799207B127A0031E2CB /* ThemeDetailViewController.swift in Sources */,
 				FE8567A1207B129F0031E2CB /* SettingViewController.swift in Sources */,
 				FE85679F207B12970031E2CB /* MovieDetailViewController.swift in Sources */,
+				FE8777E1207CDC0C0096FCD8 /* CosmosDistrib.swift in Sources */,
 				FE85677B207B0FCD0031E2CB /* WelcomeViewController.swift in Sources */,
 				FE856795207B12630031E2CB /* BoxOfficeViewController.swift in Sources */,
 				FE85679D207B128E0031E2CB /* MyPageViewController.swift in Sources */,
 				FE856779207B0FCD0031E2CB /* AppDelegate.swift in Sources */,
 				FE856791207B12450031E2CB /* SignUpViewController.swift in Sources */,
+				FEBF9F6A207CBEB300DD9C3B /* RatingTableViewCell.swift in Sources */,
 				0190E543207B19D8009E1E53 /* Constants.swift in Sources */,
 				FE856797207B126F0031E2CB /* ThemeViewController.swift in Sources */,
 				FE856793207B12560031E2CB /* HomeViewController.swift in Sources */,
@@ -443,11 +449,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E9R36XSN8N;
 				INFOPLIST_FILE = WATCHA/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.seojaehyeong.WATCHA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -459,11 +468,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E9R36XSN8N;
 				INFOPLIST_FILE = WATCHA/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.seojaehyeong.WATCHA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
