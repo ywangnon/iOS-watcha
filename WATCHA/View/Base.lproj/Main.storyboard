@@ -486,6 +486,9 @@
                                 <state key="normal" title="로그인하기">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginAction:" destination="wwx-Ri-Ken" eventType="touchUpInside" id="sc9-jH-Eah"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="서비스 이용약관, 개인정보 취급 방침에 동의합니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kn0-XY-m46">
                                 <rect key="frame" x="73" y="453" width="262" height="16"/>
@@ -499,6 +502,11 @@
                         <viewLayoutGuide key="safeArea" id="0sZ-3C-coi"/>
                     </view>
                     <navigationItem key="navigationItem" title="가입" id="EUU-TP-yPh"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="FwH-BD-BPg" id="F97-6L-3od"/>
+                        <outlet property="nickNameTextField" destination="kiT-1x-Wht" id="QqM-1E-hTI"/>
+                        <outlet property="passwordTextField" destination="YXN-W9-ASW" id="TUG-cc-GAB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HfF-o9-0TT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
