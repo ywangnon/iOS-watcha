@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		0190E543207B19D8009E1E53 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190E542207B19D8009E1E53 /* Constants.swift */; };
-
-
 		765FBC9D207EEDD2004920E6 /* ThemeDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765FBC9C207EEDD2004920E6 /* ThemeDetailTableViewController.swift */; };
 		765FBC9F207EEE4A004920E6 /* ThemeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765FBC9E207EEE4A004920E6 /* ThemeTableViewController.swift */; };
 		836CC84DE1748B040F7F3256 /* Pods_WATCHA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB2897062E9C94DCF98D7ABF /* Pods_WATCHA.framework */; };
+		FE55E1DE207F014100137175 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE55E1DD207F014100137175 /* HomeTableViewController.swift */; };
+		FE55E1E0207F015A00137175 /* BoxOfficeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE55E1DF207F015A00137175 /* BoxOfficeTableViewController.swift */; };
+		FE55E1E2207F016400137175 /* RatingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE55E1E1207F016400137175 /* RatingTableViewController.swift */; };
+		FE55E1E4207F017000137175 /* MyPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE55E1E3207F017000137175 /* MyPageTableViewController.swift */; };
+		FE55E1E6207F017800137175 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE55E1E5207F017800137175 /* SettingTableViewController.swift */; };
 		FE856779207B0FCD0031E2CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE856778207B0FCD0031E2CB /* AppDelegate.swift */; };
 		FE85677B207B0FCD0031E2CB /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85677A207B0FCD0031E2CB /* WelcomeViewController.swift */; };
 		FE85677E207B0FCD0031E2CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE85677C207B0FCD0031E2CB /* Main.storyboard */; };
@@ -20,28 +23,25 @@
 		FE856786207B0FCE0031E2CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE856784207B0FCE0031E2CB /* LaunchScreen.storyboard */; };
 		FE85678F207B12380031E2CB /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85678E207B12380031E2CB /* SignInViewController.swift */; };
 		FE856791207B12450031E2CB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE856790207B12450031E2CB /* SignUpViewController.swift */; };
-		FE856793207B12560031E2CB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE856792207B12560031E2CB /* HomeViewController.swift */; };
-		FE856795207B12630031E2CB /* BoxOfficeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE856794207B12630031E2CB /* BoxOfficeViewController.swift */; };
-		FE85679B207B12840031E2CB /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85679A207B12840031E2CB /* RatingViewController.swift */; };
-		FE85679D207B128E0031E2CB /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85679C207B128E0031E2CB /* MyPageViewController.swift */; };
 		FE85679F207B12970031E2CB /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85679E207B12970031E2CB /* MovieDetailViewController.swift */; };
-		FE8567A1207B129F0031E2CB /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8567A0207B129F0031E2CB /* SettingViewController.swift */; };
 		FE8567A5207B15090031E2CB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8567A4207B15090031E2CB /* User.swift */; };
 		FE8777E1207CDC0C0096FCD8 /* CosmosDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8777E0207CDC0C0096FCD8 /* CosmosDistrib.swift */; };
 		FEBF9F67207C93A900DD9C3B /* RatingMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBF9F66207C93A900DD9C3B /* RatingMovie.swift */; };
 		FEBF9F6A207CBEB300DD9C3B /* RatingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBF9F68207CBEB300DD9C3B /* RatingTableViewCell.swift */; };
-
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0190E542207B19D8009E1E53 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-
-
 		765FBC9C207EEDD2004920E6 /* ThemeDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeDetailTableViewController.swift; sourceTree = "<group>"; };
 		765FBC9E207EEE4A004920E6 /* ThemeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeTableViewController.swift; sourceTree = "<group>"; };
 		988CA4811CC524384C33DC93 /* Pods-WATCHA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WATCHA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WATCHA/Pods-WATCHA.debug.xcconfig"; sourceTree = "<group>"; };
 		A5C39F096531800B40459C7F /* Pods-WATCHA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WATCHA.release.xcconfig"; path = "Pods/Target Support Files/Pods-WATCHA/Pods-WATCHA.release.xcconfig"; sourceTree = "<group>"; };
 		EB2897062E9C94DCF98D7ABF /* Pods_WATCHA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WATCHA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE55E1DD207F014100137175 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		FE55E1DF207F015A00137175 /* BoxOfficeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeTableViewController.swift; sourceTree = "<group>"; };
+		FE55E1E1207F016400137175 /* RatingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingTableViewController.swift; sourceTree = "<group>"; };
+		FE55E1E3207F017000137175 /* MyPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTableViewController.swift; sourceTree = "<group>"; };
+		FE55E1E5207F017800137175 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		FE856775207B0FCC0031E2CB /* WATCHA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WATCHA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE856778207B0FCD0031E2CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE85677A207B0FCD0031E2CB /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -51,12 +51,7 @@
 		FE856787207B0FCE0031E2CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE85678E207B12380031E2CB /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		FE856790207B12450031E2CB /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		FE856792207B12560031E2CB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		FE856794207B12630031E2CB /* BoxOfficeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeViewController.swift; sourceTree = "<group>"; };
-		FE85679A207B12840031E2CB /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
-		FE85679C207B128E0031E2CB /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		FE85679E207B12970031E2CB /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
-		FE8567A0207B129F0031E2CB /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		FE8567A4207B15090031E2CB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FE8777E0207CDC0C0096FCD8 /* CosmosDistrib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmosDistrib.swift; sourceTree = "<group>"; };
 		FEBF9F66207C93A900DD9C3B /* RatingMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingMovie.swift; sourceTree = "<group>"; };
@@ -139,14 +134,14 @@
 				FE85677A207B0FCD0031E2CB /* WelcomeViewController.swift */,
 				FE85678E207B12380031E2CB /* SignInViewController.swift */,
 				FE856790207B12450031E2CB /* SignUpViewController.swift */,
-				FE856792207B12560031E2CB /* HomeViewController.swift */,
-				FE856794207B12630031E2CB /* BoxOfficeViewController.swift */,
 				765FBC9E207EEE4A004920E6 /* ThemeTableViewController.swift */,
 				765FBC9C207EEDD2004920E6 /* ThemeDetailTableViewController.swift */,
-				FE85679A207B12840031E2CB /* RatingViewController.swift */,
-				FE85679C207B128E0031E2CB /* MyPageViewController.swift */,
 				FE85679E207B12970031E2CB /* MovieDetailViewController.swift */,
-				FE8567A0207B129F0031E2CB /* SettingViewController.swift */,
+				FE55E1DD207F014100137175 /* HomeTableViewController.swift */,
+				FE55E1DF207F015A00137175 /* BoxOfficeTableViewController.swift */,
+				FE55E1E1207F016400137175 /* RatingTableViewController.swift */,
+				FE55E1E3207F017000137175 /* MyPageTableViewController.swift */,
+				FE55E1E5207F017800137175 /* SettingTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -294,22 +289,21 @@
 			files = (
 				FE8567A5207B15090031E2CB /* User.swift in Sources */,
 				FE85678F207B12380031E2CB /* SignInViewController.swift in Sources */,
-				FE85679B207B12840031E2CB /* RatingViewController.swift in Sources */,
 				FEBF9F67207C93A900DD9C3B /* RatingMovie.swift in Sources */,
-				FE856799207B127A0031E2CB /* ThemeDetailViewController.swift in Sources */,
-				FE8567A1207B129F0031E2CB /* SettingViewController.swift in Sources */,
 				FE85679F207B12970031E2CB /* MovieDetailViewController.swift in Sources */,
+				FE55E1E4207F017000137175 /* MyPageTableViewController.swift in Sources */,
 				FE8777E1207CDC0C0096FCD8 /* CosmosDistrib.swift in Sources */,
+				FE55E1E0207F015A00137175 /* BoxOfficeTableViewController.swift in Sources */,
 				FE85677B207B0FCD0031E2CB /* WelcomeViewController.swift in Sources */,
 				765FBC9D207EEDD2004920E6 /* ThemeDetailTableViewController.swift in Sources */,
 				765FBC9F207EEE4A004920E6 /* ThemeTableViewController.swift in Sources */,
-				FE856795207B12630031E2CB /* BoxOfficeViewController.swift in Sources */,
-				FE85679D207B128E0031E2CB /* MyPageViewController.swift in Sources */,
+				FE55E1DE207F014100137175 /* HomeTableViewController.swift in Sources */,
 				FE856779207B0FCD0031E2CB /* AppDelegate.swift in Sources */,
 				FE856791207B12450031E2CB /* SignUpViewController.swift in Sources */,
+				FE55E1E6207F017800137175 /* SettingTableViewController.swift in Sources */,
 				FEBF9F6A207CBEB300DD9C3B /* RatingTableViewCell.swift in Sources */,
+				FE55E1E2207F016400137175 /* RatingTableViewController.swift in Sources */,
 				0190E543207B19D8009E1E53 /* Constants.swift in Sources */,
-				FE856793207B12560031E2CB /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
