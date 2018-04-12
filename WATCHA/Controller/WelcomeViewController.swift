@@ -30,6 +30,8 @@ class WelcomeViewController: UIViewController, FBSDKLoginButtonDelegate {
         } else {
             print("\n---------- [ USER LOGGED IN ] ----------\n")
             print(FBSDKAccessToken.current())
+            print("\n---------- [ Access Token ToString ] ----------\n")
+            print(FBSDKAccessToken.current().tokenString)
             
             let params: Parameters = [
                 "access_token": FBSDKAccessToken.current()
@@ -45,7 +47,7 @@ class WelcomeViewController: UIViewController, FBSDKLoginButtonDelegate {
                         print(Value)
                         print("\n---------- [ Value End ] ----------\n")
                     case .failure(let error):
-                        print("\n---------- [ error ] ----------\n")
+                        print("\n---------- [ login success but error ] ----------\n")
                         print(error.localizedDescription)
                     }
             }
