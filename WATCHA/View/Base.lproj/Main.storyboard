@@ -34,10 +34,10 @@
             </objects>
             <point key="canvasLocation" x="1077.5999999999999" y="1086.2068965517242"/>
         </scene>
-        <!--평가 늘리기-->
+        <!--Rating-->
         <scene sceneID="4XF-XF-7IZ">
             <objects>
-                <viewController storyboardIdentifier="RatingViewController" title="평가 늘리기" id="lE3-KF-yfk" customClass="RatingViewController" customModule="WATCHA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RatingViewController" title="Rating" id="lE3-KF-yfk" customClass="RatingViewController" customModule="WATCHA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="41J-dP-Vxc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
