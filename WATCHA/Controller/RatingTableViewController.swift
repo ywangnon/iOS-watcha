@@ -87,6 +87,13 @@ class RatingTableViewController: UITableViewController {
    }
    
    
+   @objc func categoryButtonPressed() {
+      let vc = storyboard?.instantiateViewController(withIdentifier: "CategoryTableViewController")
+      vc?.modalPresentationStyle = UIModalPresentationStyle.currentContext
+      //vc?.view.backgroundColor = UIColor.clear
+      self.present(vc!, animated: true, completion: nil)
+   }
+   
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -123,7 +130,7 @@ class RatingTableViewController: UITableViewController {
             cell.yearLabel.text = "2018"
             
             cell.cosmosView.settings.fillMode = .half
-            
+         
             //pkForMoreButton = movie.moviePk
             
             cell.moreButton.addTarget(self, action: #selector(self.moreButtonPressed), for: .touchUpInside)
@@ -141,6 +148,34 @@ class RatingTableViewController: UITableViewController {
       //detailVC?.modalTransitionStyle = .crossDissolve
       navigationController?.pushViewController(detailVC!, animated: true)
       //present(detailVC!, animated: true, completion: nil)
+   }
+   
+   
+   override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+      let width = self.view.frame.size.width
+   
+      let headerView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: width, height: 40))
+      headerView.backgroundColor = UIColor.white
+      
+      let categoryButton: UIButton = UIButton(frame: CGRect(x: headerView.frame.size.width/2 - 35,
+                                                    y: headerView.frame.size.height/2 - 8,
+                                                    width: 70, height: 17))
+      categoryButton.setTitle("카테고리", for: .normal)
+      categoryButton.setTitleColor(UIColor.darkGray, for: .normal)
+      categoryButton.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 13)
+      
+      categoryButton.setImage(UIImage(named: "iphone"), for: .normal)
+      categoryButton.addTarget(self, action: #selector(self.categoryButtonPressed), for: .touchUpInside)
+      
+      headerView.addSubview(categoryButton)
+      
+      
+      return headerView
+   }
+   
+   
+   override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+      return 40.0
    }
 
 

@@ -19,3 +19,25 @@ struct RatingMovie{
    var movieCategory: String = ""
    
 }
+
+
+//테스트 위한 카테고리 리스트 임시 작성
+struct Category {
+   var title: String = ""
+   var image: String = ""
+   var pk: Int = 0
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
