@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0190E543207B19D8009E1E53 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190E542207B19D8009E1E53 /* Constants.swift */; };
+		76401CF9207F1D2B0025CA30 /* ThemeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76401CF8207F1D2B0025CA30 /* ThemeList.swift */; };
 		765FBC9D207EEDD2004920E6 /* ThemeDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765FBC9C207EEDD2004920E6 /* ThemeDetailTableViewController.swift */; };
 		765FBC9F207EEE4A004920E6 /* ThemeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765FBC9E207EEE4A004920E6 /* ThemeTableViewController.swift */; };
 		836CC84DE1748B040F7F3256 /* Pods_WATCHA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB2897062E9C94DCF98D7ABF /* Pods_WATCHA.framework */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		0190E542207B19D8009E1E53 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		76401CF8207F1D2B0025CA30 /* ThemeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeList.swift; sourceTree = "<group>"; };
 		765FBC9C207EEDD2004920E6 /* ThemeDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeDetailTableViewController.swift; sourceTree = "<group>"; };
 		765FBC9E207EEE4A004920E6 /* ThemeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeTableViewController.swift; sourceTree = "<group>"; };
 		988CA4811CC524384C33DC93 /* Pods-WATCHA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WATCHA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WATCHA/Pods-WATCHA.debug.xcconfig"; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			children = (
 				FE8567A4207B15090031E2CB /* User.swift */,
 				FEBF9F66207C93A900DD9C3B /* RatingMovie.swift */,
+				76401CF8207F1D2B0025CA30 /* ThemeList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE8567A5207B15090031E2CB /* User.swift in Sources */,
+				76401CF9207F1D2B0025CA30 /* ThemeList.swift in Sources */,
 				FE85678F207B12380031E2CB /* SignInViewController.swift in Sources */,
 				FEBF9F67207C93A900DD9C3B /* RatingMovie.swift in Sources */,
 				FE85679F207B12970031E2CB /* MovieDetailViewController.swift in Sources */,
