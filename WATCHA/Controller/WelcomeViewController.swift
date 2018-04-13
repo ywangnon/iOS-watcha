@@ -33,8 +33,12 @@ class WelcomeViewController: UIViewController, FBSDKLoginButtonDelegate {
             print("\n---------- [ Access Token ToString ] ----------\n")
             print(FBSDKAccessToken.current().tokenString)
             
+            guard let fbToken = FBSDKAccessToken.current().tokenString else {
+                return
+            }
+            
             let params: Parameters = [
-                "access_token": FBSDKAccessToken.current()
+                "access_token": fbToken
             ]
             
             Alamofire
@@ -47,7 +51,7 @@ class WelcomeViewController: UIViewController, FBSDKLoginButtonDelegate {
                         print(Value)
                         print("\n---------- [ Value End ] ----------\n")
                     case .failure(let error):
-                        print("\n---------- [ login success but error ] ----------\n")
+                        print("\n---------- [ data error ] ----------\n")
                         print(error.localizedDescription)
                     }
             }
@@ -74,17 +78,25 @@ class WelcomeViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     let btnFBLogin = FBSDKLoginButton(frame: CGRect(x: 40, y: 487, width: 295, height: 50))
     btnFBLogin.delegate = self
+    btnFBLogin.setTitle("페북으로 시작하기", for: .normal)
     btnFBLogin.readPermissions = ["public_profile", "email"]
     
     self.view.addSubview(btnFBLogin)
     
     if FBSDKAccessToken.current() != nil {
         print("\n---------- [ Tokken ] ----------\n")
-        print("LOGGED IN, \(FBSDKAccessToken.current())")
+        print("LOGGED IN, \(FBSDKAccessToken.current().tokenString)")
+        user_Token = FBSDKAccessToken.current().tokenString
+        
     } else {
         print("not logged in")
     }
    }
+    
+    /// navigation bar 숨김
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+    }
 
    override func didReceiveMemoryWarning() {
       super.didReceiveMemoryWarning()
