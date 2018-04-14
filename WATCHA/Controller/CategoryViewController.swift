@@ -1,25 +1,30 @@
 //
-//  CategoryTableViewController.swift
+//  CategoryViewController.swift
 //  WATCHA
 //
-//  Created by Seo JaeHyeong on 13/04/2018.
+//  Created by Seo JaeHyeong on 14/04/2018.
 //  Copyright © 2018 Seo Jaehyeong. All rights reserved.
 //
 
 import UIKit
 
-class CategoryTableViewController: UITableViewController {
-
+class CategoryViewController: UIViewController {
+   
    var categories: [Category] = []
    
+   @IBOutlet weak var tableView: UITableView!
    
    override func viewDidLoad() {
       super.viewDidLoad()
       
+      tableView.delegate = self
+      tableView.dataSource = self
       tableView.separatorStyle = .none
+      
       makeCategories()
-    }
 
+    }
+   
    
    @objc func cancleButtonPressed() {
       
@@ -27,71 +32,95 @@ class CategoryTableViewController: UITableViewController {
    }
    
    
+   @objc func upperViewTapped() {
+      self.dismiss(animated: true, completion: nil)
+   }
+
+
+}
+
+
+// MARK: - Table view data source
+extension CategoryViewController: UITableViewDelegate, UITableViewDataSource {
    
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 2
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
+      // #warning Incomplete implementation, return the number of sections
+      return 2
+   }
+   
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
       
       if section == 1 {
          return categories.count
       }
       
       return 1
-    }
+   }
    
    
-   override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
       if section == 1 {
          return 40
       }
       
-      return 200
+      return 300
    }
    
-   override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+   
+   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+      var result = ""
+      if section == 1 {
+         result = "카테고리 선택"
+      }
+      return result
+   }
+   
+   
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
       
-      let headerView: UIView = UIView()
       let width = self.view.frame.size.width
       
       if section == 0 {
-         headerView.frame = CGRect(x: 0, y: 0, width: width, height: 200)
-         headerView.backgroundColor = UIColor.clear
+         let upperView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: width, height: 300))
+         upperView.backgroundColor = UIColor.clear
+         let tap = UITapGestureRecognizer(target: self, action: #selector(self.upperViewTapped))
+         upperView.addGestureRecognizer(tap)
          
+         return upperView
       } else {
          
-         //let headerView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: width, height: 40))
-         headerView.frame = CGRect(x: 0, y: 0, width: width, height: 40)
+         let headerView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: width, height: 40))
+         //headerView.frame = CGRect(x: 0, y: 0, width: width, height: 40)
          headerView.backgroundColor = UIColor.white
          
-         let cancleButton: UIButton = UIButton(frame: CGRect(x: 5, y: 5, width: width, height: 30))
+         let cancleButton: UIButton = UIButton(frame: CGRect(x: 5, y: 0, width: 40, height: 40))
          cancleButton.setTitle("취소", for: .normal)
-         cancleButton.setTitleColor(UIColor.darkGray, for: .normal)
+         cancleButton.setTitleColor(UIColor.blue, for: .normal)
          cancleButton.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 17)
-         
          cancleButton.addTarget(self, action: #selector(self.cancleButtonPressed), for: .touchUpInside)
          
-         headerView.addSubview(cancleButton)
+         let titleLb: UILabel = UILabel(frame: CGRect(x: width/2 - 50, y: 0, width: 100, height: 40))
+         titleLb.text = "카테고리 선택"
+         titleLb.textColor = UIColor.darkGray
+         titleLb.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 17)
          
+         headerView.addSubview(cancleButton)
+         headerView.addSubview(titleLb)
+         
+         return headerView
       }
-      
-      return headerView
       
    }
    
    
-   override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+      
       return 40
    }
    
    
-   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      
       
       if indexPath.section == 0 {
          let upCell = UITableViewCell()
@@ -102,16 +131,13 @@ class CategoryTableViewController: UITableViewController {
          let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
          let category = categories[indexPath.row]
          
-         cell.categoryImgView.image = UIImage(named: category.image)
-         cell.categoryTitleLb.text = "\(category.title), pk = \(category.pk)"
+         cell.categoryImageView.image = UIImage(named: category.image)
+         cell.categoryTitleLabel.text = "\(category.title), pk = \(category.pk)"
          cell.backgroundColor = UIColor.white
          
          return cell
       }
    }
-   
-
-   
    
    
    
@@ -271,14 +297,5 @@ class CategoryTableViewController: UITableViewController {
       
    }
    
-
+   
 }
-
-
-
-
-
-
-
-
-

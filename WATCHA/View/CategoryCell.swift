@@ -10,13 +10,14 @@ import UIKit
 
 class CategoryCell: UITableViewCell {
 
+   //UITableViewController
+   @IBOutlet weak var categoryImgView: UIImageView!
+   @IBOutlet weak var categoryTitleLb: UILabel!
+   
+   //UIViewController
    @IBOutlet weak var categoryImageView: UIImageView!
    @IBOutlet weak var categoryTitleLabel: UILabel!
    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

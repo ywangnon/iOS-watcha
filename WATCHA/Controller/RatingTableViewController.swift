@@ -12,6 +12,11 @@ class RatingTableViewController: UITableViewController {
 
    var movies: [RatingMovie] = []
    var pkForMoreButton: String?
+   var pkForCategory: String? {
+      willSet {
+         // TODO : 카테고리 pk를 가지고 서버에서 카테고리 영화리스트를 읽어와 테이블뷰 리로드 작업을 시행한다.
+      }
+   }
    
    //For Test
    private static var rowsCount = 100
@@ -88,9 +93,12 @@ class RatingTableViewController: UITableViewController {
    
    
    @objc func categoryButtonPressed() {
-      let vc = storyboard?.instantiateViewController(withIdentifier: "CategoryTableViewController")
-      vc?.modalPresentationStyle = UIModalPresentationStyle.currentContext
-      //vc?.view.backgroundColor = UIColor.clear
+      let vc = storyboard?.instantiateViewController(withIdentifier: "CategoryViewController")
+      //let vc = storyboard?.instantiateViewController(withIdentifier: "CategoryTableViewController")
+      //let vc = CategoryTableViewController()
+      self.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+      vc?.view.backgroundColor = UIColor.clear
+      
       self.present(vc!, animated: true, completion: nil)
    }
    
