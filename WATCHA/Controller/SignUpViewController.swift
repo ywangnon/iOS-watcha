@@ -15,12 +15,37 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    /// 로그인 버튼
+    ///
+    /// - Parameter sender: 누른 버튼
     @IBAction func loginAction(_ sender: UIButton) {
         
         guard let nickName = nickNameTextField.text,
             let email = emailTextField.text,
-            let password = passwordTextField.text else {
-                return
+            let password = passwordTextField.text else { return }
+        
+        guard isValidEmailAddress(email: email) else {
+            print("email Check")
+            
+            let alertController = UIAlertController(title: "New alert!", message: "User please check out this method", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+            return
+        }
+        
+        guard isValidPassword(password) else {
+            print("password Check")
+            
+            let alertController = UIAlertController(title: "New alert!", message: "User please check out this method", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+            return
         }
         
         let params: Parameters = [
@@ -37,6 +62,7 @@ class SignUpViewController: UIViewController {
                 case .success(let Value):
                     print("\n---------- [ Login Success ] ----------\n")
                     print(Value)
+                    self.performSegue(withIdentifier: "goMain3", sender: nil)
                     print("\n---------- [ Value End ] ----------\n")
                 case .failure(let error):
                     print("\n---------- [ error ] ----------\n")
@@ -58,19 +84,46 @@ class SignUpViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func passwordCheck(_ password: String) -> Bool {
+    /// password 형태 검사
+    ///
+    /// - Parameter password: 입력된 패스워드
+    /// - Returns: 지정된 형식의 패스워드 아님
+    func isValidPassword(_ password: String) -> Bool {
         
-        return false
+        // 페스워드 정규식 : 영물, 숫자, 특수문자 6-20자 이내
+        let passwordRegEx = "^(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9])(?=.*[0-9]).{6,20}$"
+
+        let passwordTest = NSPredicate(format:"SELF MATCHES %@", passwordRegEx)
+
+        return passwordTest.evaluate(with: password)
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    
+    /// email 형태 검사
+    ///
+    /// - Parameter email: 입력된 email
+    /// - Returns: true는 이메일 형식, false는 이메일 형식 아님
+    func isValidEmailAddress(email: String) -> Bool {
+        
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        
+        return emailTest.evaluate(with: email)
+    }
+    
+    /// 이 창에서 navigation bar 띄움
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = false
+        // 버튼 title setting
+        let backButton = UIBarButtonItem()
+        backButton.title = "첫화면"
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+    }
+
+    /// 메인 창에서 nvigation bar 숨김
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+    }
     
 }
