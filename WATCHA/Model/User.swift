@@ -8,6 +8,8 @@
 
 import Foundation
 
+var user_Token: String?
+
 struct user: Decodable {
     var pk: String
     var email: String
