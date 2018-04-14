@@ -46,10 +46,12 @@ class WelcomeViewController: UIViewController, FBSDKLoginButtonDelegate {
                 .validate()
                 .responseData { (response) in
                     switch response.result {
-                    case .success(let Value):
+                    case .success(let value):
                         print("\n---------- [ Login Success ] ----------\n")
-                        print(Value)
+                        print("\(FBSDKAccessToken.current().tokenString)")
+                        user_Token = FBSDKAccessToken.current().tokenString
                         print("\n---------- [ Value End ] ----------\n")
+                        self.performSegue(withIdentifier: "goMain", sender: nil)
                     case .failure(let error):
                         print("\n---------- [ data error ] ----------\n")
                         print(error.localizedDescription)
@@ -66,43 +68,46 @@ class WelcomeViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     
-   override func viewDidLoad() {
-      super.viewDidLoad()
-    
-    centerImg.image = #imageLiteral(resourceName: "watcha")
-    
-    let imgs = [#imageLiteral(resourceName: "book"),#imageLiteral(resourceName: "cinema"),#imageLiteral(resourceName: "film"),#imageLiteral(resourceName: "lake"),#imageLiteral(resourceName: "sky")]
-    backgroundImg.animationImages = imgs
-    backgroundImg.animationDuration = 10
-    backgroundImg.startAnimating()
-    
-    let btnFBLogin = FBSDKLoginButton(frame: CGRect(x: 40, y: 487, width: 295, height: 50))
-    btnFBLogin.delegate = self
-    btnFBLogin.setTitle("페북으로 시작하기", for: .normal)
-    btnFBLogin.readPermissions = ["public_profile", "email"]
-    
-    self.view.addSubview(btnFBLogin)
-    
-    if FBSDKAccessToken.current() != nil {
-        print("\n---------- [ Tokken ] ----------\n")
-        print("LOGGED IN, \(FBSDKAccessToken.current().tokenString)")
-        user_Token = FBSDKAccessToken.current().tokenString
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-    } else {
-        print("not logged in")
+        centerImg.image = #imageLiteral(resourceName: "watcha")
+        
+        let imgs = [#imageLiteral(resourceName: "book"),#imageLiteral(resourceName: "cinema"),#imageLiteral(resourceName: "film"),#imageLiteral(resourceName: "lake"),#imageLiteral(resourceName: "sky")]
+        backgroundImg.animationImages = imgs
+        backgroundImg.animationDuration = 10
+        backgroundImg.startAnimating()
+        
+        let btnFBLogin = FBSDKLoginButton(frame: CGRect(x: 40, y: 487, width: 295, height: 50))
+        btnFBLogin.delegate = self
+        btnFBLogin.setTitle("페북으로 시작하기", for: .normal)
+        btnFBLogin.readPermissions = ["public_profile", "email"]
+        
+        self.view.addSubview(btnFBLogin)
+        
+        if FBSDKAccessToken.current() != nil {
+            print("\n---------- [ Tokken ] ----------\n")
+            print("\(FBSDKAccessToken.current().tokenString)")
+            user_Token = FBSDKAccessToken.current().tokenString
+            performSegue(withIdentifier: "goMain", sender: nil)
+        } else {
+            print("not logged in")
+        }
     }
-   }
     
     /// navigation bar 숨김
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = true
     }
-
-   override func didReceiveMemoryWarning() {
-      super.didReceiveMemoryWarning()
-      // Dispose of any resources that can be recreated.
-   }
-
-
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    }
+    
 }
 

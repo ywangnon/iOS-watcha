@@ -15,6 +15,9 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    /// 로그인 버튼
+    ///
+    /// - Parameter sender: 누른 버튼
     @IBAction func loginAction(_ sender: UIButton) {
         
         guard let nickName = nickNameTextField.text,
@@ -23,11 +26,25 @@ class SignUpViewController: UIViewController {
         
         guard isValidEmailAddress(email: email) else {
             print("email Check")
+            
+            let alertController = UIAlertController(title: "New alert!", message: "User please check out this method", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
+            
             return
         }
         
         guard isValidPassword(password) else {
             print("password Check")
+            
+            let alertController = UIAlertController(title: "New alert!", message: "User please check out this method", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
+            
             return
         }
         
@@ -45,6 +62,7 @@ class SignUpViewController: UIViewController {
                 case .success(let Value):
                     print("\n---------- [ Login Success ] ----------\n")
                     print(Value)
+                    self.performSegue(withIdentifier: "goMain3", sender: nil)
                     print("\n---------- [ Value End ] ----------\n")
                 case .failure(let error):
                     print("\n---------- [ error ] ----------\n")
@@ -66,12 +84,17 @@ class SignUpViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    /// password 형태 검사
+    ///
+    /// - Parameter password: 입력된 패스워드
+    /// - Returns: 지정된 형식의 패스워드 아님
     func isValidPassword(_ password: String) -> Bool {
         
-        let passwordRegEx = "/^(?=.*[a-zA-Z])((?=.*\\d)|(?=.*\\W)).{6,20}$/"
-        
+        // 페스워드 정규식 : 영물, 숫자, 특수문자 6-20자 이내
+        let passwordRegEx = "^(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9])(?=.*[0-9]).{6,20}$"
+
         let passwordTest = NSPredicate(format:"SELF MATCHES %@", passwordRegEx)
-        
+
         return passwordTest.evaluate(with: password)
     }
     

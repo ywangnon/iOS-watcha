@@ -36,6 +36,7 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
                 case .success(let value):
                     print("\n---------- [ Login Success ] ----------\n")
                     print(value)
+                    self.performSegue(withIdentifier: "goMain2", sender: nil)
                 case .failure(let error):
                     print("\n---------- [ data error ] ----------\n")
                     print(error.localizedDescription)
@@ -57,6 +58,14 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
         let btnFBLogin = FBSDKLoginButton(frame: CGRect(x: 40, y: 124, width: 295, height: 50))
         view.addSubview(btnFBLogin)
         
+        if FBSDKAccessToken.current() != nil {
+            print("\n---------- [ Tokken ] ----------\n")
+            print("\(FBSDKAccessToken.current().tokenString)")
+            user_Token = FBSDKAccessToken.current().tokenString
+            performSegue(withIdentifier: "goMain", sender: nil)
+        } else {
+            print("not logged in")
+        }
     }
     
     override func didReceiveMemoryWarning() {

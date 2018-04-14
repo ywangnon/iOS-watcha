@@ -240,6 +240,7 @@
                     <connections>
                         <outlet property="backgroundImg" destination="mIf-nR-hqN" id="lWh-ev-ViA"/>
                         <outlet property="centerImg" destination="dao-eZ-6B4" id="Sxd-w3-7bi"/>
+                        <segue destination="wrh-5O-Yb9" kind="show" identifier="goMain" id="H7m-Ok-EpA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z5q-Vk-m4r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -312,11 +313,12 @@
                     <connections>
                         <outlet property="emailTextField" destination="MpA-ol-a3z" id="2eU-YO-IbK"/>
                         <outlet property="passwordTextField" destination="dEm-8I-BQ6" id="kJX-i2-8YA"/>
+                        <segue destination="wrh-5O-Yb9" kind="show" identifier="goMain2" id="3Mq-pf-IIA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Umf-hT-kq8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-908" y="848"/>
+            <point key="canvasLocation" x="-434" y="824"/>
         </scene>
         <!--가입-->
         <scene sceneID="Pfh-NI-cbh">
@@ -411,11 +413,12 @@
                         <outlet property="emailTextField" destination="FwH-BD-BPg" id="F97-6L-3od"/>
                         <outlet property="nickNameTextField" destination="kiT-1x-Wht" id="QqM-1E-hTI"/>
                         <outlet property="passwordTextField" destination="YXN-W9-ASW" id="TUG-cc-GAB"/>
+                        <segue destination="wrh-5O-Yb9" kind="show" identifier="goMain3" id="NvK-Fq-bKT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HfF-o9-0TT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12" y="848"/>
+            <point key="canvasLocation" x="-434" y="-564"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Ykf-f0-ZYA">
@@ -700,4 +703,7 @@
             <point key="canvasLocation" x="2733.5999999999999" y="1672.7136431784108"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="3Mq-pf-IIA"/>
+    </inferredMetricsTieBreakers>
 </document>
