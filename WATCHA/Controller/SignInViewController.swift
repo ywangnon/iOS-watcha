@@ -73,9 +73,26 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let width = CGFloat(2.0)
+
+        // 커스텀 텍스트필드 리팩토링 필요
+        let border = CALayer()
+        border.borderColor = UIColor(red: 188/255, green: 187/255, blue: 193/255, alpha: 1.0).cgColor
+        border.frame = CGRect(x: 0, y: emailTextField.frame.size.height-width, width: emailTextField.frame.size.width, height: emailTextField.frame.size.height)
+        border.borderWidth = width
         
-        //        let btnFBLogin = FBSDKLoginButton(frame: CGRect(x: 40, y: 124, width: 295, height: 50))
-        //        view.addSubview(btnFBLogin)
+        emailTextField.layer.addSublayer(border)
+        emailTextField.layer.masksToBounds = true
+        
+        let border2 = CALayer()
+        border2.borderColor = UIColor(red: 188/255, green: 187/255, blue: 193/255, alpha: 1.0).cgColor
+        border2.frame = CGRect(x: 0, y: passwordTextField.frame.size.height-width, width: passwordTextField.frame.size.width, height: passwordTextField.frame.size.height)
+        border2.borderWidth = width
+        
+        passwordTextField.layer.addSublayer(border2)
+        passwordTextField.layer.masksToBounds = true
+        
         
         // 페이스북 커스텀 로그인 버튼
         let myLoginButton = UIButton(type: .custom)

@@ -76,6 +76,33 @@ class SignUpViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         
+        let width = CGFloat(2.0)
+        
+        // 커스텀 텍스트필드 리팩토링 필요
+        let border = CALayer()
+        border.borderColor = UIColor(red: 188/255, green: 187/255, blue: 193/255, alpha: 1.0).cgColor
+        border.frame = CGRect(x: 0, y: nickNameTextField.frame.size.height-width, width: nickNameTextField.frame.size.width, height: nickNameTextField.frame.size.height)
+        border.borderWidth = width
+        
+        nickNameTextField.layer.addSublayer(border)
+        nickNameTextField.layer.masksToBounds = true
+        
+        let border2 = CALayer()
+        border2.borderColor = UIColor(red: 188/255, green: 187/255, blue: 193/255, alpha: 1.0).cgColor
+        border2.frame = CGRect(x: 0, y: emailTextField.frame.size.height-width, width: emailTextField.frame.size.width, height: emailTextField.frame.size.height)
+        border2.borderWidth = width
+        
+        emailTextField.layer.addSublayer(border2)
+        emailTextField.layer.masksToBounds = true
+        
+        let border3 = CALayer()
+        border3.borderColor = UIColor(red: 188/255, green: 187/255, blue: 193/255, alpha: 1.0).cgColor
+        border3.frame = CGRect(x: 0, y: passwordTextField.frame.size.height-width, width: passwordTextField.frame.size.width, height: passwordTextField.frame.size.height)
+        border3.borderWidth = width
+        
+        passwordTextField.layer.addSublayer(border3)
+        passwordTextField.layer.masksToBounds = true
+        
     }
     
     override func didReceiveMemoryWarning() {
