@@ -10,6 +10,11 @@ import UIKit
 
 class ThemeTableViewController: UITableViewController {
     
+    
+    @IBOutlet weak var themeImageView: UIImageView!
+    @IBOutlet weak var themeTitleLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,8 +56,6 @@ class ThemeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-
-        
 
         return cell
     }
