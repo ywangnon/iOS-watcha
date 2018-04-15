@@ -8,7 +8,7 @@
 
 import Foundation
 
-var user_Token: String?
+//var user_Token: String?
 
 struct user: Decodable {
     var pk: String

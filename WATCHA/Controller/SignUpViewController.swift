@@ -27,9 +27,9 @@ class SignUpViewController: UIViewController {
         guard isValidEmailAddress(email: email) else {
             print("email Check")
             
-            let alertController = UIAlertController(title: "New alert!", message: "User please check out this method", preferredStyle: UIAlertControllerStyle.alert)
+            let alertController = UIAlertController(title: "이메일 형식이 아닙니다.", message: "이메일을 정확히 입력해주세요.", preferredStyle: UIAlertControllerStyle.alert)
             
-            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+            alertController.addAction(UIAlertAction(title: "확인", style: UIAlertActionStyle.default,handler: nil))
             
             self.present(alertController, animated: true, completion: nil)
             
@@ -39,9 +39,9 @@ class SignUpViewController: UIViewController {
         guard isValidPassword(password) else {
             print("password Check")
             
-            let alertController = UIAlertController(title: "New alert!", message: "User please check out this method", preferredStyle: UIAlertControllerStyle.alert)
+            let alertController = UIAlertController(title: "비밀번호가 너무 짧습니다.", message: "비밀번호를 6자리 이상 입력해주세요", preferredStyle: UIAlertControllerStyle.alert)
             
-            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+            alertController.addAction(UIAlertAction(title: "확인", style: UIAlertActionStyle.default,handler: nil))
             
             self.present(alertController, animated: true, completion: nil)
             
@@ -76,7 +76,6 @@ class SignUpViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -90,8 +89,8 @@ class SignUpViewController: UIViewController {
     /// - Returns: 지정된 형식의 패스워드 아님
     func isValidPassword(_ password: String) -> Bool {
         
-        // 페스워드 정규식 : 영물, 숫자, 특수문자 6-20자 이내
-        let passwordRegEx = "^(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9])(?=.*[0-9]).{6,20}$"
+        // 패스워드 정규식 : 6-20자 이내
+        let passwordRegEx = "^(?=.*[a-zA-Z0-9]).{6,20}$"
 
         let passwordTest = NSPredicate(format:"SELF MATCHES %@", passwordRegEx)
 
