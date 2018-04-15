@@ -51,6 +51,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="129.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wn9-Ef-P8S">
+                                            <rect key="frame" x="0.0" y="-0.5" width="375" height="130"/>
+                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="영화 박스오피스" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UpS-gC-0q4">
                                             <rect key="frame" x="44" y="52.5" width="287" height="24"/>
                                             <constraints>
@@ -62,8 +65,12 @@
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="Wn9-Ef-P8S" secondAttribute="trailing" id="4M6-WV-gFY"/>
                                         <constraint firstItem="UpS-gC-0q4" firstAttribute="leading" secondItem="1bx-tB-mMp" secondAttribute="leadingMargin" constant="28" id="GCq-x8-qEY"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="UpS-gC-0q4" secondAttribute="trailing" constant="28" id="HfB-gb-lc8"/>
+                                        <constraint firstItem="Wn9-Ef-P8S" firstAttribute="top" secondItem="1bx-tB-mMp" secondAttribute="top" id="Ijg-6L-GcN"/>
+                                        <constraint firstAttribute="bottom" secondItem="Wn9-Ef-P8S" secondAttribute="bottom" id="ImB-qi-Nbz"/>
+                                        <constraint firstItem="Wn9-Ef-P8S" firstAttribute="leading" secondItem="1bx-tB-mMp" secondAttribute="leading" id="msE-wJ-OZl"/>
                                         <constraint firstItem="UpS-gC-0q4" firstAttribute="centerY" secondItem="1bx-tB-mMp" secondAttribute="centerY" id="qCX-gB-EPU"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -704,6 +711,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3Mq-pf-IIA"/>
+        <segue reference="H7m-Ok-EpA"/>
     </inferredMetricsTieBreakers>
 </document>
