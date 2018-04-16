@@ -15,7 +15,7 @@ struct RatingMovie{
    var movieImage: String = "ready_player_one"
    var movieRate: Double = 0.0
    
-   var moviePk: String = ""
+   var moviePk: Int = 0
    var movieCategory: String = ""
    
 }
