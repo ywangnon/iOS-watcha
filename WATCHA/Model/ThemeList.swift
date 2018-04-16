@@ -16,6 +16,7 @@ struct ThemeAndRankingList {
         "전세계 흥행 TOP 영화",
         "국내 누적관객수 TOP 영화"
     ]
+    
     var themeList: [String] = [
         "고전 영화",
         "느와르 영화",

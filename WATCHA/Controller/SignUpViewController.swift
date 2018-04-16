@@ -27,9 +27,9 @@ class SignUpViewController: UIViewController {
         guard isValidEmailAddress(email: email) else {
             print("email Check")
             
-            let alertController = UIAlertController(title: "New alert!", message: "User please check out this method", preferredStyle: UIAlertControllerStyle.alert)
+            let alertController = UIAlertController(title: "이메일 형식이 아닙니다.", message: "이메일을 정확히 입력해주세요.", preferredStyle: UIAlertControllerStyle.alert)
             
-            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+            alertController.addAction(UIAlertAction(title: "확인", style: UIAlertActionStyle.default,handler: nil))
             
             self.present(alertController, animated: true, completion: nil)
             
@@ -39,9 +39,9 @@ class SignUpViewController: UIViewController {
         guard isValidPassword(password) else {
             print("password Check")
             
-            let alertController = UIAlertController(title: "New alert!", message: "User please check out this method", preferredStyle: UIAlertControllerStyle.alert)
+            let alertController = UIAlertController(title: "비밀번호가 너무 짧습니다.", message: "비밀번호를 6자리 이상 입력해주세요", preferredStyle: UIAlertControllerStyle.alert)
             
-            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+            alertController.addAction(UIAlertAction(title: "확인", style: UIAlertActionStyle.default,handler: nil))
             
             self.present(alertController, animated: true, completion: nil)
             
@@ -76,6 +76,32 @@ class SignUpViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         
+        let width = CGFloat(2.0)
+        
+        // 커스텀 텍스트필드 리팩토링 필요
+        let border = CALayer()
+        border.borderColor = UIColor(red: 188/255, green: 187/255, blue: 193/255, alpha: 1.0).cgColor
+        border.frame = CGRect(x: 0, y: nickNameTextField.frame.size.height-width, width: nickNameTextField.frame.size.width, height: nickNameTextField.frame.size.height)
+        border.borderWidth = width
+        
+        nickNameTextField.layer.addSublayer(border)
+        nickNameTextField.layer.masksToBounds = true
+        
+        let border2 = CALayer()
+        border2.borderColor = UIColor(red: 188/255, green: 187/255, blue: 193/255, alpha: 1.0).cgColor
+        border2.frame = CGRect(x: 0, y: emailTextField.frame.size.height-width, width: emailTextField.frame.size.width, height: emailTextField.frame.size.height)
+        border2.borderWidth = width
+        
+        emailTextField.layer.addSublayer(border2)
+        emailTextField.layer.masksToBounds = true
+        
+        let border3 = CALayer()
+        border3.borderColor = UIColor(red: 188/255, green: 187/255, blue: 193/255, alpha: 1.0).cgColor
+        border3.frame = CGRect(x: 0, y: passwordTextField.frame.size.height-width, width: passwordTextField.frame.size.width, height: passwordTextField.frame.size.height)
+        border3.borderWidth = width
+        
+        passwordTextField.layer.addSublayer(border3)
+        passwordTextField.layer.masksToBounds = true
         
     }
     
@@ -90,8 +116,8 @@ class SignUpViewController: UIViewController {
     /// - Returns: 지정된 형식의 패스워드 아님
     func isValidPassword(_ password: String) -> Bool {
         
-        // 페스워드 정규식 : 영물, 숫자, 특수문자 6-20자 이내
-        let passwordRegEx = "^(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9])(?=.*[0-9]).{6,20}$"
+        // 패스워드 정규식 : 6-20자 이내
+        let passwordRegEx = "^(?=.*[a-zA-Z0-9]).{6,20}$"
 
         let passwordTest = NSPredicate(format:"SELF MATCHES %@", passwordRegEx)
 
