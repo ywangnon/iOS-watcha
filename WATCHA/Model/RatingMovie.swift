@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct RatingMovie{
+struct RatingMovie: Codable{
    
    var movieTitle: String = "레디 플레이어 원"
    var movieYear: String = "2018"

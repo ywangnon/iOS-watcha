@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct MovieDetailInfo{
+struct MovieDetailInfo: Codable{
    
    var title: String = ""
    var year: String = ""
@@ -32,13 +32,13 @@ struct MovieDetailInfo{
 }
 
 
-struct Actor {
+struct Actor: Codable {
    var name: String = ""
    var position: String = ""
    var profileImage: String = ""
 }
 
-struct Comment {
+struct Comment: Codable {
    var userName: String = ""
    var userProfile: String = ""
    var time: String = ""
