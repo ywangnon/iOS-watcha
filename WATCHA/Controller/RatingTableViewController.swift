@@ -24,8 +24,8 @@ class RatingTableViewController: UITableViewController {
 //   private var ratingStorage = [Double](repeating: 0, count: rowsCount)
    
     override func viewDidLoad() {
-        super.viewDidLoad()
-
+      super.viewDidLoad()
+      
       tableView.rowHeight = 100
       loadMovieData()
       
@@ -35,6 +35,18 @@ class RatingTableViewController: UITableViewController {
 
     }
 
+   
+   override func viewWillDisappear(_ animated: Bool) {
+      navigationController?.navigationBar.isHidden = true
+   }
+   
+   
+   override func viewWillAppear(_ animated: Bool) {
+      navigationController?.navigationBar.isHidden = false
+   }
+   
+   
+   
    func loadMovieData() {
    //TODO : 서버에서 가져온 영화리스트를 movies 배열에 할당하여 데이터소스에서 사용할 것
       
@@ -113,7 +125,6 @@ class RatingTableViewController: UITableViewController {
       detailVC?.pkForMovie = tagForMovie
       
       navigationController?.pushViewController(detailVC!, animated: true)
-   
 
    }
    

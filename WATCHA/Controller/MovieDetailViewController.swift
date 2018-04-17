@@ -9,7 +9,22 @@
 import UIKit
 
 class MovieDetailViewController: UIViewController {
-
+   
+   
+   @IBOutlet weak var actorCollectionView: UICollectionView!
+   @IBOutlet weak var galleryCollectionView: UICollectionView!
+   @IBOutlet weak var youtubeCollectionView: UICollectionView!
+   @IBOutlet weak var commentTableView: UITableView!
+   @IBOutlet weak var recommendCollectionView: UICollectionView!
+   
+   @IBOutlet weak var backgroundImageView: UIImageView!
+   @IBOutlet weak var posterImageView: UIImageView!
+   @IBOutlet weak var titleLabel: UILabel!
+   @IBOutlet weak var infoLabel: UILabel!
+   @IBOutlet weak var ratedPointLabel: UILabel!
+   @IBOutlet weak var cosmosView: CosmosView!
+   
+   
    var pkForMovie: Int? {
       willSet {
          // TODO : 카테고리 pk를 가지고 서버에서 카테고리 영화정보를 읽어온다.
@@ -18,25 +33,29 @@ class MovieDetailViewController: UIViewController {
    }
    
     override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+      super.viewDidLoad()
+      
     }
+   
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+   @IBAction func backButtonPressed(_ sender: UIButton) {
+      navigationController?.popViewController(animated: true)
+   }
+   
+   
+   @IBAction func wantButtonPressed(_ sender: UIButton) {
+   }
+ 
+   
+   @IBAction func rateButtonPressed(_ sender: UIButton) {
+   }
+   
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+   @IBAction func commentButtonPressed(_ sender: UIButton) {
+   }
+   
+   
+   @IBAction func moreButtonPressed(_ sender: UIButton) {
+   }
+   
 }
