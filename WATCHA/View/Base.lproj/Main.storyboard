@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wrh-5O-Yb9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M0h-8s-GZB">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -426,6 +426,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.99215686274509807" green="0.18431372549019609" blue="0.43529411764705883" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="22a-b9-Pko" kind="relationship" relationship="viewControllers" id="2cO-Dd-dno"/>
@@ -464,7 +465,7 @@
         <scene sceneID="9eo-44-UGE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d4y-Bu-N6v" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="테마" id="gYo-cw-vtC"/>
+                    <tabBarItem key="tabBarItem" title="테마" image="테마" id="gYo-cw-vtC"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wjh-89-9eJ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -853,11 +854,11 @@
             </objects>
             <point key="canvasLocation" x="4471" y="1673"/>
         </scene>
-        <!--BoxOffice-->
+        <!--박스오피스-->
         <scene sceneID="YjH-wl-hVW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MvU-ts-bHy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="BoxOffice" id="wc3-Le-xIX"/>
+                    <tabBarItem key="tabBarItem" title="박스오피스" image="박스오피스" id="wc3-Le-xIX"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IGZ-z0-tEw">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -872,11 +873,11 @@
             </objects>
             <point key="canvasLocation" x="2724" y="-594.15292353823088"/>
         </scene>
-        <!--Home-->
+        <!--홈-->
         <scene sceneID="e4H-Yq-ALi">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="22a-b9-Pko" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="TbP-fa-YcL"/>
+                    <tabBarItem key="tabBarItem" title="홈" image="홈" id="TbP-fa-YcL"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vYf-XD-26z">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -891,11 +892,11 @@
             </objects>
             <point key="canvasLocation" x="2716" y="152.47376311844079"/>
         </scene>
-        <!--Rating-->
+        <!--평가늘리기-->
         <scene sceneID="JZh-AC-M3I">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="W76-CK-sGG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Rating" id="vO5-RQ-DFL"/>
+                    <tabBarItem key="tabBarItem" title="평가늘리기" image="평가" id="vO5-RQ-DFL"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eve-pv-l9A">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -911,11 +912,11 @@
             </objects>
             <point key="canvasLocation" x="2728.8000000000002" y="931.48425787106453"/>
         </scene>
-        <!--MyPage-->
+        <!--마이페이지-->
         <scene sceneID="cC0-N9-Hil">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rlq-ct-gGD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="MyPage" id="MwE-WX-ekp"/>
+                    <tabBarItem key="tabBarItem" title="마이페이지" image="마이페이지" id="MwE-WX-ekp"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GkU-xF-I0h">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -931,6 +932,13 @@
             <point key="canvasLocation" x="2733.5999999999999" y="1672.7136431784108"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="마이페이지" width="23" height="23"/>
+        <image name="박스오피스" width="23" height="23"/>
+        <image name="테마" width="23" height="23"/>
+        <image name="평가" width="23" height="23"/>
+        <image name="홈" width="23" height="23"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="NvK-Fq-bKT"/>
     </inferredMetricsTieBreakers>
