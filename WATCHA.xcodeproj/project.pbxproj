@@ -11,6 +11,8 @@
 		76401CF9207F1D2B0025CA30 /* ThemeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76401CF8207F1D2B0025CA30 /* ThemeList.swift */; };
 		765FBC9D207EEDD2004920E6 /* ThemeDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765FBC9C207EEDD2004920E6 /* ThemeDetailTableViewController.swift */; };
 		765FBC9F207EEE4A004920E6 /* ThemeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765FBC9E207EEE4A004920E6 /* ThemeTableViewController.swift */; };
+		7674B8F32087012300DD31F4 /* ThemeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674B8F22087012300DD31F4 /* ThemeTableViewCell.swift */; };
+		7674B8F5208702C100DD31F4 /* ThemeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674B8F4208702C100DD31F4 /* ThemeDetailTableViewCell.swift */; };
 		836CC84DE1748B040F7F3256 /* Pods_WATCHA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB2897062E9C94DCF98D7ABF /* Pods_WATCHA.framework */; };
 		FE037A70208078F800956C4D /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE037A6F208078F800956C4D /* CategoryCell.swift */; };
 		FE037A722082085700956C4D /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE037A712082085700956C4D /* CategoryViewController.swift */; };
@@ -39,6 +41,8 @@
 		76401CF8207F1D2B0025CA30 /* ThemeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeList.swift; sourceTree = "<group>"; };
 		765FBC9C207EEDD2004920E6 /* ThemeDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeDetailTableViewController.swift; sourceTree = "<group>"; };
 		765FBC9E207EEE4A004920E6 /* ThemeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeTableViewController.swift; sourceTree = "<group>"; };
+		7674B8F22087012300DD31F4 /* ThemeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeTableViewCell.swift; sourceTree = "<group>"; };
+		7674B8F4208702C100DD31F4 /* ThemeDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeDetailTableViewCell.swift; sourceTree = "<group>"; };
 		988CA4811CC524384C33DC93 /* Pods-WATCHA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WATCHA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WATCHA/Pods-WATCHA.debug.xcconfig"; sourceTree = "<group>"; };
 		A5C39F096531800B40459C7F /* Pods-WATCHA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WATCHA.release.xcconfig"; path = "Pods/Target Support Files/Pods-WATCHA/Pods-WATCHA.release.xcconfig"; sourceTree = "<group>"; };
 		EB2897062E9C94DCF98D7ABF /* Pods_WATCHA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WATCHA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,6 +167,8 @@
 				FE85677C207B0FCD0031E2CB /* Main.storyboard */,
 				FEBF9F68207CBEB300DD9C3B /* RatingTableViewCell.swift */,
 				FE037A6F208078F800956C4D /* CategoryCell.swift */,
+				7674B8F22087012300DD31F4 /* ThemeTableViewCell.swift */,
+				7674B8F4208702C100DD31F4 /* ThemeDetailTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -310,6 +316,7 @@
 				765FBC9D207EEDD2004920E6 /* ThemeDetailTableViewController.swift in Sources */,
 				765FBC9F207EEE4A004920E6 /* ThemeTableViewController.swift in Sources */,
 				FE55E1DE207F014100137175 /* HomeTableViewController.swift in Sources */,
+				7674B8F5208702C100DD31F4 /* ThemeDetailTableViewCell.swift in Sources */,
 				FE856779207B0FCD0031E2CB /* AppDelegate.swift in Sources */,
 				FE856791207B12450031E2CB /* SignUpViewController.swift in Sources */,
 				FE55E1E6207F017800137175 /* SettingTableViewController.swift in Sources */,
@@ -318,6 +325,7 @@
 				FE55E1E2207F016400137175 /* RatingTableViewController.swift in Sources */,
 				0190E543207B19D8009E1E53 /* Constants.swift in Sources */,
 				FE037A70208078F800956C4D /* CategoryCell.swift in Sources */,
+				7674B8F32087012300DD31F4 /* ThemeTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

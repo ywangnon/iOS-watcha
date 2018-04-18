@@ -44,15 +44,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="1m9-E5-RiT">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="themeCell" id="1m9-E5-RiT" customClass="ThemeTableViewCell" customModule="WATCHA" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55.5" width="375" height="130"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1m9-E5-RiT" id="1bx-tB-mMp">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="129.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wn9-Ef-P8S">
-                                            <rect key="frame" x="0.0" y="-0.5" width="375" height="130"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gBA-la-hQj">
+                                            <rect key="frame" x="0.0" y="-0.5" width="375" height="129.5"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="영화 박스오피스" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UpS-gC-0q4">
                                             <rect key="frame" x="44" y="52.5" width="287" height="24"/>
@@ -65,15 +65,19 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="Wn9-Ef-P8S" secondAttribute="trailing" id="4M6-WV-gFY"/>
                                         <constraint firstItem="UpS-gC-0q4" firstAttribute="leading" secondItem="1bx-tB-mMp" secondAttribute="leadingMargin" constant="28" id="GCq-x8-qEY"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="UpS-gC-0q4" secondAttribute="trailing" constant="28" id="HfB-gb-lc8"/>
-                                        <constraint firstItem="Wn9-Ef-P8S" firstAttribute="top" secondItem="1bx-tB-mMp" secondAttribute="top" id="Ijg-6L-GcN"/>
-                                        <constraint firstAttribute="bottom" secondItem="Wn9-Ef-P8S" secondAttribute="bottom" id="ImB-qi-Nbz"/>
-                                        <constraint firstItem="Wn9-Ef-P8S" firstAttribute="leading" secondItem="1bx-tB-mMp" secondAttribute="leading" id="msE-wJ-OZl"/>
+                                        <constraint firstItem="gBA-la-hQj" firstAttribute="top" secondItem="1bx-tB-mMp" secondAttribute="top" id="ZE6-NS-eOE"/>
+                                        <constraint firstAttribute="bottom" secondItem="gBA-la-hQj" secondAttribute="bottom" id="coa-gF-ALF"/>
                                         <constraint firstItem="UpS-gC-0q4" firstAttribute="centerY" secondItem="1bx-tB-mMp" secondAttribute="centerY" id="qCX-gB-EPU"/>
+                                        <constraint firstAttribute="trailing" secondItem="gBA-la-hQj" secondAttribute="trailing" id="tN6-3u-iZC"/>
+                                        <constraint firstItem="gBA-la-hQj" firstAttribute="leading" secondItem="1bx-tB-mMp" secondAttribute="leading" id="vMm-Kd-oqo"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="themeImageView" destination="gBA-la-hQj" id="Nnj-04-acQ"/>
+                                    <outlet property="themeTitleLabel" destination="UpS-gC-0q4" id="7M8-RH-cf7"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -97,7 +101,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="4vI-0B-Afl">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" reuseIdentifier="themeDetailCell" id="4vI-0B-Afl" customClass="ThemeDetailTableViewCell" customModule="WATCHA" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4vI-0B-Afl" id="75a-BY-Hvf">
@@ -107,7 +111,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bCs-da-FkT">
                                             <rect key="frame" x="7" y="7" width="338" height="135.5"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ci-7p-voW">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="박스오피스포스터" translatesAutoresizingMaskIntoConstraints="NO" id="0Ci-7p-voW">
                                                     <rect key="frame" x="0.0" y="0.0" width="97" height="135.5"/>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Ujh-pP-veG">
@@ -935,11 +939,12 @@
     <resources>
         <image name="마이페이지" width="23" height="23"/>
         <image name="박스오피스" width="23" height="23"/>
+        <image name="박스오피스포스터" width="97" height="136"/>
         <image name="테마" width="23" height="23"/>
         <image name="평가" width="23" height="23"/>
         <image name="홈" width="23" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NvK-Fq-bKT"/>
+        <segue reference="H7m-Ok-EpA"/>
     </inferredMetricsTieBreakers>
 </document>
