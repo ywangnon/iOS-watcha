@@ -102,12 +102,20 @@ class WelcomeViewController: UIViewController, FBSDKLoginButtonDelegate {
         if FBSDKAccessToken.current() != nil {
             print("\n---------- [ Tokken ] ----------\n")
             print("\(FBSDKAccessToken.current().tokenString)")
-            let token_String = FBSDKAccessToken.current().tokenString
-            let plist = UserDefaults.standard
-            
-            plist.set(token_String, forKey: "user_Token")
-//            user_Token = FBSDKAccessToken.current().tokenString
-            performSegue(withIdentifier: "goMain", sender: nil)
+//            var token_String = ""
+//
+//            do {
+//                let userInfo = try! JSONDecoder().decode(login_User.self, from: value)
+//                print(userInfo)
+//                token_String = userInfo.token
+//                print("Completely Success")
+//            } catch {
+//                print(error.localizedDescription)
+//            }
+//
+//            let plist = UserDefaults.standard
+//            plist.set(token_String, forKey: "user_Token")
+//            performSegue(withIdentifier: "goMain", sender: nil)
         } else {
             print("not logged in")
         }
@@ -157,14 +165,26 @@ class WelcomeViewController: UIViewController, FBSDKLoginButtonDelegate {
                         switch response.result {
                         case .success(let value):
                             print("\n---------- [ Login Success ] ----------\n")
-                            print("\(FBSDKAccessToken.current().tokenString)")
-                            let token_String = FBSDKAccessToken.current().tokenString
-                            let plist = UserDefaults.standard
                             
+                            print("\(FBSDKAccessToken.current().tokenString)")
+                            var token_String = ""
+                            
+                            do {
+                                let userInfo = try! JSONDecoder().decode(login_User.self, from: value)
+                                print(userInfo)
+                                token_String = userInfo.token
+                                print("Completely Success")
+                            } catch {
+                                print(error.localizedDescription)
+                            }
+                            
+                            let plist = UserDefaults.standard
                             plist.set(token_String, forKey: "user_Token")
-//                            user_Token = FBSDKAccessToken.current().tokenString
+                            
                             print("\n---------- [ Value End ] ----------\n")
                             self.performSegue(withIdentifier: "goMain", sender: nil)
+                            
+                            
                         case .failure(let error):
                             print("\n---------- [ data error ] ----------\n")
                             print(error.localizedDescription)
