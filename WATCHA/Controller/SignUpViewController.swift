@@ -59,9 +59,24 @@ class SignUpViewController: UIViewController {
             .validate()
             .responseData { (response) in
                 switch response.result {
-                case .success(let Value):
+                case .success(let value):
                     print("\n---------- [ Login Success ] ----------\n")
-                    print(Value)
+                    print(value)
+                    
+                    var token_String = ""
+                    
+                    do {
+                        let userInfo = try! JSONDecoder().decode(login_User.self, from: value)
+                        print(userInfo)
+                        print(userInfo.token)
+                        token_String = userInfo.token
+                        print("Completely Success")
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                    let plist = UserDefaults.standard
+                    plist.set(token_String, forKey: "user_Token")
+                    
                     self.performSegue(withIdentifier: "goMain3", sender: nil)
                     print("\n---------- [ Value End ] ----------\n")
                 case .failure(let error):
