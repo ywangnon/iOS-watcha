@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import Alamofire
 
 class RatingTableViewController: UITableViewController {
 
+   let TAG = "api/movie/tag/"
+   let GENRE = "api/movie/genre/"
+   
    var movies: [RatingMovie] = []
    var pkForMoreButton: Int?
    var pkForMovieDetail: Int?
@@ -19,19 +23,12 @@ class RatingTableViewController: UITableViewController {
       }
    }
    
-   //For Test
-//   private static var rowsCount = 100
-//   private var ratingStorage = [Double](repeating: 0, count: rowsCount)
    
     override func viewDidLoad() {
       super.viewDidLoad()
       
       tableView.rowHeight = 100
       loadMovieData()
-      
-//      for i in 0..<RatingTableViewController.rowsCount {
-//            ratingStorage[i] = Double(i) / 99 * 5
-//      }
 
     }
 

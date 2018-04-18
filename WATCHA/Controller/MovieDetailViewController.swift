@@ -11,6 +11,7 @@ import Alamofire
 
 class MovieDetailViewController: UIViewController {
    
+   let TOKEN = "4f6e08d2d447cc6cced431a8d45d75aaa51fa977"
    
    @IBOutlet weak var actorCollectionView: UICollectionView!
    @IBOutlet weak var galleryCollectionView: UICollectionView!
