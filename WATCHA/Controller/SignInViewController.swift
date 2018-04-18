@@ -10,7 +10,6 @@ import UIKit
 import FBSDKLoginKit
 import Alamofire
 
-
 class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     @IBOutlet weak var emailTextField: UITextField!
