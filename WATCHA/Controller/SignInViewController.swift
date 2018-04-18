@@ -36,6 +36,20 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
                 case .success(let value):
                     print("\n---------- [ Login Success ] ----------\n")
                     print(value)
+                    var token_String = ""
+                    
+                    do {
+                        let userInfo = try! JSONDecoder().decode(login_User.self, from: value)
+                        print(userInfo)
+                        print(userInfo.token)
+                        token_String = userInfo.token
+                        print("Completely Success")
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                    let plist = UserDefaults.standard
+                    plist.set(token_String, forKey: "user_Token")
+                    
                     self.performSegue(withIdentifier: "goMain2", sender: nil)
                 case .failure(let error):
                     print("\n---------- [ data error ] ----------\n")
@@ -158,6 +172,15 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
                         switch response.result {
                         case .success(let value):
                             print("\n---------- [ Login Success ] ----------\n")
+                            
+                            do {
+                                let userInfo = try! JSONDecoder().decode(user.self, from: value)
+                                print(userInfo)
+                                print("Completely Success")
+                            } catch {
+                                print(error.localizedDescription)
+                            }
+                            
                             print("\(FBSDKAccessToken.current().tokenString)")
                             let token_String = FBSDKAccessToken.current().tokenString
                             let plist = UserDefaults.standard

@@ -11,8 +11,8 @@ import Foundation
 //var user_Token: String?
 
 struct user: Decodable {
-    var pk: String
-    var email: String
+    var pk: Int
+    var email: String?
     var nickname: String
     var imgProfile: String?
     var firstName: String
@@ -24,4 +24,9 @@ struct user: Decodable {
         case lastName = "last_name"
         case pk, email, nickname
     }
+}
+
+struct login_User: Decodable {
+    var token: String
+    var user: user
 }
