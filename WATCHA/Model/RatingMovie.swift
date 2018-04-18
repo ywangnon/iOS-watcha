@@ -8,15 +8,33 @@
 
 import Foundation
 
-struct RatingMovie{
+struct RatingMovie: Codable{
    
-   var movieTitle: String = "레디 플레이어 원"
-   var movieYear: String = "2018"
-   var movieImage: String = "ready_player_one"
-   var movieRate: Double = 0.0
+   //영화 제목
+   var title: String
+   //출시연도
+   //var year: String
+   //영화 포스터 이미지 링크
+   var posterImage: String
+   //영화 평균 별점
+   var averageRate: String
+   //영화 id
+   var pk: Int
+   //영화 카테고리(장르)
+   var genre: [Genre]
+   //영화 태그
+   var tag: [Int]
    
-   var moviePk: String = ""
-   var movieCategory: String = ""
+   
+   private enum CodingKeys: String, CodingKey {
+      case title = "title_ko"
+      //case year
+      case posterImage = "poster_image"
+      case averageRate = "rating_avg"
+      case pk = "id"
+      case genre
+      case tag
+   }
    
 }
 
@@ -24,8 +42,20 @@ struct RatingMovie{
 //테스트 위한 카테고리 리스트 임시 작성
 struct Category {
    var title: String = ""
+   var name: String = ""
    var image: String = ""
-   var pk: Int = 0
+   var kind: String = ""
+}
+
+
+struct Genre: Codable {
+   var id: Int
+   var name: String
+   
+   private enum CodingKeys: String, CodingKey {
+      case id = "id"
+      case name = "genre"
+   }
 }
 
 
