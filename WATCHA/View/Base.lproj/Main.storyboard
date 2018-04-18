@@ -1509,31 +1509,18 @@
         </scene>
     </scenes>
     <resources>
-<<<<<<< HEAD
         <image name="lake" width="945" height="531"/>
         <image name="ready_player_one" width="63" height="90"/>
-=======
-<<<<<<< HEAD
         <image name="domesticMovieTopRank" width="375" height="138"/>
-=======
->>>>>>> 84e5818dd89ba6b8bb131f60a17d9848d9a46b3f
         <image name="마이페이지" width="23" height="23"/>
         <image name="박스오피스" width="23" height="23"/>
         <image name="박스오피스포스터" width="97" height="136"/>
         <image name="테마" width="23" height="23"/>
         <image name="평가" width="23" height="23"/>
         <image name="홈" width="23" height="23"/>
->>>>>>> 4f8557458104d9976d149e471f472aa8fe191dd5
     </resources>
     <inferredMetricsTieBreakers>
-<<<<<<< HEAD
         <segue reference="H7m-Ok-EpA"/>
-=======
-<<<<<<< HEAD
-        <segue reference="H7m-Ok-EpA"/>
-=======
         <segue reference="3Mq-pf-IIA"/>
->>>>>>> 84e5818dd89ba6b8bb131f60a17d9848d9a46b3f
->>>>>>> 650c7027621440024dc4d0b61dd8377ed7009232
     </inferredMetricsTieBreakers>
 </document>

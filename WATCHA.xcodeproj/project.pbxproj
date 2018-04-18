@@ -185,16 +185,13 @@
 				015E8FD32085A35100BEC5B3 /* HomeCell.swift */,
 				FEBF9F68207CBEB300DD9C3B /* RatingTableViewCell.swift */,
 				FE037A6F208078F800956C4D /* CategoryCell.swift */,
-<<<<<<< HEAD
 				7674B8F22087012300DD31F4 /* ThemeTableViewCell.swift */,
 				7674B8F4208702C100DD31F4 /* ThemeDetailTableViewCell.swift */,
-=======
 				FE89094520859FF500BCA5C9 /* ActorCollectionViewCell.swift */,
 				FE89094D2085D33000BCA5C9 /* CommentTableViewCell.swift */,
 				FE89094F2085D3C500BCA5C9 /* GalleryCollectionViewCell.swift */,
 				FE8909512085D3FE00BCA5C9 /* YoutubeCollectionViewCell.swift */,
 				FE8909532085D42800BCA5C9 /* RecommendCollectionViewCell.swift */,
->>>>>>> 650c7027621440024dc4d0b61dd8377ed7009232
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -346,11 +343,8 @@
 				765FBC9D207EEDD2004920E6 /* ThemeDetailTableViewController.swift in Sources */,
 				FE8909502085D3C500BCA5C9 /* GalleryCollectionViewCell.swift in Sources */,
 				765FBC9F207EEE4A004920E6 /* ThemeTableViewController.swift in Sources */,
-<<<<<<< HEAD
 				FE55E1DE207F014100137175 /* HomeTableViewController.swift in Sources */,
 				7674B8F5208702C100DD31F4 /* ThemeDetailTableViewCell.swift in Sources */,
-=======
->>>>>>> 650c7027621440024dc4d0b61dd8377ed7009232
 				FE856779207B0FCD0031E2CB /* AppDelegate.swift in Sources */,
 				015E8FD42085A35100BEC5B3 /* HomeCell.swift in Sources */,
 				FE856791207B12450031E2CB /* SignUpViewController.swift in Sources */,
@@ -361,12 +355,9 @@
 				FE89094E2085D33000BCA5C9 /* CommentTableViewCell.swift in Sources */,
 				0190E543207B19D8009E1E53 /* Constants.swift in Sources */,
 				FE037A70208078F800956C4D /* CategoryCell.swift in Sources */,
-<<<<<<< HEAD
 				7674B8F32087012300DD31F4 /* ThemeTableViewCell.swift in Sources */,
-=======
 				FE037A7420848AA300956C4D /* MovieDetail.swift in Sources */,
 				FE89094620859FF500BCA5C9 /* ActorCollectionViewCell.swift in Sources */,
->>>>>>> 650c7027621440024dc4d0b61dd8377ed7009232
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
