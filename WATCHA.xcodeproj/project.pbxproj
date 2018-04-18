@@ -343,7 +343,6 @@
 				765FBC9D207EEDD2004920E6 /* ThemeDetailTableViewController.swift in Sources */,
 				FE8909502085D3C500BCA5C9 /* GalleryCollectionViewCell.swift in Sources */,
 				765FBC9F207EEE4A004920E6 /* ThemeTableViewController.swift in Sources */,
-				FE55E1DE207F014100137175 /* HomeTableViewController.swift in Sources */,
 				7674B8F5208702C100DD31F4 /* ThemeDetailTableViewCell.swift in Sources */,
 				FE856779207B0FCD0031E2CB /* AppDelegate.swift in Sources */,
 				015E8FD42085A35100BEC5B3 /* HomeCell.swift in Sources */,

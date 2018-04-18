@@ -1509,9 +1509,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="domesticMovieTopRank" width="375" height="138"/>
         <image name="lake" width="945" height="531"/>
         <image name="ready_player_one" width="63" height="90"/>
-        <image name="domesticMovieTopRank" width="375" height="138"/>
         <image name="마이페이지" width="23" height="23"/>
         <image name="박스오피스" width="23" height="23"/>
         <image name="박스오피스포스터" width="97" height="136"/>
@@ -1520,7 +1520,6 @@
         <image name="홈" width="23" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="H7m-Ok-EpA"/>
         <segue reference="3Mq-pf-IIA"/>
     </inferredMetricsTieBreakers>
 </document>
