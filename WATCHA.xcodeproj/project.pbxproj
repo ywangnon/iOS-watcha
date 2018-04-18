@@ -20,7 +20,6 @@
 		FE55E1E2207F016400137175 /* RatingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE55E1E1207F016400137175 /* RatingTableViewController.swift */; };
 		FE55E1E4207F017000137175 /* MyPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE55E1E3207F017000137175 /* MyPageTableViewController.swift */; };
 		FE55E1E6207F017800137175 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE55E1E5207F017800137175 /* SettingTableViewController.swift */; };
-		FE55E20A2080520400137175 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE55E2092080520400137175 /* CategoryTableViewController.swift */; };
 		FE856779207B0FCD0031E2CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE856778207B0FCD0031E2CB /* AppDelegate.swift */; };
 		FE85677B207B0FCD0031E2CB /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85677A207B0FCD0031E2CB /* WelcomeViewController.swift */; };
 		FE85677E207B0FCD0031E2CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE85677C207B0FCD0031E2CB /* Main.storyboard */; };
@@ -56,7 +55,6 @@
 		FE55E1E1207F016400137175 /* RatingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingTableViewController.swift; sourceTree = "<group>"; };
 		FE55E1E3207F017000137175 /* MyPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTableViewController.swift; sourceTree = "<group>"; };
 		FE55E1E5207F017800137175 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
-		FE55E2092080520400137175 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		FE856775207B0FCC0031E2CB /* WATCHA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WATCHA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE856778207B0FCD0031E2CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE85677A207B0FCD0031E2CB /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -160,7 +158,6 @@
 				FE55E1DF207F015A00137175 /* BoxOfficeTableViewController.swift */,
 				FE55E1E1207F016400137175 /* RatingTableViewController.swift */,
 				FE85679E207B12970031E2CB /* MovieDetailViewController.swift */,
-				FE55E2092080520400137175 /* CategoryTableViewController.swift */,
 				FE037A712082085700956C4D /* CategoryViewController.swift */,
 				FE55E1E3207F017000137175 /* MyPageTableViewController.swift */,
 				FE55E1E5207F017800137175 /* SettingTableViewController.swift */,
@@ -322,7 +319,6 @@
 				FEBF9F67207C93A900DD9C3B /* RatingMovie.swift in Sources */,
 				FE85679F207B12970031E2CB /* MovieDetailViewController.swift in Sources */,
 				FE55E1E4207F017000137175 /* MyPageTableViewController.swift in Sources */,
-				FE55E20A2080520400137175 /* CategoryTableViewController.swift in Sources */,
 				FE8909542085D42800BCA5C9 /* RecommendCollectionViewCell.swift in Sources */,
 				FE8777E1207CDC0C0096FCD8 /* CosmosDistrib.swift in Sources */,
 				FE55E1E0207F015A00137175 /* BoxOfficeTableViewController.swift in Sources */,

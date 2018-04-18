@@ -8,9 +8,15 @@
 
 import UIKit
 
+protocol CategoryDelegate {
+   func passData(url: String)
+}
+
+
 class CategoryViewController: UIViewController {
    
    var categories: [Category] = []
+   var delegate: CategoryDelegate?
    
    @IBOutlet weak var tableView: UITableView!
    
@@ -132,7 +138,7 @@ extension CategoryViewController: UITableViewDelegate, UITableViewDataSource {
          let category = categories[indexPath.row]
          
          cell.categoryImageView.image = UIImage(named: category.image)
-         cell.categoryTitleLabel.text = "\(category.title), pk = \(category.pk)"
+         cell.categoryTitleLabel.text = "\(category.title)"
          cell.backgroundColor = UIColor.white
          
          return cell
@@ -140,159 +146,183 @@ extension CategoryViewController: UITableViewDelegate, UITableViewDataSource {
    }
    
    
+   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      let categoryName = categories[indexPath.row].name
+      let categoryKind = categories[indexPath.row].kind
+      
+      delegate?.passData(url: API.baseURL+"api/movie/"+categoryKind+"/"+categoryName+"/")
+      self.dismiss(animated: true, completion: nil)
+   }
+   
+   
    
    // 테스트 위한 카테고리 작성
    func makeCategories() {
       
-      var randomMovie = Category()
-      randomMovie.title = "랜덤 영화"
-      randomMovie.image = "github"
-      randomMovie.pk = 1
-      categories.append(randomMovie)
+      var a = Category()
+      a.title = "국내 누적관객수 TOP 영화"
+      a.name = "top-korea"
+      a.image = "github"
+      a.kind = "tag"
+      categories.append(a)
       
-      var millionMovie = Category()
-      millionMovie.title = "역대 100만 관객 돌파 영화"
-      millionMovie.image = "github"
-      millionMovie.pk = 2
-      categories.append(millionMovie)
+      var b = Category()
+      b.title = "역대 100만 관객 돌파 영화"
+      b.name = "million-seller"
+      b.image = "github"
+      b.kind = "tag"
+      categories.append(a)
       
-      var c = Category()
-      c.title = "왓챠 평균별점 TOP 영화"
-      c.image = "github"
-      c.pk = 3
-      categories.append(c)
+//      var c = Category()
+//      c.title = "왓챠 평균별점 TOP 영화"
+//      c.image = "github"
+//      c.pk = 3
+//      categories.append(c)
       
       var d = Category()
       d.title = "전세계 흥행 TOP 영화"
+      d.name = "top-world"
       d.image = "github"
-      d.pk = 4
+      d.kind = "tag"
       categories.append(d)
       
-      var e = Category()
-      e.title = "국내 누적관객수 TOP 영화"
-      e.image = "github"
-      e.pk = 5
-      categories.append(e)
+//      var e = Category()
       
-      var f = Category()
-      f.title = "전문가 고평점 영화"
-      f.image = "github"
-      f.pk = 6
-      categories.append(f)
+//      var f = Category()
+//      f.title = "전문가 고평점 영화"
+//      f.image = "github"
+//      f.pk = 6
+//      categories.append(f)
       
-      var g = Category()
-      g.title = "저예산 독립 영화"
-      g.image = "github"
-      g.pk = 7
-      categories.append(g)
+//      var g = Category()
+//      g.title = "저예산 독립 영화"
+//      g.image = "github"
+//      g.pk = 7
+//      categories.append(g)
       
       var h = Category()
       h.title = "고전 영화"
       h.image = "github"
-      h.pk = 8
+      h.kind = "genre"
       categories.append(h)
       
       var i = Category()
       i.title = "느와르 영화"
       i.image = "github"
-      i.pk = 9
+      i.kind = "genre"
       categories.append(i)
       
       var j = Category()
       j.title = "슈퍼 히어로 영화"
+      j.name = "hero"
       j.image = "github"
-      j.pk = 10
+      j.kind = "genre"
       categories.append(j)
       
       var k = Category()
       k.title = "스포츠 영화"
+      k.name = "sports"
       k.image = "github"
-      k.pk = 11
+      k.kind = "genre"
       categories.append(k)
       
       var l = Category()
       l.title = "범죄"
+      l.name = "crime"
       l.image = "github"
-      l.pk = 12
+      l.kind = "genre"
       categories.append(l)
       
       var m = Category()
       m.title = "드라마"
+      m.name = "drama"
       m.image = "github"
-      m.pk = 13
+      m.kind = "genre"
       categories.append(m)
       
       var n = Category()
       n.title = "코미디 영화"
+      n.name = "comedy"
       n.image = "github"
-      n.pk = 14
+      n.kind = "genre"
       categories.append(n)
       
       var o = Category()
       o.title = "로맨스/멜로"
+      o.name = "romance"
       o.image = "github"
-      o.pk = 15
+      o.kind = "genre"
       categories.append(o)
       
       var p = Category()
       p.title = "스릴러"
+      p.name = "thriller"
       p.image = "github"
-      p.pk = 16
+      p.kind = "genre"
       categories.append(p)
       
       var q = Category()
       q.title = "로맨틱코미디"
+      q.name = "roco"
       q.image = "github"
-      q.pk = 17
+      q.kind = "genre"
       categories.append(q)
       
       var r = Category()
       r.title = "전쟁"
+      r.name = "war"
       r.image = "github"
-      r.pk = 18
+      r.kind = "genre"
       categories.append(r)
       
       var s = Category()
       s.title = "가족"
+      s.name = "family"
       s.image = "github"
-      s.pk = 19
+      s.kind = "genre"
       categories.append(s)
       
       
       var t = Category()
       t.title = "판타지"
+      t.name = "fantasy"
       t.image = "github"
-      t.pk = 20
+      t.kind = "genre"
       categories.append(t)
       
       var u = Category()
       u.title = "액션"
+      u.name = "action"
       u.image = "github"
-      u.pk = 21
+      u.kind = "genre"
       categories.append(u)
       
       var v = Category()
       v.title = "SF"
+      v.name = "sf"
       v.image = "github"
-      v.pk = 22
+      v.kind = "genre"
       categories.append(v)
       
       var w = Category()
       w.title = "애니메이션"
+      w.name = "animation"
       w.image = "github"
-      w.pk = 23
+      w.kind = "genre"
       categories.append(w)
       
       var x = Category()
       x.title = "다큐멘터리"
+      x.name = "documentary"
       x.image = "github"
-      x.pk = 24
+      x.kind = "genre"
       categories.append(x)
       
       var y = Category()
       y.title = "공포"
+      y.name = "horror"
       y.image = "github"
-      y.pk = 25
+      y.kind = "genre"
       categories.append(y)
       
    }

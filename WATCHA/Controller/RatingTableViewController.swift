@@ -9,17 +9,43 @@
 import UIKit
 import Alamofire
 
+class MovieTapGesture: UITapGestureRecognizer {
+   var pkForMovie = Int()
+}
+
 class RatingTableViewController: UITableViewController {
 
    let TAG = "api/movie/tag/"
    let GENRE = "api/movie/genre/"
    
+   //for test temporary toket
+   let TOKEN = "token 4f6e08d2d447cc6cced431a8d45d75aaa51fa977"
+   
    var movies: [RatingMovie] = []
    var pkForMoreButton: Int?
    var pkForMovieDetail: Int?
-   var pkForCategory: Int? {
-      willSet {
+   var urlForMovieList: String? {
+      willSet(url){
          // TODO : 카테고리 pk를 가지고 서버에서 카테고리 영화리스트를 읽어와 테이블뷰 리로드 작업을 시행한다.
+         print("url = ",url!)
+         let userToken: HTTPHeaders = ["Authorization": TOKEN]
+         Alamofire.request(url!, method: .get, headers: userToken)
+            .validate(statusCode: 200..<300)
+            .responseJSON { response in
+               if let error = response.error {
+                  dump(error)
+                  return
+               }
+               
+               do {
+                  let data = try JSONSerialization.data(withJSONObject: response.result.value!, options: .prettyPrinted)
+                  let decoder: JSONDecoder = JSONDecoder()
+                  self.movies = try decoder.decode([RatingMovie].self, from: data)
+                  self.tableView.reloadData()
+               } catch {
+                  print(error)
+               }
+         }
       }
    }
    
@@ -27,9 +53,9 @@ class RatingTableViewController: UITableViewController {
     override func viewDidLoad() {
       super.viewDidLoad()
       
-      tableView.rowHeight = 100
       loadMovieData()
-
+      tableView.rowHeight = 100
+      
     }
 
    
@@ -39,6 +65,7 @@ class RatingTableViewController: UITableViewController {
    
    
    override func viewWillAppear(_ animated: Bool) {
+      tableView.reloadData()
       navigationController?.navigationBar.isHidden = false
    }
    
@@ -46,34 +73,26 @@ class RatingTableViewController: UITableViewController {
    
    func loadMovieData() {
    //TODO : 서버에서 가져온 영화리스트를 movies 배열에 할당하여 데이터소스에서 사용할 것
+      let userToken: HTTPHeaders = ["Authorization": TOKEN]
       
-   //테스트 데이터들
-      var movie1 = RatingMovie()
-      movie1.moviePk = 1
-      movie1.movieRate = 1.0
-      movies.append(movie1)
-      
-      var movie2 = RatingMovie()
-      movie2.moviePk = 2
-      movie2.movieRate = 2.0
-      movies.append(movie2)
-      
-      var movie3 = RatingMovie()
-      movie3.moviePk = 3
-      movie3.movieRate = 3.0
-      movies.append(movie3)
-      
-      var movie4 = RatingMovie()
-      movie4.moviePk = 4
-      movie4.movieRate = 4.0
-      movies.append(movie4)
-      
-      var movie5 = RatingMovie()
-      movie5.moviePk = 5
-      movie5.movieRate = 5.0
-      movies.append(movie5)
-      
+      Alamofire.request(API.baseURL+GENRE+"action/", method: .get, headers: userToken)
+         .validate(statusCode: 200..<300)
+         .responseJSON { response in
+            if let error = response.error {
+               dump(error)
+               return
+            }
+            
+            do {
+               let data = try JSONSerialization.data(withJSONObject: response.result.value!, options: .prettyPrinted)
+               let decoder: JSONDecoder = JSONDecoder()
+               self.movies = try decoder.decode([RatingMovie].self, from: data)
+               self.tableView.reloadData()
+            } catch {
+               print(error)
+            }
       }
+   }
 
    
    @objc func moreButtonPressed() {
@@ -103,13 +122,13 @@ class RatingTableViewController: UITableViewController {
    
    
    @objc func categoryButtonPressed() {
-      let vc = storyboard?.instantiateViewController(withIdentifier: "CategoryViewController")
-      //let vc = storyboard?.instantiateViewController(withIdentifier: "CategoryTableViewController")
-      //let vc = CategoryTableViewController()
+      let vc = storyboard?.instantiateViewController(withIdentifier: "CategoryViewController") as! CategoryViewController
       self.modalPresentationStyle = UIModalPresentationStyle.fullScreen
-      vc?.view.backgroundColor = UIColor.clear
+      vc.view.backgroundColor = UIColor.clear
+      vc.delegate = self
       
-      self.present(vc!, animated: true, completion: nil)
+      
+      self.present(vc, animated: true, completion: nil)
    }
    
    
@@ -126,10 +145,6 @@ class RatingTableViewController: UITableViewController {
    }
    
    
-   
-   
-   
-   
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -139,15 +154,12 @@ class RatingTableViewController: UITableViewController {
 
    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return movies.count
+      return movies.count
     }
    
    
    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        if let cell = tableView.dequeueReusableCell(withIdentifier: "RatingCell", for: indexPath) as? RatingTableViewCell {
-//         let rating = ratingStorage[indexPath.row]
-//         cell.update(rating)
          
          cell.cosmosView.didFinishTouchingCosmos = { rating in
             // TODO : 별점 평가하기 터치가 끝나면 해당 유저의 영화 평점을 서버에 저장한다.
@@ -158,22 +170,25 @@ class RatingTableViewController: UITableViewController {
          }
          
          let movie = movies[indexPath.row]
-      
+         print("movie = ", movie.title)
          let tapImageGesture = MovieTapGesture(target: self, action: #selector(self.movieTapped))
-         tapImageGesture.pkForMovie = movie.moviePk
-      
-         cell.posterImgView.image = UIImage(named: movie.movieImage)
+         tapImageGesture.pkForMovie = movie.pk
+
+         let url = URL(string: movie.posterImage)
+         if let imageData = try? Data(contentsOf: url!, options: []) {
+            cell.posterImgView.image = UIImage(data: imageData)
+         }
          cell.posterImgView.addGestureRecognizer(tapImageGesture)
-      
+
          let tapTitleGesture = MovieTapGesture(target: self, action: #selector(self.movieTapped))
-         tapTitleGesture.pkForMovie = movie.moviePk
-         
-         cell.titleLable.text = movie.movieTitle
+         tapTitleGesture.pkForMovie = movie.pk
+
+         cell.titleLable.text = movie.title
          cell.titleLable.addGestureRecognizer(tapTitleGesture)
-      
-         cell.yearLabel.text = movie.movieYear
-         cell.update(movie.movieRate)
-            
+
+         cell.yearLabel.text = "2018"
+         cell.update(0)
+         
          cell.moreButton.addTarget(self, action: #selector(self.moreButtonPressed), for: .touchUpInside)
          
          return cell
@@ -214,9 +229,14 @@ class RatingTableViewController: UITableViewController {
 }
 
 
-class MovieTapGesture: UITapGestureRecognizer {
-   var pkForMovie = Int()
+
+extension RatingTableViewController: CategoryDelegate {   
+   func passData(url: String) {
+      self.urlForMovieList = url
+   }
 }
+
+
 
 
 
