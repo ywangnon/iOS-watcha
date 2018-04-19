@@ -11,7 +11,7 @@ import FBSDKLoginKit
 import Alamofire
 
 
-class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
+class SignInViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -38,15 +38,13 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
                     print(value)
                     var token_String = ""
                     
-                    do {
-                        let userInfo = try! JSONDecoder().decode(login_User.self, from: value)
-                        print(userInfo)
-                        print(userInfo.token)
-                        token_String = userInfo.token
-                        print("Completely Success")
-                    } catch {
-                        print(error.localizedDescription)
-                    }
+                    
+                    let userInfo = try! JSONDecoder().decode(login_User.self, from: value)
+                    print(userInfo)
+                    print(userInfo.token)
+                    token_String = userInfo.token
+                    print("Completely Success")
+                    
                     let plist = UserDefaults.standard
                     plist.set(token_String, forKey: "user_Token")
                     
@@ -75,14 +73,6 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
                     }
                 }
         }
-    }
-    
-    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-        
-    }
-    
-    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-        
     }
     
     override func viewDidLoad() {
@@ -173,20 +163,15 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
                         case .success(let value):
                             print("\n---------- [ Login Success ] ----------\n")
                             
-                            do {
-                                let userInfo = try! JSONDecoder().decode(user.self, from: value)
-                                print(userInfo)
-                                print("Completely Success")
-                            } catch {
-                                print(error.localizedDescription)
-                            }
+                            let userInfo = try! JSONDecoder().decode(user.self, from: value)
+                            print(userInfo)
+                            print("Completely Success")
                             
                             print("\(FBSDKAccessToken.current().tokenString)")
                             let token_String = FBSDKAccessToken.current().tokenString
                             let plist = UserDefaults.standard
                             
                             plist.set(token_String, forKey: "user_Token")
-//                            user_Token = FBSDKAccessToken.current().tokenString
                             print("\n---------- [ Value End ] ----------\n")
                             self.performSegue(withIdentifier: "goMain", sender: nil)
                         case .failure(let error):
