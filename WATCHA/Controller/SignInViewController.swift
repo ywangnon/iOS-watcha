@@ -29,7 +29,7 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
         ]
         
         Alamofire
-            .request(API.Auth.emailSignIn, method: .post, parameters: params)
+            .request(API.Auth.emailLogin, method: .post, parameters: params)
             .validate()
             .responseData { response in
                 switch response.result {
@@ -166,7 +166,7 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
                 ]
                 
                 Alamofire
-                    .request(API.Auth.facebookSignIn, method: .post, parameters: params)
+                    .request(API.Auth.facebookLogin, method: .post, parameters: params)
                     .validate()
                     .responseData { (response) in
                         switch response.result {

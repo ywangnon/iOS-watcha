@@ -55,7 +55,7 @@ class SignUpViewController: UIViewController {
         ]
         
         Alamofire
-            .request(API.Auth.emailSignUp, method: .post, parameters: params)
+            .request(API.Auth.signUp, method: .post, parameters: params)
             .validate()
             .responseData { (response) in
                 switch response.result {

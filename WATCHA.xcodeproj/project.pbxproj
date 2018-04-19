@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		015E8FD42085A35100BEC5B3 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015E8FD32085A35100BEC5B3 /* HomeCell.swift */; };
-		015E8FD62085A36100BEC5B3 /* EmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015E8FD52085A36100BEC5B3 /* EmptyCell.swift */; };
 		015E8FD82085AC7300BEC5B3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015E8FD72085AC7300BEC5B3 /* HomeViewController.swift */; };
 		0190E543207B19D8009E1E53 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190E542207B19D8009E1E53 /* Constants.swift */; };
+		01FC6A052088556500AE6086 /* MainMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FC6A042088556500AE6086 /* MainMovie.swift */; };
 		76401CF9207F1D2B0025CA30 /* ThemeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76401CF8207F1D2B0025CA30 /* ThemeList.swift */; };
 		765FBC9D207EEDD2004920E6 /* ThemeDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765FBC9C207EEDD2004920E6 /* ThemeDetailTableViewController.swift */; };
 		765FBC9F207EEE4A004920E6 /* ThemeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765FBC9E207EEE4A004920E6 /* ThemeTableViewController.swift */; };
@@ -45,9 +45,9 @@
 
 /* Begin PBXFileReference section */
 		015E8FD32085A35100BEC5B3 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
-		015E8FD52085A36100BEC5B3 /* EmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCell.swift; sourceTree = "<group>"; };
 		015E8FD72085AC7300BEC5B3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0190E542207B19D8009E1E53 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		01FC6A042088556500AE6086 /* MainMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMovie.swift; sourceTree = "<group>"; };
 		76401CF8207F1D2B0025CA30 /* ThemeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeList.swift; sourceTree = "<group>"; };
 		765FBC9C207EEDD2004920E6 /* ThemeDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeDetailTableViewController.swift; sourceTree = "<group>"; };
 		765FBC9E207EEE4A004920E6 /* ThemeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeTableViewController.swift; sourceTree = "<group>"; };
@@ -178,7 +178,6 @@
 			children = (
 				FE856784207B0FCE0031E2CB /* LaunchScreen.storyboard */,
 				FE85677C207B0FCD0031E2CB /* Main.storyboard */,
-				015E8FD52085A36100BEC5B3 /* EmptyCell.swift */,
 				015E8FD32085A35100BEC5B3 /* HomeCell.swift */,
 				FEBF9F68207CBEB300DD9C3B /* RatingTableViewCell.swift */,
 				FE037A6F208078F800956C4D /* CategoryCell.swift */,
@@ -200,6 +199,7 @@
 				FEBF9F66207C93A900DD9C3B /* RatingMovie.swift */,
 				76401CF8207F1D2B0025CA30 /* ThemeList.swift */,
 				FE037A7320848AA300956C4D /* MovieDetail.swift */,
+				01FC6A042088556500AE6086 /* MainMovie.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -330,12 +330,12 @@
 				FE85678F207B12380031E2CB /* SignInViewController.swift in Sources */,
 				FEBF9F67207C93A900DD9C3B /* RatingMovie.swift in Sources */,
 				FE85679F207B12970031E2CB /* MovieDetailViewController.swift in Sources */,
-				015E8FD62085A36100BEC5B3 /* EmptyCell.swift in Sources */,
 				FE55E1E4207F017000137175 /* MyPageTableViewController.swift in Sources */,
 				FE8909542085D42800BCA5C9 /* RecommendCollectionViewCell.swift in Sources */,
 				FE8777E1207CDC0C0096FCD8 /* CosmosDistrib.swift in Sources */,
 				FE55E1E0207F015A00137175 /* BoxOfficeTableViewController.swift in Sources */,
 				FE85677B207B0FCD0031E2CB /* WelcomeViewController.swift in Sources */,
+				01FC6A052088556500AE6086 /* MainMovie.swift in Sources */,
 				015E8FD82085AC7300BEC5B3 /* HomeViewController.swift in Sources */,
 				765FBC9D207EEDD2004920E6 /* ThemeDetailTableViewController.swift in Sources */,
 				FE8909502085D3C500BCA5C9 /* GalleryCollectionViewCell.swift in Sources */,

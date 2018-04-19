@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wrh-5O-Yb9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M0h-8s-GZB">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1074,16 +1074,8 @@
                                 <rect key="frame" x="0.0" y="115" width="375" height="503"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EmptyCell" rowHeight="15" id="D9D-d1-ttj" customClass="EmptyCell" customModule="WATCHA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="15"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="D9D-d1-ttj" id="zU9-Ow-Njv">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="14.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeCell" rowHeight="236" id="MQX-hd-VXP" customClass="HomeCell" customModule="WATCHA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="43" width="375" height="236"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="236"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MQX-hd-VXP" id="aad-ug-WJq">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="235.5"/>
@@ -1149,6 +1141,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="lQD-Yz-YDh" secondAttribute="bottom" id="RbT-Ud-Bm6"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="movieImage" destination="lQD-Yz-YDh" id="M8P-Dl-bJF"/>
                                             <outlet property="movieTitleLabel" destination="Pc5-M2-Lpw" id="ZIv-rp-E2K"/>
@@ -1156,6 +1149,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="qN4-Gd-H8M" id="qEr-xr-MEJ"/>
+                                    <outlet property="delegate" destination="qN4-Gd-H8M" id="QQv-Ek-qRB"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1171,6 +1168,10 @@
                         <viewLayoutGuide key="safeArea" id="m2r-Fb-66h"/>
                     </view>
                     <navigationItem key="navigationItem" title="WATCHA" id="V4T-Ss-ASY"/>
+                    <connections>
+                        <outlet property="searchTextField" destination="1Jg-1y-uet" id="Oe7-HM-PXX"/>
+                        <outlet property="tableView" destination="tez-No-a5s" id="35W-B7-Z0i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4w5-bw-bcB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
