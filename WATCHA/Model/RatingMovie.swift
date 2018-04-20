@@ -13,7 +13,7 @@ struct RatingMovie: Codable{
    //영화 제목
    var title: String
    //출시연도
-   //var year: String
+   var year: String
    //영화 포스터 이미지 링크
    var posterImage: String
    //영화 평균 별점
@@ -28,7 +28,7 @@ struct RatingMovie: Codable{
    
    private enum CodingKeys: String, CodingKey {
       case title = "title_ko"
-      //case year
+      case year = "movie_created_date"
       case posterImage = "poster_image"
       case averageRate = "rating_avg"
       case pk = "id"

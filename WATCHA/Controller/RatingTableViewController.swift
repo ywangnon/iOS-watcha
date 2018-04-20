@@ -19,7 +19,8 @@ class RatingTableViewController: UITableViewController {
    let GENRE = "api/movie/genre/"
    
    //for test temporary toket
-   let TOKEN = "token 4f6e08d2d447cc6cced431a8d45d75aaa51fa977"
+   //private let TOKEN = "token \(UserDefaults.standard.string(forKey: "user_Token")!)"
+   private let TOKEN = "token 89388cd52f32a2dd1fb3b18ba26e3c7830937968"
    
    var movies: [RatingMovie] = []
    var pkForMoreButton: Int?
@@ -186,7 +187,7 @@ class RatingTableViewController: UITableViewController {
          cell.titleLable.text = movie.title
          cell.titleLable.addGestureRecognizer(tapTitleGesture)
 
-         cell.yearLabel.text = "2018"
+         cell.yearLabel.text = movie.year
          cell.update(0)
          
          cell.moreButton.addTarget(self, action: #selector(self.moreButtonPressed), for: .touchUpInside)

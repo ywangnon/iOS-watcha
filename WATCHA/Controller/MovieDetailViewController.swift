@@ -12,7 +12,8 @@ import Alamofire
 class MovieDetailViewController: UIViewController {
    
    //for test temporary toket
-   let TOKEN = "4f6e08d2d447cc6cced431a8d45d75aaa51fa977"
+   //private let TOKEN = "token \(UserDefaults.standard.string(forKey: "user_Token")!)"
+   private let TOKEN = "token 89388cd52f32a2dd1fb3b18ba26e3c7830937968"
    
    @IBOutlet weak var actorCollectionView: UICollectionView!
    @IBOutlet weak var galleryCollectionView: UICollectionView!
