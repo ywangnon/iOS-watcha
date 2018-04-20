@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0107490220893E7E0009C1BA /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0107490120893E7E0009C1BA /* Home.swift */; };
 		015E8FD42085A35100BEC5B3 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015E8FD32085A35100BEC5B3 /* HomeCell.swift */; };
-		015E8FD62085A36100BEC5B3 /* EmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015E8FD52085A36100BEC5B3 /* EmptyCell.swift */; };
 		015E8FD82085AC7300BEC5B3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015E8FD72085AC7300BEC5B3 /* HomeViewController.swift */; };
 		0190E543207B19D8009E1E53 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190E542207B19D8009E1E53 /* Constants.swift */; };
 		76401CF9207F1D2B0025CA30 /* ThemeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76401CF8207F1D2B0025CA30 /* ThemeList.swift */; };
@@ -20,7 +20,6 @@
 		FE037A70208078F800956C4D /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE037A6F208078F800956C4D /* CategoryCell.swift */; };
 		FE037A722082085700956C4D /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE037A712082085700956C4D /* CategoryViewController.swift */; };
 		FE037A7420848AA300956C4D /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE037A7320848AA300956C4D /* MovieDetail.swift */; };
-		FE55E1DE207F014100137175 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE55E1DD207F014100137175 /* HomeTableViewController.swift */; };
 		FE55E1E0207F015A00137175 /* BoxOfficeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE55E1DF207F015A00137175 /* BoxOfficeTableViewController.swift */; };
 		FE55E1E2207F016400137175 /* RatingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE55E1E1207F016400137175 /* RatingTableViewController.swift */; };
 		FE55E1E4207F017000137175 /* MyPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE55E1E3207F017000137175 /* MyPageTableViewController.swift */; };
@@ -45,8 +44,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0107490120893E7E0009C1BA /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		015E8FD32085A35100BEC5B3 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
-		015E8FD52085A36100BEC5B3 /* EmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCell.swift; sourceTree = "<group>"; };
 		015E8FD72085AC7300BEC5B3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0190E542207B19D8009E1E53 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		76401CF8207F1D2B0025CA30 /* ThemeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeList.swift; sourceTree = "<group>"; };
@@ -60,7 +59,6 @@
 		FE037A6F208078F800956C4D /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		FE037A712082085700956C4D /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		FE037A7320848AA300956C4D /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
-		FE55E1DD207F014100137175 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		FE55E1DF207F015A00137175 /* BoxOfficeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeTableViewController.swift; sourceTree = "<group>"; };
 		FE55E1E1207F016400137175 /* RatingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingTableViewController.swift; sourceTree = "<group>"; };
 		FE55E1E3207F017000137175 /* MyPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTableViewController.swift; sourceTree = "<group>"; };
@@ -164,7 +162,6 @@
 				FE856790207B12450031E2CB /* SignUpViewController.swift */,
 				765FBC9E207EEE4A004920E6 /* ThemeTableViewController.swift */,
 				765FBC9C207EEDD2004920E6 /* ThemeDetailTableViewController.swift */,
-				FE85679E207B12970031E2CB /* MovieDetailViewController.swift */,
 				015E8FD72085AC7300BEC5B3 /* HomeViewController.swift */,
 				FE55E1DF207F015A00137175 /* BoxOfficeTableViewController.swift */,
 				FE55E1E1207F016400137175 /* RatingTableViewController.swift */,
@@ -181,7 +178,6 @@
 			children = (
 				FE856784207B0FCE0031E2CB /* LaunchScreen.storyboard */,
 				FE85677C207B0FCD0031E2CB /* Main.storyboard */,
-				015E8FD52085A36100BEC5B3 /* EmptyCell.swift */,
 				015E8FD32085A35100BEC5B3 /* HomeCell.swift */,
 				FEBF9F68207CBEB300DD9C3B /* RatingTableViewCell.swift */,
 				FE037A6F208078F800956C4D /* CategoryCell.swift */,
@@ -200,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				FE8567A4207B15090031E2CB /* User.swift */,
+				0107490120893E7E0009C1BA /* Home.swift */,
 				FEBF9F66207C93A900DD9C3B /* RatingMovie.swift */,
 				76401CF8207F1D2B0025CA30 /* ThemeList.swift */,
 				FE037A7320848AA300956C4D /* MovieDetail.swift */,
@@ -333,7 +330,6 @@
 				FE85678F207B12380031E2CB /* SignInViewController.swift in Sources */,
 				FEBF9F67207C93A900DD9C3B /* RatingMovie.swift in Sources */,
 				FE85679F207B12970031E2CB /* MovieDetailViewController.swift in Sources */,
-				015E8FD62085A36100BEC5B3 /* EmptyCell.swift in Sources */,
 				FE55E1E4207F017000137175 /* MyPageTableViewController.swift in Sources */,
 				FE8909542085D42800BCA5C9 /* RecommendCollectionViewCell.swift in Sources */,
 				FE8777E1207CDC0C0096FCD8 /* CosmosDistrib.swift in Sources */,
@@ -350,6 +346,7 @@
 				FE55E1E6207F017800137175 /* SettingTableViewController.swift in Sources */,
 				FE037A722082085700956C4D /* CategoryViewController.swift in Sources */,
 				FEBF9F6A207CBEB300DD9C3B /* RatingTableViewCell.swift in Sources */,
+				0107490220893E7E0009C1BA /* Home.swift in Sources */,
 				FE55E1E2207F016400137175 /* RatingTableViewController.swift in Sources */,
 				FE89094E2085D33000BCA5C9 /* CommentTableViewCell.swift in Sources */,
 				0190E543207B19D8009E1E53 /* Constants.swift in Sources */,
@@ -502,7 +499,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 944595JNCH;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = WATCHA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -521,7 +518,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 944595JNCH;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = WATCHA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

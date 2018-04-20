@@ -10,6 +10,10 @@ import UIKit
 
 class HomeCell: UITableViewCell {
 
+    // title_ko
+    // rating_avg
+    // poster_image
+    
     @IBOutlet var ratingLabel: UILabel!
     @IBOutlet var movieTitleLabel: UILabel!
     
