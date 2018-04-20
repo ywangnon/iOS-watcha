@@ -19,4 +19,8 @@ enum API {
     enum Post {
         static let list = API.baseURL + "api/members/"
     }
+   enum Movie {
+      static let detail = API.baseURL + "api/movie/"
+      static let memberDetail = API.baseURL + "api/movie-members/"
+   }
 }

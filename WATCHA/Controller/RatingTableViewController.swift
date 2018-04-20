@@ -20,7 +20,7 @@ class RatingTableViewController: UITableViewController {
    
    //for test temporary toket
    //private let TOKEN = "token \(UserDefaults.standard.string(forKey: "user_Token")!)"
-   private let TOKEN = "token 89388cd52f32a2dd1fb3b18ba26e3c7830937968"
+   private let TOKEN = "token b8999260f52f162dceee7e298b3bd9da44d30af7"
    
    var movies: [RatingMovie] = []
    var pkForMoreButton: Int?
@@ -41,7 +41,7 @@ class RatingTableViewController: UITableViewController {
                do {
                   let data = try JSONSerialization.data(withJSONObject: response.result.value!, options: .prettyPrinted)
                   let decoder: JSONDecoder = JSONDecoder()
-                  self.movies = try decoder.decode([RatingMovie].self, from: data)
+                  self.movies = try decoder.decode(RatingMovieList.self, from: data).results
                   self.tableView.reloadData()
                } catch {
                   print(error)
@@ -87,7 +87,7 @@ class RatingTableViewController: UITableViewController {
             do {
                let data = try JSONSerialization.data(withJSONObject: response.result.value!, options: .prettyPrinted)
                let decoder: JSONDecoder = JSONDecoder()
-               self.movies = try decoder.decode([RatingMovie].self, from: data)
+               self.movies = try decoder.decode(RatingMovieList.self, from: data).results
                self.tableView.reloadData()
             } catch {
                print(error)
@@ -187,7 +187,7 @@ class RatingTableViewController: UITableViewController {
          cell.titleLable.text = movie.title
          cell.titleLable.addGestureRecognizer(tapTitleGesture)
 
-         cell.yearLabel.text = movie.year
+         cell.yearLabel.text = "\(movie.year)"
          cell.update(0)
          
          cell.moreButton.addTarget(self, action: #selector(self.moreButtonPressed), for: .touchUpInside)

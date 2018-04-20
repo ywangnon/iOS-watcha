@@ -10,4 +10,5 @@ import UIKit
 
 class YoutubeCollectionViewCell: UICollectionViewCell {
     
+   @IBOutlet weak var thumbnailImage: UIImageView!
 }
