@@ -10,12 +10,11 @@ import UIKit
 import FBSDKLoginKit
 import Alamofire
 
+
 class WelcomeViewController: UIViewController {
     
     @IBOutlet weak var centerImg: UIImageView!
     @IBOutlet weak var backgroundImg: UIImageView!
-    
-
     
     /// button을 사용하여 logout 한 경우 delegate에게 보냄.
     ///
@@ -23,6 +22,7 @@ class WelcomeViewController: UIViewController {
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         print("\n---------- [ logged out ] ----------\n")
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +37,7 @@ class WelcomeViewController: UIViewController {
         // 페이스북 커스텀 로그인 버튼
         let myLoginButton = UIButton(type: .custom)
         myLoginButton.frame = CGRect(x: 40, y: 487, width: 295, height: 50)
-        myLoginButton.backgroundColor = UIColor.blue
+        myLoginButton.backgroundColor = UIColor(red: 66/255, green: 103/255, blue: 178/255, alpha: 1.0)
         myLoginButton.layer.cornerRadius = 10
         myLoginButton.setTitle("페북으로 시작하기", for: .normal)
         
@@ -51,19 +51,20 @@ class WelcomeViewController: UIViewController {
         if FBSDKAccessToken.current() != nil {
             print("\n---------- [ Tokken ] ----------\n")
             print("\(FBSDKAccessToken.current().tokenString)")
-//            var token_String = ""
-//
-//            do {
-//                let userInfo = try! JSONDecoder().decode(login_User.self, from: value)
-//                token_String = userInfo.token
-//                print("Completely Success")
-//            } catch {
-//                print(error.localizedDescription)
-//            }
-//
-//            let plist = UserDefaults.standard
-//            plist.set(token_String, forKey: "user_Token")
-            performSegue(withIdentifier: "goMain", sender: nil)
+            //            var token_String = ""
+            //
+            //            do {
+            //                let userInfo = try! JSONDecoder().decode(login_User.self, from: value)
+            //                print(userInfo)
+            //                token_String = userInfo.token
+            //                print("Completely Success")
+            //            } catch {
+            //                print(error.localizedDescription)
+            //            }
+            //
+            //            let plist = UserDefaults.standard
+            //            plist.set(token_String, forKey: "user_Token")
+            //            performSegue(withIdentifier: "goMain", sender: nil)
         } else {
             print("not logged in")
         }
@@ -77,6 +78,10 @@ class WelcomeViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
     }
     
     /// 페이스북 커스텀 로그인 함수
@@ -113,14 +118,12 @@ class WelcomeViewController: UIViewController {
                             print("\(FBSDKAccessToken.current().tokenString)")
                             var token_String = ""
                             
-                            do {
-                                let userInfo = try! JSONDecoder().decode(login_User.self, from: value)
-                                print(userInfo)
-                                token_String = userInfo.token
-                                print("Completely Success")
-                            } catch {
-                                print(error.localizedDescription)
-                            }
+                            
+                            let userInfo = try! JSONDecoder().decode(login_User.self, from: value)
+                            print(userInfo)
+                            token_String = userInfo.token
+                            print("Completely Success")
+                            
                             
                             let plist = UserDefaults.standard
                             plist.set(token_String, forKey: "user_Token")
@@ -138,4 +141,3 @@ class WelcomeViewController: UIViewController {
         }
         )}
 }
-

@@ -55,7 +55,7 @@ class SignUpViewController: UIViewController {
         ]
         
         Alamofire
-            .request(API.Auth.signUp, method: .post, parameters: params)
+            .request(API.Auth.emailLogin, method: .post, parameters: params)
             .validate()
             .responseData { (response) in
                 switch response.result {
@@ -65,15 +65,12 @@ class SignUpViewController: UIViewController {
                     
                     var token_String = ""
                     
-                    do {
-                        let userInfo = try! JSONDecoder().decode(login_User.self, from: value)
-                        print(userInfo)
-                        print(userInfo.token)
-                        token_String = userInfo.token
-                        print("Completely Success")
-                    } catch {
-                        print(error.localizedDescription)
-                    }
+                    let userInfo = try! JSONDecoder().decode(login_User.self, from: value)
+                    print(userInfo)
+                    print(userInfo.token)
+                    token_String = userInfo.token
+                    print("Completely Success")
+                    
                     let plist = UserDefaults.standard
                     plist.set(token_String, forKey: "user_Token")
                     
@@ -133,9 +130,9 @@ class SignUpViewController: UIViewController {
         
         // 패스워드 정규식 : 6-20자 이내
         let passwordRegEx = "^(?=.*[a-zA-Z0-9]).{6,20}$"
-
+        
         let passwordTest = NSPredicate(format:"SELF MATCHES %@", passwordRegEx)
-
+        
         return passwordTest.evaluate(with: password)
     }
     
@@ -161,7 +158,7 @@ class SignUpViewController: UIViewController {
         backButton.title = "첫화면"
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
-
+    
     /// 메인 창에서 nvigation bar 숨김
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = true
