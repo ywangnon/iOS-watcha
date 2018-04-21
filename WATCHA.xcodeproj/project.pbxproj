@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0107490220893E7E0009C1BA /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0107490120893E7E0009C1BA /* Home.swift */; };
+		01074904208AF8660009C1BA /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01074903208AF8660009C1BA /* Search.swift */; };
 		015E8FD42085A35100BEC5B3 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015E8FD32085A35100BEC5B3 /* HomeCell.swift */; };
 		015E8FD82085AC7300BEC5B3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015E8FD72085AC7300BEC5B3 /* HomeViewController.swift */; };
 		0190E543207B19D8009E1E53 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190E542207B19D8009E1E53 /* Constants.swift */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		0107490120893E7E0009C1BA /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		01074903208AF8660009C1BA /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		015E8FD32085A35100BEC5B3 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		015E8FD72085AC7300BEC5B3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0190E542207B19D8009E1E53 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				FEBF9F66207C93A900DD9C3B /* RatingMovie.swift */,
 				76401CF8207F1D2B0025CA30 /* ThemeList.swift */,
 				FE037A7320848AA300956C4D /* MovieDetail.swift */,
+				01074903208AF8660009C1BA /* Search.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				765FBC9D207EEDD2004920E6 /* ThemeDetailTableViewController.swift in Sources */,
 				FE8909502085D3C500BCA5C9 /* GalleryCollectionViewCell.swift in Sources */,
 				765FBC9F207EEE4A004920E6 /* ThemeTableViewController.swift in Sources */,
+				01074904208AF8660009C1BA /* Search.swift in Sources */,
 				7674B8F5208702C100DD31F4 /* ThemeDetailTableViewCell.swift in Sources */,
 				FE856779207B0FCD0031E2CB /* AppDelegate.swift in Sources */,
 				015E8FD42085A35100BEC5B3 /* HomeCell.swift in Sources */,

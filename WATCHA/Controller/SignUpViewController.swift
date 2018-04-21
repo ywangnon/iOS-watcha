@@ -11,9 +11,16 @@ import Alamofire
 
 class SignUpViewController: UIViewController {
     
+    var isSelected: Bool = false
+    
     @IBOutlet weak var nickNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
+    @IBAction func btn_box(sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        isSelected =  !isSelected
+    }
     
     /// 로그인 버튼
     ///
@@ -40,6 +47,18 @@ class SignUpViewController: UIViewController {
             print("password Check")
             
             let alertController = UIAlertController(title: "비밀번호가 너무 짧습니다.", message: "비밀번호를 6자리 이상 입력해주세요", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alertController.addAction(UIAlertAction(title: "확인", style: UIAlertActionStyle.default,handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+            return
+        }
+        
+        guard isSelected else {
+            print("password Check")
+            
+            let alertController = UIAlertController(title: "체크박스에 체크해주세요", message: "서비스 이용약관, 개인정보 취급 방침에 동의해주세요.", preferredStyle: UIAlertControllerStyle.alert)
             
             alertController.addAction(UIAlertAction(title: "확인", style: UIAlertActionStyle.default,handler: nil))
             
