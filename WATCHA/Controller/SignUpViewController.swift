@@ -11,9 +11,16 @@ import Alamofire
 
 class SignUpViewController: UIViewController {
     
+    var isSelected: Bool = false
+    
     @IBOutlet weak var nickNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
+    @IBAction func btn_box(sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        isSelected =  !isSelected
+    }
     
     /// 로그인 버튼
     ///
@@ -48,6 +55,18 @@ class SignUpViewController: UIViewController {
             return
         }
         
+        guard isSelected else {
+            print("password Check")
+            
+            let alertController = UIAlertController(title: "체크박스에 체크해주세요", message: "서비스 이용약관, 개인정보 취급 방침에 동의해주세요.", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alertController.addAction(UIAlertAction(title: "확인", style: UIAlertActionStyle.default,handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+            return
+        }
+        
         let params: Parameters = [
             "email": email,
             "nickname": nickName,
@@ -55,7 +74,7 @@ class SignUpViewController: UIViewController {
         ]
         
         Alamofire
-            .request(API.Auth.emailSignUp, method: .post, parameters: params)
+            .request(API.Auth.emailLogin, method: .post, parameters: params)
             .validate()
             .responseData { (response) in
                 switch response.result {
@@ -65,15 +84,12 @@ class SignUpViewController: UIViewController {
                     
                     var token_String = ""
                     
-                    do {
-                        let userInfo = try! JSONDecoder().decode(login_User.self, from: value)
-                        print(userInfo)
-                        print(userInfo.token)
-                        token_String = userInfo.token
-                        print("Completely Success")
-                    } catch {
-                        print(error.localizedDescription)
-                    }
+                    let userInfo = try! JSONDecoder().decode(login_User.self, from: value)
+                    print(userInfo)
+                    print(userInfo.token)
+                    token_String = userInfo.token
+                    print("Completely Success")
+                    
                     let plist = UserDefaults.standard
                     plist.set(token_String, forKey: "user_Token")
                     
@@ -133,9 +149,9 @@ class SignUpViewController: UIViewController {
         
         // 패스워드 정규식 : 6-20자 이내
         let passwordRegEx = "^(?=.*[a-zA-Z0-9]).{6,20}$"
-
+        
         let passwordTest = NSPredicate(format:"SELF MATCHES %@", passwordRegEx)
-
+        
         return passwordTest.evaluate(with: password)
     }
     
@@ -161,7 +177,7 @@ class SignUpViewController: UIViewController {
         backButton.title = "첫화면"
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
-
+    
     /// 메인 창에서 nvigation bar 숨김
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = true
