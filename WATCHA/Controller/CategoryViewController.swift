@@ -9,7 +9,7 @@
 import UIKit
 
 protocol CategoryDelegate {
-   func passData(url: String)
+   func passData(url: String, genre: String)
 }
 
 
@@ -150,7 +150,7 @@ extension CategoryViewController: UITableViewDelegate, UITableViewDataSource {
       let categoryName = categories[indexPath.row].name
       let categoryKind = categories[indexPath.row].kind
       
-      delegate?.passData(url: API.baseURL+"api/movie/"+categoryKind+"/"+categoryName+"/")
+      delegate?.passData(url: API.baseURL+"api/movie/"+categoryKind+"/"+categoryName+"/", genre: categoryName)
       self.dismiss(animated: true, completion: nil)
    }
    

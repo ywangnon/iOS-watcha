@@ -41,6 +41,7 @@
 		FE8909542085D42800BCA5C9 /* RecommendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8909532085D42800BCA5C9 /* RecommendCollectionViewCell.swift */; };
 		FEBF9F67207C93A900DD9C3B /* RatingMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBF9F66207C93A900DD9C3B /* RatingMovie.swift */; };
 		FEBF9F6A207CBEB300DD9C3B /* RatingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBF9F68207CBEB300DD9C3B /* RatingTableViewCell.swift */; };
+		FEF9FFDE208CAB56006C4CB4 /* CategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF9FFDD208CAB56006C4CB4 /* CategoryList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		FE8909532085D42800BCA5C9 /* RecommendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCollectionViewCell.swift; sourceTree = "<group>"; };
 		FEBF9F66207C93A900DD9C3B /* RatingMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingMovie.swift; sourceTree = "<group>"; };
 		FEBF9F68207CBEB300DD9C3B /* RatingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingTableViewCell.swift; sourceTree = "<group>"; };
+		FEF9FFDD208CAB56006C4CB4 /* CategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 				FEBF9F66207C93A900DD9C3B /* RatingMovie.swift */,
 				76401CF8207F1D2B0025CA30 /* ThemeList.swift */,
 				FE037A7320848AA300956C4D /* MovieDetail.swift */,
+				FEF9FFDD208CAB56006C4CB4 /* CategoryList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				FE8567A5207B15090031E2CB /* User.swift in Sources */,
 				76401CF9207F1D2B0025CA30 /* ThemeList.swift in Sources */,
 				FE85678F207B12380031E2CB /* SignInViewController.swift in Sources */,
+				FEF9FFDE208CAB56006C4CB4 /* CategoryList.swift in Sources */,
 				FEBF9F67207C93A900DD9C3B /* RatingMovie.swift in Sources */,
 				FE85679F207B12970031E2CB /* MovieDetailViewController.swift in Sources */,
 				FE55E1E4207F017000137175 /* MyPageTableViewController.swift in Sources */,

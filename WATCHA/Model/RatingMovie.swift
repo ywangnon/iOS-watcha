@@ -71,17 +71,3 @@ struct Genre: Codable {
       case name = "genre"
    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

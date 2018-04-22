@@ -16,12 +16,16 @@ class MovieDetailViewController: UIViewController {
    private let TOKEN = "token b8999260f52f162dceee7e298b3bd9da44d30af7"
    
    var movie: MovieDetailInfo?
+   var recommendMovies: [RatingMovie] = []
+   var actors: [ActorType] = []
+   var genreName: String = ""
    
    @IBOutlet weak var actorCollectionView: UICollectionView!
    @IBOutlet weak var galleryCollectionView: UICollectionView!
    @IBOutlet weak var youtubeCollectionView: UICollectionView!
    @IBOutlet weak var commentTableView: UITableView!
    @IBOutlet weak var recommendCollectionView: UICollectionView!
+   @IBOutlet weak var commentView: UIView!
    
    @IBOutlet weak var backgroundImageView: UIImageView!
    @IBOutlet weak var posterImageView: UIImageView!
@@ -62,8 +66,39 @@ class MovieDetailViewController: UIViewController {
     override func viewDidLoad() {
       super.viewDidLoad()
       
+      commentTableView.separatorStyle = .none
       registerDelegate()
     }
+   
+   
+   override func viewDidAppear(_ animated: Bool) {
+      loadRecommendMovies()
+   }
+   
+   
+   func loadRecommendMovies() {
+      print("======== start load recommend movies Info ========")
+      print("recommend genre = ",genreName)
+      let userToken: HTTPHeaders = ["Authorization": TOKEN]
+      let url = API.Movie.detail + "genre/\(genreName)/"
+      Alamofire.request(url, method: .get, headers: userToken)
+         .validate(statusCode: 200..<300)
+         .responseJSON { response in
+            if let error = response.error {
+               dump(error)
+               return
+            }
+            
+            do {
+               let data = try JSONSerialization.data(withJSONObject: response.result.value!, options: .prettyPrinted)
+               let decoder: JSONDecoder = JSONDecoder()
+               self.recommendMovies = try decoder.decode(RatingMovieList.self, from: data).results
+               self.setupUI()
+            } catch {
+               print(error)
+            }
+      }
+   }
    
    
    func setupUI() {
@@ -94,8 +129,7 @@ class MovieDetailViewController: UIViewController {
       guard let point = movie?.averageRating else {return}
       ratedPointLabel.text = point
       cosmosView.settings.fillMode = .precise
-      //cosmosView.rating = Double(point)!
-      cosmosView.rating = 2.3
+      cosmosView.rating = Double(point)!
       
       guard let story = movie?.story else {return}
       guard let grade = movie?.filmRate else {return}
@@ -107,9 +141,17 @@ class MovieDetailViewController: UIViewController {
       \(story)
       """
       
+      if let member = movie?.actors {
+         for actor in member.reversed() {
+            actors.append(actor)
+         }
+      }
+      
       actorCollectionView.reloadData()
       galleryCollectionView.reloadData()
       youtubeCollectionView.reloadData()
+      commentTableView.reloadData()
+      recommendCollectionView.reloadData()
    }
    
    
@@ -174,11 +216,14 @@ extension MovieDetailViewController: UICollectionViewDelegate, UICollectionViewD
       case youtubeCollectionView:
          counts = movie?.youtubeUrls?.count ?? 0
       case recommendCollectionView:
-         counts = movie?.comments?.count ?? 0
+         if recommendMovies.count > 1 {
+            counts = recommendMovies.count - 1
+         } else {
+            print("No count recommend movies")
+         }
       default:
-         counts = 1
+         print("No Selection number Of Items In Section")
       }
-
       return counts
    }
    
@@ -189,15 +234,15 @@ extension MovieDetailViewController: UICollectionViewDelegate, UICollectionViewD
       case actorCollectionView:
          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ActorCell", for: indexPath) as! ActorCollectionViewCell
          
-         let who = movie?.actors[indexPath.row]
-         let urlForActor = URL(string: who?.actor.profileImage ?? "")
+         let who = actors[indexPath.row]
+         let urlForActor = URL(string: who.actor.profileImage)
          if let imageData = try? Data(contentsOf: urlForActor!, options: []) {
             cell.actorImageView.image = UIImage(data: imageData)
          }
          
-         let name = who?.actor.name ?? ""
-         let type = who?.type ?? ""
-         if var position = who?.position {
+         let name = who.actor.name
+         let type = who.type
+         if var position = who.position {
             position = "/" + position
          }
          cell.nameLabel.text = name
@@ -220,10 +265,18 @@ extension MovieDetailViewController: UICollectionViewDelegate, UICollectionViewD
          if let imageData = try? Data(contentsOf: urlForThumbNail!, options: []) {
             cell.thumbnailImage.image = UIImage(data: imageData)
          }
+         cell.titleLabel.text = movie?.youtubeUrls?[indexPath.row].title
          
          return cell
       case recommendCollectionView:
          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RecommendCell", for: indexPath) as! RecommendCollectionViewCell
+         
+         let urlForPoster = URL(string: recommendMovies[indexPath.row].posterImage)
+         if let imageData = try? Data(contentsOf: urlForPoster!, options: []) {
+            cell.posterImageView.image = UIImage(data: imageData)
+         }
+         cell.titleLabel.text = recommendMovies[indexPath.row].title
+         
          return cell
       default:
          print("Fail Select Cell")
@@ -248,7 +301,9 @@ extension MovieDetailViewController: UICollectionViewDelegateFlowLayout {
       case galleryCollectionView:
          return CGSize(width: 130, height: 100)
       case youtubeCollectionView:
-         return CGSize(width: 160, height: 90)
+         return CGSize(width: 350, height: 78)
+      case recommendCollectionView:
+         return CGSize(width: 97, height: 155)
       default:
          print("Fail Select collectionView in UICollectionViewDelegateFlowLayout")
       }
@@ -263,12 +318,25 @@ extension MovieDetailViewController: UICollectionViewDelegateFlowLayout {
 extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource {
    
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return 3
+      return movie?.comments?.count ?? 0
    }
    
    
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = commentTableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! CommentTableViewCell
+      
+      if let comment = movie?.comments?[indexPath.row] {
+         if let image = comment.user.profileImage {
+            let urlForProfile = URL(string: image)
+            if let imageData = try? Data(contentsOf: urlForProfile!, options: []) {
+               cell.profileImageView.image = UIImage(data: imageData)
+            }
+         }
+         cell.nameLabel.text = comment.user.nickName
+         cell.cosmosView.rating = Double(comment.rating)!
+         cell.yearLabel.text = String(comment.updatedDate.prefix(10))
+         cell.commentLabel.text = comment.comment
+      }
       
       return cell
    }

@@ -11,6 +11,7 @@ import Alamofire
 
 class MovieTapGesture: UITapGestureRecognizer {
    var pkForMovie = Int()
+   var genre = String()
 }
 
 class RatingTableViewController: UITableViewController {
@@ -25,6 +26,8 @@ class RatingTableViewController: UITableViewController {
    var movies: [RatingMovie] = []
    var pkForMoreButton: Int?
    var pkForMovieDetail: Int?
+   var genreName: String = ""
+   
    var urlForMovieList: String? {
       willSet(url){
          // TODO : 카테고리 pk를 가지고 서버에서 카테고리 영화리스트를 읽어와 테이블뷰 리로드 작업을 시행한다.
@@ -75,7 +78,7 @@ class RatingTableViewController: UITableViewController {
    func loadMovieData() {
    //TODO : 서버에서 가져온 영화리스트를 movies 배열에 할당하여 데이터소스에서 사용할 것
       let userToken: HTTPHeaders = ["Authorization": TOKEN]
-      
+      genreName = "action"
       Alamofire.request(API.baseURL+GENRE+"action/", method: .get, headers: userToken)
          .validate(statusCode: 200..<300)
          .responseJSON { response in
@@ -135,12 +138,11 @@ class RatingTableViewController: UITableViewController {
    
    @objc func movieTapped(gesture : MovieTapGesture) {
       print("Rating View Cell for movie Selected")
-      let tagForMovie = gesture.pkForMovie
-      print("Movie Tag = ",tagForMovie)
+      print("Movie ID = ",gesture.pkForMovie)
       
       let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "MovieDetailViewController") as? MovieDetailViewController
-      detailVC?.pkForMovie = tagForMovie
-      
+      detailVC?.pkForMovie = gesture.pkForMovie
+      detailVC?.genreName = genreName
       navigationController?.pushViewController(detailVC!, animated: true)
 
    }
@@ -174,6 +176,7 @@ class RatingTableViewController: UITableViewController {
          print("movie = ", movie.title)
          let tapImageGesture = MovieTapGesture(target: self, action: #selector(self.movieTapped))
          tapImageGesture.pkForMovie = movie.pk
+         tapImageGesture.genre = genreName
 
          let url = URL(string: movie.posterImage)
          if let imageData = try? Data(contentsOf: url!, options: []) {
@@ -183,7 +186,8 @@ class RatingTableViewController: UITableViewController {
 
          let tapTitleGesture = MovieTapGesture(target: self, action: #selector(self.movieTapped))
          tapTitleGesture.pkForMovie = movie.pk
-
+         tapTitleGesture.genre = genreName
+         
          cell.titleLable.text = movie.title
          cell.titleLable.addGestureRecognizer(tapTitleGesture)
 
@@ -232,8 +236,9 @@ class RatingTableViewController: UITableViewController {
 
 
 extension RatingTableViewController: CategoryDelegate {   
-   func passData(url: String) {
+   func passData(url: String, genre: String) {
       self.urlForMovieList = url
+      self.genreName = genre
    }
 }
 
