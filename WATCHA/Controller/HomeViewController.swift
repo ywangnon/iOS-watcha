@@ -16,9 +16,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     let strToken = UserDefaults.standard.string(forKey: "user_Token")
     
-    var result: HomeMovies!
+    var result: TopMovies!
     var searchResult: SearchMovie!
-    var movies: [HomeMovie] = []
+    var movies: [Top5] = []
     var SearchMovies: [SearchMovie.movie] = []
     
     var searchBool: Bool = false
@@ -47,7 +47,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         print("\n---------- [ url ] ----------\n")
         
-        Alamofire.request(API.MainPage.sortByTag.topKorea, method: .get, headers: userToken)
+        Alamofire.request(API.MainPage.Top5Movie, method: .get, headers: userToken)
             .validate(statusCode: 200..<300)
             .responseJSON { response in
                 if let error = response.error {
@@ -62,7 +62,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     print(data)
                     let decoder: JSONDecoder = JSONDecoder()
                     print(decoder)
-                    self.result = try decoder.decode(HomeMovies.self, from: data)
+                    self.result = try decoder.decode(TopMovies.self, from: data)
                     self.movies = self.result.results
                     print(self.movies)
                     self.HometableView.reloadData()
@@ -90,18 +90,15 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let tapImageGesture = MovieTapGesture(target: self, action: #selector(self.movieTapped))
             tapImageGesture.pkForMovie = movie.id
             
+            
             let url = URL(string: movie.poster_image)
             if let imageData = try? Data(contentsOf: url!, options: []) {
                 cell.movieImage.image = UIImage(data: imageData)
             }
+            cell.movieImage.isUserInteractionEnabled = true
             cell.movieImage.addGestureRecognizer(tapImageGesture)
             
-            let tapTitleGesture = MovieTapGesture(target: self, action: #selector(self.movieTapped))
-            tapTitleGesture.pkForMovie = movie.id
-            
             cell.movieTitleLabel.text = movie.title_ko
-            cell.movieTitleLabel.addGestureRecognizer(tapTitleGesture)
-            
             cell.ratingLabel.text = "0.0"
             
         } else {
@@ -114,14 +111,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             if let imageData = try? Data(contentsOf: url!, options: []) {
                 cell.movieImage.image = UIImage(data: imageData)
             }
+            cell.movieImage.isUserInteractionEnabled = true
             cell.movieImage.addGestureRecognizer(tapImageGesture)
             
-            let tapTitleGesture = MovieTapGesture(target: self, action: #selector(self.movieTapped))
-            tapTitleGesture.pkForMovie = movie.id
-            
             cell.movieTitleLabel.text = movie.title
-            cell.movieTitleLabel.addGestureRecognizer(tapTitleGesture)
-            
             cell.ratingLabel.text = movie.averageRate
             
         }
