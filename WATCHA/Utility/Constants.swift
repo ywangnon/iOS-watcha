@@ -30,6 +30,9 @@ enum API {
         static let box_Office_List = API.baseURL + "api/movie/box-office/name-list/"
         static let box_Office_Top5 = API.baseURL + "api/movie/box-office/five-list/"
         static let box_Office_Detail = API.baseURL + "api/movie/box-office/"
+      
+        static let detail = API.baseURL + "api/movie/"
+        static let memberDetail = API.baseURL + "api/movie-members/"
     }
     
     enum MainPage {

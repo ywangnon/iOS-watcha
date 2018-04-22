@@ -11,6 +11,7 @@ import Alamofire
 
 class MovieTapGesture: UITapGestureRecognizer {
    var pkForMovie = Int()
+   var genre = String()
 }
 
 class RatingTableViewController: UITableViewController {
@@ -19,11 +20,14 @@ class RatingTableViewController: UITableViewController {
    let GENRE = "api/movie/genre/"
    
    //for test temporary toket
-   let TOKEN = "token 4f6e08d2d447cc6cced431a8d45d75aaa51fa977"
+   //private let TOKEN = "token \(UserDefaults.standard.string(forKey: "user_Token")!)"
+   private let TOKEN = "token b8999260f52f162dceee7e298b3bd9da44d30af7"
    
    var movies: [RatingMovie] = []
    var pkForMoreButton: Int?
    var pkForMovieDetail: Int?
+   var genreName: String = ""
+   
    var urlForMovieList: String? {
       willSet(url){
          // TODO : 카테고리 pk를 가지고 서버에서 카테고리 영화리스트를 읽어와 테이블뷰 리로드 작업을 시행한다.
@@ -40,7 +44,7 @@ class RatingTableViewController: UITableViewController {
                do {
                   let data = try JSONSerialization.data(withJSONObject: response.result.value!, options: .prettyPrinted)
                   let decoder: JSONDecoder = JSONDecoder()
-                  self.movies = try decoder.decode([RatingMovie].self, from: data)
+                  self.movies = try decoder.decode(RatingMovieList.self, from: data).results
                   self.tableView.reloadData()
                } catch {
                   print(error)
@@ -74,7 +78,7 @@ class RatingTableViewController: UITableViewController {
    func loadMovieData() {
    //TODO : 서버에서 가져온 영화리스트를 movies 배열에 할당하여 데이터소스에서 사용할 것
       let userToken: HTTPHeaders = ["Authorization": TOKEN]
-      
+      genreName = "action"
       Alamofire.request(API.baseURL+GENRE+"action/", method: .get, headers: userToken)
          .validate(statusCode: 200..<300)
          .responseJSON { response in
@@ -86,7 +90,7 @@ class RatingTableViewController: UITableViewController {
             do {
                let data = try JSONSerialization.data(withJSONObject: response.result.value!, options: .prettyPrinted)
                let decoder: JSONDecoder = JSONDecoder()
-               self.movies = try decoder.decode([RatingMovie].self, from: data)
+               self.movies = try decoder.decode(RatingMovieList.self, from: data).results
                self.tableView.reloadData()
             } catch {
                print(error)
@@ -134,12 +138,11 @@ class RatingTableViewController: UITableViewController {
    
    @objc func movieTapped(gesture : MovieTapGesture) {
       print("Rating View Cell for movie Selected")
-      let tagForMovie = gesture.pkForMovie
-      print("Movie Tag = ",tagForMovie)
+      print("Movie ID = ",gesture.pkForMovie)
       
       let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "MovieDetailViewController") as? MovieDetailViewController
-      detailVC?.pkForMovie = tagForMovie
-      
+      detailVC?.pkForMovie = gesture.pkForMovie
+      detailVC?.genreName = genreName
       navigationController?.pushViewController(detailVC!, animated: true)
 
    }
@@ -173,6 +176,7 @@ class RatingTableViewController: UITableViewController {
          print("movie = ", movie.title)
          let tapImageGesture = MovieTapGesture(target: self, action: #selector(self.movieTapped))
          tapImageGesture.pkForMovie = movie.pk
+         tapImageGesture.genre = genreName
 
          let url = URL(string: movie.posterImage)
          if let imageData = try? Data(contentsOf: url!, options: []) {
@@ -182,11 +186,12 @@ class RatingTableViewController: UITableViewController {
 
          let tapTitleGesture = MovieTapGesture(target: self, action: #selector(self.movieTapped))
          tapTitleGesture.pkForMovie = movie.pk
-
+         tapTitleGesture.genre = genreName
+         
          cell.titleLable.text = movie.title
          cell.titleLable.addGestureRecognizer(tapTitleGesture)
 
-         cell.yearLabel.text = "2018"
+         cell.yearLabel.text = "\(movie.year)"
          cell.update(0)
          
          cell.moreButton.addTarget(self, action: #selector(self.moreButtonPressed), for: .touchUpInside)
@@ -231,8 +236,9 @@ class RatingTableViewController: UITableViewController {
 
 
 extension RatingTableViewController: CategoryDelegate {   
-   func passData(url: String) {
+   func passData(url: String, genre: String) {
       self.urlForMovieList = url
+      self.genreName = genre
    }
 }
 

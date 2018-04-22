@@ -124,6 +124,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		FE16A369208CCF96000B004A /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		FE85676C207B0FCC0031E2CB = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +138,7 @@
 				FE856776207B0FCC0031E2CB /* Products */,
 				A830537523E3E6405A07D9E9 /* Pods */,
 				98D5976678E83CBDD2BAB917 /* Frameworks */,
+				FE16A369208CCF96000B004A /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};

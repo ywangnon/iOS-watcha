@@ -10,4 +10,6 @@ import UIKit
 
 class YoutubeCollectionViewCell: UICollectionViewCell {
     
+   @IBOutlet weak var thumbnailImage: UIImageView!
+   @IBOutlet weak var titleLabel: UILabel!
 }
