@@ -150,8 +150,4 @@ enum API {
     enum MovieDetail {
         
     }
-<<<<<<< HEAD
-   
-=======
->>>>>>> 64684cdac4a6abddee3e8259c347d33b728e5b30
 }
