@@ -30,9 +30,6 @@ struct HomeMovie: Decodable {
     var averageRate: String
     //영화 카테고리(장르)
     var genre: [Genre]
-    //영화 태그
-    // var tag: [Int]
-    
     
     private enum CodingKeys: String, CodingKey {
         case title = "title_ko"
@@ -41,8 +38,36 @@ struct HomeMovie: Decodable {
         case posterImageX3 = "poster_image_eval_x3"
         case averageRate = "rating_avg"
         case id, genre
-        // case tag
     }
 }
 
+struct Top5 {
+    
+    var id: Int
+    var title: String
+    var year: Int
+    var ticketRate: String
+    var averageRate: String
+    var posterImage: String
+    var posterImageX3: String
+    var d_day: String
+    var audience: Int
+    var film_rate: String
+    var running_time: Int
+    var genre: [Genre]
+    var username: String?
+    var comment: String?
+    var img_profile: String?
+    var user_pk: String?
+    
+    private enum CodingKeys: String, CodingKey {
+        case title = "title_ko"
+        case year = "movie_created_date"
+        case ticketRate = "ticketing_rate"
+        case posterImage = "poster_image_m"
+        case posterImageX3 = "poster_image_eval_x3"
+        case averageRate = "rating_avg"
+        case id, genre, d_day, audience, film_rate, running_time, username, comment, img_profile, user_pk
+    }
+}
 
