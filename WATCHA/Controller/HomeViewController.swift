@@ -157,17 +157,18 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             print("\n---------- [ Search ] ----------\n")
             
-            guard let token = strToken, let searchWord = searchTextField.text else { return false }
-            
+            guard let token = strToken, let word = searchTextField.text else { return false }
+            //            let searchWord = ("?movie=\(word)").addingPercentEncoding(withAllowedCharacters: .alphanumerics)!
+            //            let url = "https://justdo2t.com/api/movie/search/" + searchWord
             let headerToken = "token " + token
-            let url = "https://justdo2t.com/api/movie/search/?movie=\(searchWord)"
-            
+            let url = "https://justdo2t.com/api/movie/search/?movie=\(word)"//"&page_size=3"
             print("\n---------- [ header ] ----------\n")
             print(headerToken)
             
             let userToken: HTTPHeaders = ["Authorization": headerToken]
             
-            Alamofire.request(url, method: .get, headers: userToken)
+            //            Alamofire.request(url, method: .get, headers: userToken)
+            Alamofire.request(url, method: .get, encoding: URLEncoding.default, headers: userToken)
                 .validate(statusCode: 200..<300)
                 .responseJSON { response in
                     if let error = response.error {
