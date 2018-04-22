@@ -41,7 +41,14 @@ struct HomeMovie: Decodable {
     }
 }
 
-struct Top5 {
+struct TopMovies: Decodable {
+    var count: Int
+    var next: String?
+    var previous: String?
+    var results: [Top5]
+}
+
+struct Top5: Decodable {
     
     var id: Int
     var title: String
@@ -64,8 +71,8 @@ struct Top5 {
         case title = "title_ko"
         case year = "movie_created_date"
         case ticketRate = "ticketing_rate"
-        case posterImage = "poster_image_m"
-        case posterImageX3 = "poster_image_eval_x3"
+        case posterImage = "poster_image"
+        case posterImageX3 = "poster_image_m"
         case averageRate = "rating_avg"
         case id, genre, d_day, audience, film_rate, running_time, username, comment, img_profile, user_pk
     }

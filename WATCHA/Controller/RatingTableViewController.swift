@@ -20,8 +20,8 @@ class RatingTableViewController: UITableViewController {
    let GENRE = "api/movie/genre/"
    
    //for test temporary toket
-   //private let TOKEN = "token \(UserDefaults.standard.string(forKey: "user_Token")!)"
-   private let TOKEN = "token b8999260f52f162dceee7e298b3bd9da44d30af7"
+   private let TOKEN = "token \(UserDefaults.standard.string(forKey: "user_Token")!)"
+//   private let TOKEN = "token b8999260f52f162dceee7e298b3bd9da44d30af7"
    
    var movies: [RatingMovie] = []
    var pkForMoreButton: Int?
