@@ -15,13 +15,8 @@ class MovieTapGesture: UITapGestureRecognizer {
 }
 
 class RatingTableViewController: UITableViewController {
-
-   let TAG = "api/movie/tag/"
-   let GENRE = "api/movie/genre/"
    
-   //for test temporary toket
    private let TOKEN = "token \(UserDefaults.standard.string(forKey: "user_Token")!)"
-//   private let TOKEN = "token b8999260f52f162dceee7e298b3bd9da44d30af7"
    
    var movies: [RatingMovie] = []
    var pkForMoreButton: Int?
@@ -30,7 +25,7 @@ class RatingTableViewController: UITableViewController {
    
    var urlForMovieList: String? {
       willSet(url){
-         // TODO : 카테고리 pk를 가지고 서버에서 카테고리 영화리스트를 읽어와 테이블뷰 리로드 작업을 시행한다.
+         // TODO: 카테고리 pk를 가지고 서버에서 카테고리 영화리스트를 읽어와 테이블뷰 리로드 작업을 시행한다.
          print("url = ",url!)
          let userToken: HTTPHeaders = ["Authorization": TOKEN]
          Alamofire.request(url!, method: .get, headers: userToken)
@@ -76,10 +71,10 @@ class RatingTableViewController: UITableViewController {
    
    
    func loadMovieData() {
-   //TODO : 서버에서 가져온 영화리스트를 movies 배열에 할당하여 데이터소스에서 사용할 것
+   //TODO: 서버에서 가져온 영화리스트를 movies 배열에 할당하여 데이터소스에서 사용할 것
       let userToken: HTTPHeaders = ["Authorization": TOKEN]
       genreName = "action"
-      Alamofire.request(API.baseURL+GENRE+"action/", method: .get, headers: userToken)
+      Alamofire.request(API.MainPage.sortByGenre.action, method: .get, headers: userToken)
          .validate(statusCode: 200..<300)
          .responseJSON { response in
             if let error = response.error {

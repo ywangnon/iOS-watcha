@@ -11,9 +11,7 @@ import Alamofire
 
 class MovieDetailViewController: UIViewController {
    
-   //for test temporary toket
-   //private let TOKEN = "token \(UserDefaults.standard.string(forKey: "user_Token")!)"
-   private let TOKEN = "token b8999260f52f162dceee7e298b3bd9da44d30af7"
+   private let TOKEN = "token \(UserDefaults.standard.string(forKey: "user_Token")!)"
    
    var movie: MovieDetailInfo?
    var recommendMovies: [RatingMovie] = []
@@ -37,7 +35,7 @@ class MovieDetailViewController: UIViewController {
    
    var pkForMovie: Int = 0 {
       didSet {
-         // TODO : 카테고리 pk를 가지고 서버에서 카테고리 영화정보를 읽어온다.
+         // TODO: 카테고리 pk를 가지고 서버에서 카테고리 영화정보를 읽어온다.
          print("======== start update movie Info ========")
          print("pkForMovie = ",pkForMovie)
          let userToken: HTTPHeaders = ["Authorization": TOKEN]
@@ -76,6 +74,8 @@ class MovieDetailViewController: UIViewController {
    }
    
    
+   
+   //MARK: - API Call, Data Load, Setting UI Methods
    func loadRecommendMovies() {
       print("======== start load recommend movies Info ========")
       print("recommend genre = ",genreName)
@@ -173,7 +173,9 @@ class MovieDetailViewController: UIViewController {
       recommendCollectionView.dataSource = self
    }
    
+   
 
+   //MARK: - Button Action Methods
    @IBAction func backButtonPressed(_ sender: UIButton) {
       navigationController?.popViewController(animated: true)
    }
