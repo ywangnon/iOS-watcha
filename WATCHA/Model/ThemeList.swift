@@ -39,3 +39,30 @@ struct ThemeAndRankingList {
     ]
 }
 
+struct ThemeImage {
+    var themeImagelist: [String] = [
+    "millionTopMoviewRank",
+    "watchaRatingMovieRank",
+    "worldmovieTopRank",
+    "domesticMovieTopRank",
+    "classicMovie",
+    "noireMovie",
+    "super",
+    "sportsMovie",
+    "crimeMovie",
+    "dramaMovie",
+    "comedyMovie",
+    "romanceMeloMovie",
+    "thrillerMovie",
+    "romanticComedyMovie",
+    "warMovie",
+    "familyMovie",
+    "fantasyMovie",
+    "actionMovie",
+    "SFMovie",
+    "animation",
+    "documentaryMovie",
+    "horrorMovie"
+    ]
+}
+

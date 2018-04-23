@@ -54,8 +54,19 @@ class ThemeTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let imageList = ThemeImage()
+        let labelList = ThemeAndRankingList()
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "themeCell", for: indexPath) as! ThemeTableViewCell
+        
+        if indexPath.section == 0 {
+            cell.themeTitleLabel?.text = labelList.rankingList[indexPath.row]
+        } else if indexPath.section == 1 {
+            cell.themeTitleLabel?.text = labelList.themeList[indexPath.row]
+        }
 
+        cell.themeImageView.image = UIImage(named: imageList.themeImagelist[indexPath.row])
+        
         return cell
     }
     
