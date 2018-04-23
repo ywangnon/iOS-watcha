@@ -762,6 +762,7 @@
                                 <connections>
                                     <outlet property="themeImageView" destination="gBA-la-hQj" id="Nnj-04-acQ"/>
                                     <outlet property="themeTitleLabel" destination="UpS-gC-0q4" id="7M8-RH-cf7"/>
+                                    <segue destination="9Wg-F7-n5F" kind="presentation" id="Vkz-LG-Mhd"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -803,37 +804,31 @@
                                                     <rect key="frame" x="105" y="0.0" width="233" height="135.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="영화제목" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNb-9J-5uu">
-                                                            <rect key="frame" x="0.0" y="0.0" width="69.5" height="31.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="69.5" height="37"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평균 별점" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFY-Nf-Fb9">
-                                                            <rect key="frame" x="0.0" y="31.5" width="49" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="37" width="49" height="24.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="예매율, 누적관객" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oro-fy-KOI">
-                                                            <rect key="frame" x="0.0" y="52" width="86.5" height="21"/>
+                                                            <rect key="frame" x="0.0" y="61.5" width="86.5" height="24.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="감독" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bka-07-lkZ">
-                                                            <rect key="frame" x="0.0" y="73" width="22.5" height="21"/>
+                                                            <rect key="frame" x="0.0" y="86" width="22.5" height="25"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주연배우" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSW-Ze-AOd">
-                                                            <rect key="frame" x="0.0" y="94" width="45" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="연도, 국가, 장르, 상영시간" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lsn-yk-aYR">
-                                                            <rect key="frame" x="0.0" y="114.5" width="135" height="21"/>
+                                                            <rect key="frame" x="0.0" y="111" width="45" height="24.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -855,6 +850,14 @@
                                         <constraint firstAttribute="trailing" secondItem="bCs-da-FkT" secondAttribute="trailing" constant="30" id="vC0-EW-aal"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="actorsLabel" destination="kSW-Ze-AOd" id="L0b-GA-rJ9"/>
+                                    <outlet property="averageRatingLabel" destination="PFY-Nf-Fb9" id="IRf-yu-Y6t"/>
+                                    <outlet property="depositAndBoxOfficeLabel" destination="Oro-fy-KOI" id="kaB-S7-0ul"/>
+                                    <outlet property="directorLabel" destination="bka-07-lkZ" id="hLt-ql-75z"/>
+                                    <outlet property="posterImage" destination="0Ci-7p-voW" id="ruE-kg-2cO"/>
+                                    <outlet property="titleLabel" destination="aNb-9J-5uu" id="R2W-s6-4Og"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1198,12 +1201,68 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="SkE-wT-0fq">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="150" id="SkE-wT-0fq">
+                                <rect key="frame" x="0.0" y="28" width="375" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SkE-wT-0fq" id="hvc-Ub-lbf">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="woA-S0-axG">
+                                            <rect key="frame" x="16" y="11" width="343" height="128"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" image="박스오피스포스터" translatesAutoresizingMaskIntoConstraints="NO" id="d36-wK-s6s">
+                                                    <rect key="frame" x="0.0" y="0.0" width="97" height="128"/>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="kNx-XI-JDX">
+                                                    <rect key="frame" x="105" y="0.0" width="238" height="128"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="영화제목" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWi-RL-sn1">
+                                                            <rect key="frame" x="0.0" y="0.0" width="69.5" height="35"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평균 별점" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMa-PX-X3P">
+                                                            <rect key="frame" x="0.0" y="35" width="49" height="23"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="예매율, 누적관객" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0z0-wO-pfU">
+                                                            <rect key="frame" x="0.0" y="58" width="86.5" height="23.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="감독" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPF-hZ-Fdh">
+                                                            <rect key="frame" x="0.0" y="81.5" width="22.5" height="23"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주연배우" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="do1-ow-iBK">
+                                                            <rect key="frame" x="0.0" y="104.5" width="45" height="23.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="d36-wK-s6s" firstAttribute="leading" secondItem="woA-S0-axG" secondAttribute="leading" id="F73-GU-toA"/>
+                                                <constraint firstAttribute="bottom" secondItem="d36-wK-s6s" secondAttribute="bottom" id="HEA-xq-mtR"/>
+                                                <constraint firstItem="d36-wK-s6s" firstAttribute="top" secondItem="woA-S0-axG" secondAttribute="top" id="TXQ-47-OpF"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="woA-S0-axG" secondAttribute="bottom" id="2aU-qA-JhF"/>
+                                        <constraint firstItem="woA-S0-axG" firstAttribute="top" secondItem="hvc-Ub-lbf" secondAttribute="topMargin" id="ALp-qg-cqN"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="woA-S0-axG" secondAttribute="trailing" id="YNH-OL-Sxe"/>
+                                        <constraint firstItem="woA-S0-axG" firstAttribute="leading" secondItem="hvc-Ub-lbf" secondAttribute="leadingMargin" id="eaY-XB-Ld6"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -1216,7 +1275,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rRB-36-DDi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3606" y="-594"/>
+            <point key="canvasLocation" x="3605.5999999999999" y="-594.15292353823088"/>
         </scene>
         <!--WATCHA-->
         <scene sceneID="giP-Rc-kov">
