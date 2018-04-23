@@ -74,7 +74,7 @@ class SignUpViewController: UIViewController {
         ]
         
         Alamofire
-            .request(API.Auth.emailLogin, method: .post, parameters: params)
+            .request(API.Auth.signUp, method: .post, parameters: params)
             .validate()
             .responseData { (response) in
                 switch response.result {
@@ -134,6 +134,26 @@ class SignUpViewController: UIViewController {
         passwordTextField.layer.addSublayer(border3)
         passwordTextField.layer.masksToBounds = true
         
+        createToolBar()
+    }
+    
+    func createToolBar() {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(self.doneClicked))
+        
+        toolbar.setItems([flexibleSpace, doneButton], animated: false)
+        
+        nickNameTextField.inputAccessoryView = toolbar
+        emailTextField.inputAccessoryView = toolbar
+        passwordTextField.inputAccessoryView = toolbar
+    }
+    
+    @objc func doneClicked() {
+        view.endEditing(true)
     }
     
     override func didReceiveMemoryWarning() {

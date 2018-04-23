@@ -16,9 +16,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     let strToken = UserDefaults.standard.string(forKey: "user_Token")
     
-    var result: TopMovies!
+    var result: HomeMovies!
+    var movies: [HomeMovie] = []
     var searchResult: SearchMovie!
-    var movies: [Top5] = []
     var SearchMovies: [SearchMovie.movie] = []
     
     var searchBool: Bool = false
@@ -47,7 +47,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         print("\n---------- [ url ] ----------\n")
         
-        Alamofire.request(API.MainPage.Top5Movie, method: .get, headers: userToken)
+        Alamofire.request(API.MainPage.sortByTag.topKorea, method: .get, headers: userToken)
             .validate(statusCode: 200..<300)
             .responseJSON { response in
                 if let error = response.error {
@@ -62,7 +62,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     print(data)
                     let decoder: JSONDecoder = JSONDecoder()
                     print(decoder)
-                    self.result = try decoder.decode(TopMovies.self, from: data)
+                    self.result = try decoder.decode(HomeMovies.self, from: data)
                     self.movies = self.result.results
                     print(self.movies)
                     self.HometableView.reloadData()
@@ -131,7 +131,24 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         HometableView.delegate = self
         HometableView.rowHeight = 256
         
-        // Do any additional setup after loading the view.
+        createToolBar()
+    }
+    
+    func createToolBar() {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(self.doneClicked))
+        
+        toolbar.setItems([flexibleSpace, doneButton], animated: false)
+        
+        searchTextField.inputAccessoryView = toolbar
+    }
+    
+    @objc func doneClicked() {
+        view.endEditing(true)
     }
     
     override func didReceiveMemoryWarning() {
