@@ -3,7 +3,7 @@
 //  WATCHA
 //
 //  Created by Seo JaeHyeong on 09/04/2018.
-//  Copyright © 2018 Seo Jaehyeong. All rights reserved.
+//  Copyright © 2018 Yoo Hansub. All rights reserved.
 //
 
 import UIKit
@@ -51,20 +51,6 @@ class WelcomeViewController: UIViewController {
         if FBSDKAccessToken.current() != nil {
             print("\n---------- [ Tokken ] ----------\n")
             print("\(FBSDKAccessToken.current().tokenString)")
-            //            var token_String = ""
-            //
-            //            do {
-            //                let userInfo = try! JSONDecoder().decode(login_User.self, from: value)
-            //                print(userInfo)
-            //                token_String = userInfo.token
-            //                print("Completely Success")
-            //            } catch {
-            //                print(error.localizedDescription)
-            //            }
-            //
-            //            let plist = UserDefaults.standard
-            //            plist.set(token_String, forKey: "user_Token")
-            //            performSegue(withIdentifier: "goMain", sender: nil)
         } else {
             print("not logged in")
         }

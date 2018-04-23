@@ -3,16 +3,12 @@
 //  WATCHA
 //
 //  Created by Hansub Yoo on 2018. 4. 17..
-//  Copyright © 2018년 Seo Jaehyeong. All rights reserved.
+//  Copyright © 2018년 Seo Yoo Hansub. All rights reserved.
 //
 
 import UIKit
 
 class HomeCell: UITableViewCell {
-
-    // title_ko
-    // rating_avg
-    // poster_image
     
     @IBOutlet var ratingLabel: UILabel!
     @IBOutlet var movieTitleLabel: UILabel!
@@ -22,7 +18,6 @@ class HomeCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
         
     }
 
