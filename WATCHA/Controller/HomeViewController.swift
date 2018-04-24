@@ -134,6 +134,16 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         createToolBar()
     }
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let cs = NSCharacterSet.decimalDigits.inverted
+        
+        if string.rangeOfCharacter(from: cs) == nil {
+            return true
+        } else {
+            return false
+        }
+    }
     func createToolBar() {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
