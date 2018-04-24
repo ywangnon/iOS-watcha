@@ -736,7 +736,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="129.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gBA-la-hQj">
+                                        <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gBA-la-hQj">
                                             <rect key="frame" x="0.0" y="-0.5" width="375" height="129.5"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="영화 박스오피스" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UpS-gC-0q4">
@@ -745,7 +745,7 @@
                                                 <constraint firstAttribute="height" constant="24" id="uOX-Ap-xpb"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -762,7 +762,7 @@
                                 <connections>
                                     <outlet property="themeImageView" destination="gBA-la-hQj" id="Nnj-04-acQ"/>
                                     <outlet property="themeTitleLabel" destination="UpS-gC-0q4" id="7M8-RH-cf7"/>
-                                    <segue destination="9Wg-F7-n5F" kind="presentation" id="Vkz-LG-Mhd"/>
+                                    <segue destination="9Wg-F7-n5F" kind="show" id="8ZM-Uz-QE7"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -783,7 +783,7 @@
             <objects>
                 <tableViewController id="9Wg-F7-n5F" customClass="ThemeDetailTableViewController" customModule="WATCHA" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="UA0-Sk-pcy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -1744,6 +1744,6 @@
         <image name="홈" width="23" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="H7m-Ok-EpA"/>
+        <segue reference="NvK-Fq-bKT"/>
     </inferredMetricsTieBreakers>
 </document>
