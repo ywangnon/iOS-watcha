@@ -1269,7 +1269,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="150" id="SkE-wT-0fq">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="boxofficeCell" rowHeight="150" id="SkE-wT-0fq" customClass="BoxofficeTableViewCell" customModule="WATCHA" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SkE-wT-0fq" id="hvc-Ub-lbf">
@@ -1332,6 +1332,14 @@
                                         <constraint firstItem="woA-S0-axG" firstAttribute="leading" secondItem="hvc-Ub-lbf" secondAttribute="leadingMargin" id="eaY-XB-Ld6"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="actorsLabel" destination="do1-ow-iBK" id="xer-s5-JA1"/>
+                                    <outlet property="averageRatingLabel" destination="hMa-PX-X3P" id="Vr7-83-PnF"/>
+                                    <outlet property="depositAndBoxOfficeLabel" destination="0z0-wO-pfU" id="2Cr-dh-SlO"/>
+                                    <outlet property="directorLabel" destination="YPF-hZ-Fdh" id="fUM-mW-t5L"/>
+                                    <outlet property="posterImage" destination="d36-wK-s6s" id="xKg-EO-Wbj"/>
+                                    <outlet property="titleLabel" destination="gWi-RL-sn1" id="CRx-uS-bpp"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1340,6 +1348,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="GyM-Xb-eWD"/>
+                    <connections>
+                        <outlet property="boxofficeTableView" destination="BxF-z0-DTP" id="EUd-rV-hgA"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rRB-36-DDi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
