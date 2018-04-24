@@ -49,14 +49,14 @@ class RatingTableViewController: UITableViewController {
    }
    
    
-    override func viewDidLoad() {
+   override func viewDidLoad() {
       super.viewDidLoad()
       
       loadMovieData()
       tableView.rowHeight = 100
       
-    }
-
+   }
+   
    
    override func viewWillDisappear(_ animated: Bool) {
       navigationController?.navigationBar.isHidden = true
@@ -71,10 +71,10 @@ class RatingTableViewController: UITableViewController {
    
    
    func loadMovieData() {
-   //TODO: 서버에서 가져온 영화리스트를 movies 배열에 할당하여 데이터소스에서 사용할 것
+      //TODO: 서버에서 가져온 영화리스트를 movies 배열에 할당하여 데이터소스에서 사용할 것
       let userToken: HTTPHeaders = ["Authorization": TOKEN]
       genreName = "action"
-      Alamofire.request(API.MainPage.sortByGenre.action, method: .get, headers: userToken)
+      Alamofire.request(API.EvalPage.sortByGenre.action, method: .get, headers: userToken)
          .validate(statusCode: 200..<300)
          .responseJSON { response in
             if let error = response.error {
@@ -92,7 +92,7 @@ class RatingTableViewController: UITableViewController {
             }
       }
    }
-
+   
    
    @objc func moreButtonPressed() {
       let alertVC = UIAlertController(title: "WATCHA", message: "", preferredStyle: .actionSheet)
@@ -111,6 +111,7 @@ class RatingTableViewController: UITableViewController {
       let cancleAction = UIAlertAction(title: "취소", style: .cancel) { action in
          print("취소")
       }
+      
       alertVC.addAction(likeAction)
       alertVC.addAction(commentAction)
       alertVC.addAction(myCollectionAction)
@@ -139,53 +140,74 @@ class RatingTableViewController: UITableViewController {
       detailVC?.pkForMovie = gesture.pkForMovie
       detailVC?.genreName = genreName
       navigationController?.pushViewController(detailVC!, animated: true)
-
+      
    }
    
    
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
+   // MARK: - Table view data source
    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+   override func numberOfSections(in tableView: UITableView) -> Int {
+      // #warning Incomplete implementation, return the number of sections
+      return 1
+   }
+   
+   
+   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
       return movies.count
-    }
+   }
    
    
    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       if let cell = tableView.dequeueReusableCell(withIdentifier: "RatingCell", for: indexPath) as? RatingTableViewCell {
-         
+      if let cell = tableView.dequeueReusableCell(withIdentifier: "RatingCell", for: indexPath) as? RatingTableViewCell {
+         let movie = movies[indexPath.row]
+
          cell.cosmosView.didFinishTouchingCosmos = { rating in
-            // TODO : 별점 평가하기 터치가 끝나면 해당 유저의 영화 평점을 서버에 저장한다.
+            // TODO: Save with API to Project Server
             // 메인 스레드에서 하지 말것
             DispatchQueue.global().async {
-               print("Success Save Movie Rating")
+               print("===== Start Save Movie Rating =====")
+               let userToken = "Token \(UserDefaults.standard.string(forKey: "user_Token")!)"
+               let userHeaders: HTTPHeaders = ["Content-Type": "application/json", "Authorization": userToken]
+               let params: Parameters = [
+                  "user_want_movie": false,
+                  "user_watched_movie": false,
+                  "rating": String(rating),
+                  "comment": "",
+                  "movie": movie.pk
+               ]
+
+               Alamofire.request(API.MyPage.checkCreate, method: .post, parameters: params, encoding: JSONEncoding.default , headers: userHeaders)
+                  .validate(statusCode: 200..<300)
+                  .responseJSON { response in
+                     if let error = response.error {
+                        dump(error)
+                        return
+                     }
+                     print("Success Save Movie Rating")
+                     self.movies.remove(at: indexPath.row)
+                     tableView.reloadData()
+               }
             }
          }
          
-         let movie = movies[indexPath.row]
          print("movie = ", movie.title)
          let tapImageGesture = MovieTapGesture(target: self, action: #selector(self.movieTapped))
          tapImageGesture.pkForMovie = movie.pk
          tapImageGesture.genre = genreName
-
+         
          let url = URL(string: movie.posterImage)
          if let imageData = try? Data(contentsOf: url!, options: []) {
             cell.posterImgView.image = UIImage(data: imageData)
          }
          cell.posterImgView.addGestureRecognizer(tapImageGesture)
-
+         
          let tapTitleGesture = MovieTapGesture(target: self, action: #selector(self.movieTapped))
          tapTitleGesture.pkForMovie = movie.pk
          tapTitleGesture.genre = genreName
          
          cell.titleLable.text = movie.title
          cell.titleLable.addGestureRecognizer(tapTitleGesture)
-
+         
          cell.yearLabel.text = "\(movie.year)"
          cell.update(0)
          
@@ -200,13 +222,13 @@ class RatingTableViewController: UITableViewController {
    
    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
       let width = self.view.frame.size.width
-   
+      
       let headerView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: width, height: 40))
       headerView.backgroundColor = UIColor.white
       
       let categoryButton: UIButton = UIButton(frame: CGRect(x: headerView.frame.size.width/2 - 35,
-                                                    y: headerView.frame.size.height/2 - 8,
-                                                    width: 70, height: 17))
+                                                            y: headerView.frame.size.height/2 - 8,
+                                                            width: 70, height: 17))
       categoryButton.setTitle("카테고리", for: .normal)
       categoryButton.setTitleColor(UIColor.darkGray, for: .normal)
       categoryButton.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 13)
@@ -224,8 +246,8 @@ class RatingTableViewController: UITableViewController {
    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
       return 40.0
    }
-
-
+   
+   
 }
 
 
@@ -236,24 +258,4 @@ extension RatingTableViewController: CategoryDelegate {
       self.genreName = genre
    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

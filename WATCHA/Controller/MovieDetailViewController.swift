@@ -61,12 +61,12 @@ class MovieDetailViewController: UIViewController {
    }
    
    
-    override func viewDidLoad() {
+   override func viewDidLoad() {
       super.viewDidLoad()
       
       commentTableView.separatorStyle = .none
       registerDelegate()
-    }
+   }
    
    
    override func viewDidAppear(_ animated: Bool) {
@@ -174,7 +174,7 @@ class MovieDetailViewController: UIViewController {
    }
    
    
-
+   
    //MARK: - Button Action Methods
    @IBAction func backButtonPressed(_ sender: UIButton) {
       navigationController?.popViewController(animated: true)
@@ -184,13 +184,13 @@ class MovieDetailViewController: UIViewController {
    //보고싶어요 버튼 클릭시 액션 정의
    @IBAction func wantButtonPressed(_ sender: UIButton) {
    }
- 
+   
    
    //평가하기 버튼 클릭시 액션 정의
    @IBAction func rateButtonPressed(_ sender: UIButton) {
    }
    
-
+   
    //코멘트 버튼 클릭시 액션 정의
    @IBAction func commentButtonPressed(_ sender: UIButton) {
    }
@@ -345,29 +345,3 @@ extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource 
    
    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
