@@ -13,9 +13,10 @@ class MovieDetailViewController: UIViewController {
    
    private let TOKEN = "token \(UserDefaults.standard.string(forKey: "user_Token")!)"
    
-   var movie: MovieDetailInfo?
-   var recommendMovies: [RatingMovie] = []
-   var actors: [ActorType] = []
+   private var movie: MovieDetailInfo?
+   private var recommendMovies: [RatingMovie] = []
+   private var actors: [ActorType] = []
+   
    var genreName: String = ""
    
    @IBOutlet weak var actorCollectionView: UICollectionView!
@@ -79,8 +80,11 @@ class MovieDetailViewController: UIViewController {
    func loadRecommendMovies() {
       print("======== start load recommend movies Info ========")
       print("recommend genre = ",genreName)
+      if genreName == "" {
+         genreName = "top-world"
+      }
       let userToken: HTTPHeaders = ["Authorization": TOKEN]
-      let url = API.Movie.detail + "genre/\(genreName)/"
+      let url = API.Movie.detail + "\(typeOf(genreName))/\(genreName)/"
       Alamofire.request(url, method: .get, headers: userToken)
          .validate(statusCode: 200..<300)
          .responseJSON { response in
@@ -98,6 +102,17 @@ class MovieDetailViewController: UIViewController {
                print(error)
             }
       }
+   }
+   
+   
+   func typeOf(_ type: String) -> String {
+      let tags = ["top-korea", "million-seller", "top-world", "hero", "sports", "family"]
+      for tag in tags {
+         if tag == genreName {
+            return "tag"
+         }
+      }
+      return "genre"
    }
    
    
@@ -240,6 +255,8 @@ extension MovieDetailViewController: UICollectionViewDelegate, UICollectionViewD
          let urlForActor = URL(string: who.actor.profileImage)
          if let imageData = try? Data(contentsOf: urlForActor!, options: []) {
             cell.actorImageView.image = UIImage(data: imageData)
+            cell.actorImageView.layer.cornerRadius = 10
+            cell.actorImageView.clipsToBounds = true
          }
          
          let name = who.actor.name

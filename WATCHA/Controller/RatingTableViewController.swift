@@ -12,6 +12,7 @@ import Alamofire
 class MovieTapGesture: UITapGestureRecognizer {
    var pkForMovie = Int()
    var genre = String()
+   var type = String()
 }
 
 class RatingTableViewController: UITableViewController {
@@ -21,7 +22,7 @@ class RatingTableViewController: UITableViewController {
    var movies: [RatingMovie] = []
    var pkForMoreButton: Int?
    var pkForMovieDetail: Int?
-   var genreName: String = ""
+   var genreName: String = "comedy"
    
    var urlForMovieList: String? {
       willSet(url){
@@ -73,7 +74,6 @@ class RatingTableViewController: UITableViewController {
    func loadMovieData() {
       //TODO: 서버에서 가져온 영화리스트를 movies 배열에 할당하여 데이터소스에서 사용할 것
       let userToken: HTTPHeaders = ["Authorization": TOKEN]
-      genreName = "action"
       Alamofire.request(API.EvalPage.sortByGenre.action, method: .get, headers: userToken)
          .validate(statusCode: 200..<300)
          .responseJSON { response in
@@ -97,7 +97,7 @@ class RatingTableViewController: UITableViewController {
    @objc func moreButtonPressed() {
       let alertVC = UIAlertController(title: "WATCHA", message: "", preferredStyle: .actionSheet)
       let likeAction = UIAlertAction(title: "보고싶어요", style: .default) { action in
-         print("보고싶어요")
+         
       }
       let commentAction = UIAlertAction(title: "코멘트", style: .default) { action in
          print("코멘트")
@@ -138,7 +138,7 @@ class RatingTableViewController: UITableViewController {
       
       let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "MovieDetailViewController") as? MovieDetailViewController
       detailVC?.pkForMovie = gesture.pkForMovie
-      detailVC?.genreName = genreName
+      detailVC?.genreName = gesture.genre
       navigationController?.pushViewController(detailVC!, animated: true)
       
    }
@@ -169,7 +169,7 @@ class RatingTableViewController: UITableViewController {
                let userToken = "Token \(UserDefaults.standard.string(forKey: "user_Token")!)"
                let userHeaders: HTTPHeaders = ["Content-Type": "application/json", "Authorization": userToken]
                let params: Parameters = [
-                  "user_want_movie": false,
+                  "user_want_movie": true,
                   "user_watched_movie": false,
                   "rating": String(rating),
                   "comment": "",

@@ -437,8 +437,8 @@
                                                     <constraint firstAttribute="height" constant="180" id="xoJ-mk-5if"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w2u-gV-Q4e" userLabel="Comment View">
-                                                <rect key="frame" x="0.0" y="1080" width="375" height="230"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w2u-gV-Q4e" userLabel="Comment View">
+                                                <rect key="frame" x="0.0" y="1040" width="375" height="250"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="코멘트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XmV-nw-9iH">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
@@ -578,7 +578,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sF1-54-hzu" userLabel="Recommend View">
                                                 <rect key="frame" x="0.0" y="1300" width="375" height="520"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비슷한 작품" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epW-eB-5tj">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="추천 작품" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epW-eB-5tj">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="rz9-ZR-tkI"/>
@@ -1824,17 +1824,17 @@
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GalleryCell" id="av4-Mi-AJB" customClass="GalleryCollectionViewCell" customModule="WATCHA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="75" height="113"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyPageCell" id="av4-Mi-AJB" customClass="MyPageCollectionViewCell" customModule="WATCHA" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="0.0" width="75" height="113"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="75" height="113"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YWc-kK-bGp">
+                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YWc-kK-bGp">
                                                     <rect key="frame" x="0.0" y="0.0" width="75" height="113"/>
                                                 </imageView>
                                             </subviews>
@@ -1846,9 +1846,21 @@
                                             <constraint firstAttribute="bottom" secondItem="YWc-kK-bGp" secondAttribute="bottom" id="u5q-SF-bjW"/>
                                         </constraints>
                                         <size key="customSize" width="75" height="113"/>
+                                        <connections>
+                                            <outlet property="recommendMovieImage" destination="YWc-kK-bGp" id="WNa-jp-BdB"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0dy-7H-WS5">
+                                <rect key="frame" x="315" y="69" width="55" height="30"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOutButtonPressed:" destination="ZIT-u6-pdp" eventType="touchUpInside" id="cNG-eu-c5x"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -1856,10 +1868,12 @@
                             <constraint firstItem="BgN-bI-iOg" firstAttribute="trailing" secondItem="Ys6-Ks-jkR" secondAttribute="trailing" id="45P-QQ-KBP"/>
                             <constraint firstItem="Ys6-Ks-jkR" firstAttribute="top" secondItem="a11-Kb-387" secondAttribute="top" id="6CS-xc-dtl"/>
                             <constraint firstItem="BgN-bI-iOg" firstAttribute="trailing" secondItem="5c8-6W-MrK" secondAttribute="trailing" id="6u8-kP-1dj"/>
+                            <constraint firstItem="0dy-7H-WS5" firstAttribute="top" secondItem="BgN-bI-iOg" secondAttribute="top" constant="5" id="B3E-dX-1xK"/>
                             <constraint firstItem="o7j-dG-VuY" firstAttribute="centerX" secondItem="BgN-bI-iOg" secondAttribute="centerX" id="EmC-nR-okr"/>
                             <constraint firstItem="Ubg-qa-rtu" firstAttribute="top" secondItem="Ys6-Ks-jkR" secondAttribute="top" constant="155" id="H0c-2s-hlV"/>
                             <constraint firstItem="Imx-UA-2hy" firstAttribute="top" secondItem="Ys6-Ks-jkR" secondAttribute="bottom" id="KXp-HH-04Z"/>
                             <constraint firstItem="BgN-bI-iOg" firstAttribute="trailing" secondItem="Imx-UA-2hy" secondAttribute="trailing" id="Leu-Ki-jJj"/>
+                            <constraint firstItem="BgN-bI-iOg" firstAttribute="trailing" secondItem="0dy-7H-WS5" secondAttribute="trailing" constant="5" id="NM9-cI-RjD"/>
                             <constraint firstItem="UD9-ze-HfP" firstAttribute="centerX" secondItem="BgN-bI-iOg" secondAttribute="centerX" id="NjR-5o-0gJ"/>
                             <constraint firstItem="lZT-p4-CrB" firstAttribute="top" secondItem="Ubg-qa-rtu" secondAttribute="bottom" constant="10" id="Q61-BQ-kKy"/>
                             <constraint firstItem="BgN-bI-iOg" firstAttribute="bottom" secondItem="5c8-6W-MrK" secondAttribute="bottom" id="VSj-hB-BXu"/>
@@ -1982,6 +1996,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FNk-TJ-zlI">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="ZIT-u6-pdp" kind="relationship" relationship="rootViewController" id="eKo-f1-Gjz"/>
                     </connections>

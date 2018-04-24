@@ -24,6 +24,7 @@ enum API {
       static let update = API.baseURL + "api/members/detail/"
       static let delete = API.baseURL + "api/members/detail/"
       static let img_Profile_Update = API.baseURL + "api/members/{pk값}/img-profile/"
+      static let logout = API.baseURL + "api/members/logout/"
    }
    
    enum Movie {

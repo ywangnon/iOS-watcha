@@ -36,8 +36,8 @@ struct MyPage: Codable {
    var pk: Int
    var email: String
    var nickName: String
-   var profileImage: String
-   var totalRunnigTime: String
+   var profileImage: String?
+   var totalRunnigTime: Int
    var checkedMovieCount: Int
    var stillImage: StillImage
    
