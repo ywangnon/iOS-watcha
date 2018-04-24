@@ -111,6 +111,25 @@ class SignInViewController: UIViewController {
         // Add the button to the view
         view.addSubview(myLoginButton)
         
+        createToolBar()
+    }
+    
+    func createToolBar() {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(self.doneClicked))
+        
+        toolbar.setItems([flexibleSpace, doneButton], animated: false)
+        
+        emailTextField.inputAccessoryView = toolbar
+        passwordTextField.inputAccessoryView = toolbar
+    }
+    
+    @objc func doneClicked() {
+        view.endEditing(true)
     }
     
     override func didReceiveMemoryWarning() {
