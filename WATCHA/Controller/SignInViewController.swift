@@ -46,6 +46,7 @@ class SignInViewController: UIViewController {
                     
                     let plist = UserDefaults.standard
                     plist.set(token_String, forKey: "user_Token")
+                    plist.set(userInfo.user.pk, forKey: "#$id8461038765")
                     print("\n---------- [ user_Token ] ----------\n")
                     print(plist.string(forKey: "user_Token"))
                     self.performSegue(withIdentifier: "goMain2", sender: nil)
@@ -111,6 +112,25 @@ class SignInViewController: UIViewController {
         // Add the button to the view
         view.addSubview(myLoginButton)
         
+        createToolBar()
+    }
+    
+    func createToolBar() {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(self.doneClicked))
+        
+        toolbar.setItems([flexibleSpace, doneButton], animated: false)
+        
+        emailTextField.inputAccessoryView = toolbar
+        passwordTextField.inputAccessoryView = toolbar
+    }
+    
+    @objc func doneClicked() {
+        view.endEditing(true)
     }
     
     override func didReceiveMemoryWarning() {
