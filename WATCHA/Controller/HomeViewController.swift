@@ -47,7 +47,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
       
       print("\n---------- [ url ] ----------\n")
       
-      Alamofire.request(API.MainPage.sortByTag.topKorea, method: .get, headers: userToken)
+      Alamofire.request(API.MainPage.sortByGenre.romance, method: .get, headers: userToken)
          .validate(statusCode: 200..<300)
          .responseJSON { response in
             if let error = response.error {
@@ -98,13 +98,19 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
          let movie = SearchMovies[indexPath.row]
          let tapImageGesture = MovieTapGesture(target: self, action: #selector(self.movieTapped))
          tapImageGesture.pkForMovie = movie.id
-         
+        
          let url = URL(string: movie.poster_image)
          if let imageData = try? Data(contentsOf: url!, options: []) {
             cell.movieImage.image = UIImage(data: imageData)
          }
          cell.movieImage.isUserInteractionEnabled = true
          cell.movieImage.addGestureRecognizer(tapImageGesture)
+        
+        let tapViewGesture = MovieTapGesture(target: self, action: #selector(self.movieTapped))
+        tapViewGesture.pkForMovie = movie.id
+        
+        cell.touchView.isUserInteractionEnabled = true
+        cell.touchView.addGestureRecognizer(tapViewGesture)
          
          cell.movieTitleLabel.text = movie.title_ko
          cell.ratingLabel.text = "0.0"
@@ -122,6 +128,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
          }
          cell.movieImage.isUserInteractionEnabled = true
          cell.movieImage.addGestureRecognizer(tapImageGesture)
+        
+        let tapViewGesture = MovieTapGesture(target: self, action: #selector(self.movieTapped))
+        tapViewGesture.pkForMovie = movie.id
+        tapViewGesture.genre = movie.genre[0].name
+        
+        cell.touchView.isUserInteractionEnabled = true
+        cell.touchView.addGestureRecognizer(tapViewGesture)
          
          cell.movieTitleLabel.text = movie.title
          cell.ratingLabel.text = movie.averageRate
@@ -139,7 +152,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
       searchTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
       
       HometableView.delegate = self
-      HometableView.rowHeight = 256
+      HometableView.rowHeight = 300
       
       createToolBar()
    }

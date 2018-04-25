@@ -14,6 +14,7 @@ class HomeCell: UITableViewCell {
     @IBOutlet var movieTitleLabel: UILabel!
     
     @IBOutlet var movieImage: UIImageView!
+    @IBOutlet var touchView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
