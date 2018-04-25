@@ -122,8 +122,16 @@ class MyPageViewController: UIViewController {
 //
 //
 //      }
-   }
-   
+    
+    
+    Alamofire.request(API.User.logout).response { response in
+        debugPrint(response)
+        print("success log out")
+    }
+    
+    
+    }
+    
    
    @objc func movieTapped(gesture : MovieTapGesture) {
       print("MyPage for movie Selected")
