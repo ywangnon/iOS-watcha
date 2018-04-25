@@ -29,7 +29,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g2f-PK-Mmm" userLabel="Top View">
                                                 <rect key="frame" x="0.0" y="-20" width="375" height="400"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x9p-bp-zGZ">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x9p-bp-zGZ">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="280"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="280" id="x2s-ls-Iqj"/>
@@ -745,25 +745,25 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="24" id="uOX-Ap-xpb"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="gBA-la-hQj" secondAttribute="trailing" id="G0M-oH-9Cl"/>
                                         <constraint firstItem="UpS-gC-0q4" firstAttribute="leading" secondItem="1bx-tB-mMp" secondAttribute="leadingMargin" constant="28" id="GCq-x8-qEY"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="UpS-gC-0q4" secondAttribute="trailing" constant="28" id="HfB-gb-lc8"/>
-                                        <constraint firstItem="gBA-la-hQj" firstAttribute="top" secondItem="1bx-tB-mMp" secondAttribute="top" id="ZE6-NS-eOE"/>
-                                        <constraint firstAttribute="bottom" secondItem="gBA-la-hQj" secondAttribute="bottom" id="coa-gF-ALF"/>
+                                        <constraint firstAttribute="bottom" secondItem="gBA-la-hQj" secondAttribute="bottom" id="KE8-Cf-Snm"/>
+                                        <constraint firstItem="gBA-la-hQj" firstAttribute="leading" secondItem="1bx-tB-mMp" secondAttribute="leading" id="eWZ-kP-1u6"/>
+                                        <constraint firstItem="gBA-la-hQj" firstAttribute="top" secondItem="1bx-tB-mMp" secondAttribute="top" id="mJm-Sv-aUN"/>
                                         <constraint firstItem="UpS-gC-0q4" firstAttribute="centerY" secondItem="1bx-tB-mMp" secondAttribute="centerY" id="qCX-gB-EPU"/>
-                                        <constraint firstAttribute="trailing" secondItem="gBA-la-hQj" secondAttribute="trailing" id="tN6-3u-iZC"/>
-                                        <constraint firstItem="gBA-la-hQj" firstAttribute="leading" secondItem="1bx-tB-mMp" secondAttribute="leading" id="vMm-Kd-oqo"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="themeImageView" destination="gBA-la-hQj" id="Nnj-04-acQ"/>
                                     <outlet property="themeTitleLabel" destination="UpS-gC-0q4" id="7M8-RH-cf7"/>
-                                    <segue destination="9Wg-F7-n5F" kind="presentation" id="Vkz-LG-Mhd"/>
+                                    <segue destination="9Wg-F7-n5F" kind="show" id="8ZM-Uz-QE7"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -798,7 +798,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bCs-da-FkT">
                                             <rect key="frame" x="7" y="7" width="377" height="135.66666666666666"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="박스오피스포스터" translatesAutoresizingMaskIntoConstraints="NO" id="0Ci-7p-voW">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="박스오피스포스터" translatesAutoresizingMaskIntoConstraints="NO" id="0Ci-7p-voW">
                                                     <rect key="frame" x="0.0" y="0.0" width="97" height="135.66666666666666"/>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Ujh-pP-veG">
@@ -1290,7 +1290,7 @@
         <scene sceneID="9eo-44-UGE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d4y-Bu-N6v" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="테마" image="테마" id="gYo-cw-vtC"/>
+                    <tabBarItem key="tabBarItem" title="테마" image="테마" id="gYo-cw-vtC"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wjh-89-9eJ">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -1305,7 +1305,7 @@
             </objects>
             <point key="canvasLocation" x="2724" y="-1315"/>
         </scene>
-        <!--Box Office Table View Controller-->
+        <!--박스오피스-->
         <scene sceneID="pXf-9L-JIE">
             <objects>
                 <tableViewController id="N7p-We-qRs" customClass="BoxOfficeTableViewController" customModule="WATCHA" customModuleProvider="target" sceneMemberID="viewController">
@@ -1324,8 +1324,12 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="woA-S0-axG">
                                             <rect key="frame" x="20" y="11" width="374" height="128"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" image="박스오피스포스터" translatesAutoresizingMaskIntoConstraints="NO" id="d36-wK-s6s">
-                                                    <rect key="frame" x="0.0" y="0.0" width="97" height="128"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" image="박스오피스포스터" translatesAutoresizingMaskIntoConstraints="NO" id="d36-wK-s6s">
+                                                    <rect key="frame" x="0.0" y="0.0" width="97" height="149.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="97" id="FEf-Wm-m77"/>
+                                                        <constraint firstAttribute="height" constant="149.5" id="FSv-IX-lgP"/>
+                                                    </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="kNx-XI-JDX">
                                                     <rect key="frame" x="105" y="0.0" width="269" height="128"/>
@@ -1369,14 +1373,37 @@
                                                 <constraint firstItem="d36-wK-s6s" firstAttribute="top" secondItem="woA-S0-axG" secondAttribute="top" id="TXQ-47-OpF"/>
                                             </constraints>
                                         </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gf-yp-gwe">
+                                            <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
+                                            <color key="backgroundColor" red="1" green="0.47450980392156861" blue="0.2315066133558833" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="18" id="1Zf-CN-4yW"/>
+                                                <constraint firstAttribute="width" secondItem="0gf-yp-gwe" secondAttribute="height" multiplier="1:1" id="6bz-pg-oHa"/>
+                                                <constraint firstAttribute="height" constant="18" id="VQS-bJ-XJB"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="woA-S0-axG" secondAttribute="bottom" id="2aU-qA-JhF"/>
-                                        <constraint firstItem="woA-S0-axG" firstAttribute="top" secondItem="hvc-Ub-lbf" secondAttribute="topMargin" id="ALp-qg-cqN"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="woA-S0-axG" secondAttribute="trailing" id="YNH-OL-Sxe"/>
-                                        <constraint firstItem="woA-S0-axG" firstAttribute="leading" secondItem="hvc-Ub-lbf" secondAttribute="leadingMargin" id="eaY-XB-Ld6"/>
+                                        <constraint firstItem="woA-S0-axG" firstAttribute="leading" secondItem="hvc-Ub-lbf" secondAttribute="leading" id="6Q2-J4-f0Q"/>
+                                        <constraint firstAttribute="trailing" secondItem="woA-S0-axG" secondAttribute="trailing" id="8ik-Zt-XgH"/>
+                                        <constraint firstItem="woA-S0-axG" firstAttribute="top" secondItem="hvc-Ub-lbf" secondAttribute="top" id="LZH-ca-1SZ"/>
+                                        <constraint firstAttribute="bottom" secondItem="woA-S0-axG" secondAttribute="bottom" id="XIP-vI-nVy"/>
+                                        <constraint firstItem="0gf-yp-gwe" firstAttribute="top" secondItem="hvc-Ub-lbf" secondAttribute="top" id="nmd-he-jjb"/>
+                                        <constraint firstItem="0gf-yp-gwe" firstAttribute="leading" secondItem="hvc-Ub-lbf" secondAttribute="leading" id="rIC-8j-hyu"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="actorsLabel" destination="do1-ow-iBK" id="xer-s5-JA1"/>
+                                    <outlet property="averageRatingLabel" destination="hMa-PX-X3P" id="Vr7-83-PnF"/>
+                                    <outlet property="depositAndBoxOfficeLabel" destination="0z0-wO-pfU" id="2Cr-dh-SlO"/>
+                                    <outlet property="directorLabel" destination="YPF-hZ-Fdh" id="fUM-mW-t5L"/>
+                                    <outlet property="posterImage" destination="d36-wK-s6s" id="xKg-EO-Wbj"/>
+                                    <outlet property="rankLabel" destination="0gf-yp-gwe" id="2fk-ft-usI"/>
+                                    <outlet property="titleLabel" destination="gWi-RL-sn1" id="CRx-uS-bpp"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1384,7 +1411,10 @@
                             <outlet property="delegate" destination="N7p-We-qRs" id="rQg-8F-f5Q"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="GyM-Xb-eWD"/>
+                    <navigationItem key="navigationItem" title="박스오피스" id="GyM-Xb-eWD"/>
+                    <connections>
+                        <outlet property="boxofficeTableView" destination="BxF-z0-DTP" id="EUd-rV-hgA"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rRB-36-DDi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1976,7 +2006,7 @@
         <scene sceneID="YjH-wl-hVW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MvU-ts-bHy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="박스오피스" image="박스오피스" id="wc3-Le-xIX"/>
+                    <tabBarItem key="tabBarItem" title="박스오피스" image="박스오피스" id="wc3-Le-xIX"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IGZ-z0-tEw">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -1995,7 +2025,7 @@
         <scene sceneID="e4H-Yq-ALi">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="22a-b9-Pko" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="홈" image="홈" id="TbP-fa-YcL"/>
+                    <tabBarItem key="tabBarItem" title="홈" image="홈" id="TbP-fa-YcL"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vYf-XD-26z">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -2014,7 +2044,7 @@
         <scene sceneID="JZh-AC-M3I">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="W76-CK-sGG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="평가늘리기" image="평가" id="vO5-RQ-DFL"/>
+                    <tabBarItem key="tabBarItem" title="평가늘리기" image="평가" id="vO5-RQ-DFL"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eve-pv-l9A">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -2034,7 +2064,7 @@
         <scene sceneID="hOP-97-SH5">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XuJ-hY-djR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="마이페이지" image="마이페이지" selectedImage="마이페이지하일라이트" id="6Dj-0a-bqN"/>
+                    <tabBarItem key="tabBarItem" title="마이페이지" image="마이페이지" selectedImage="마이페이지하일라이트" id="6Dj-0a-bqN"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QLI-6y-lUn">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -2057,12 +2087,12 @@
         <image name="CheckIcon" width="879" height="720"/>
         <image name="domesticMovieTopRank" width="375" height="138"/>
         <image name="마이페이지" width="16" height="16"/>
-        <image name="마이페이지하일라이트" width="23" height="23"/>
-        <image name="박스오피스" width="23" height="23"/>
-        <image name="박스오피스포스터" width="97" height="136"/>
-        <image name="테마" width="23" height="23"/>
-        <image name="평가" width="23" height="23"/>
-        <image name="홈" width="23" height="23"/>
+        <image name="마이페이지하일라이트" width="23" height="23"/>
+        <image name="박스오피스" width="23" height="23"/>
+        <image name="박스오피스포스터" width="97" height="136"/>
+        <image name="테마" width="23" height="23"/>
+        <image name="평가" width="23" height="23"/>
+        <image name="홈" width="23" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="3Mq-pf-IIA"/>

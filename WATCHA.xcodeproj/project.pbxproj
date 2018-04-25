@@ -17,6 +17,9 @@
 		765FBC9F207EEE4A004920E6 /* ThemeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765FBC9E207EEE4A004920E6 /* ThemeTableViewController.swift */; };
 		7674B8F32087012300DD31F4 /* ThemeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674B8F22087012300DD31F4 /* ThemeTableViewCell.swift */; };
 		7674B8F5208702C100DD31F4 /* ThemeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674B8F4208702C100DD31F4 /* ThemeDetailTableViewCell.swift */; };
+		76B01993208F7E75009F94B6 /* ThemeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B01992208F7E75009F94B6 /* ThemeDetail.swift */; };
+		76B01995208F7F4A009F94B6 /* BoxofficeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B01994208F7F4A009F94B6 /* BoxofficeList.swift */; };
+		76B01997208F8493009F94B6 /* BoxofficeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B01996208F8493009F94B6 /* BoxofficeTableViewCell.swift */; };
 		836CC84DE1748B040F7F3256 /* Pods_WATCHA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB2897062E9C94DCF98D7ABF /* Pods_WATCHA.framework */; };
 		FE037A70208078F800956C4D /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE037A6F208078F800956C4D /* CategoryCell.swift */; };
 		FE037A722082085700956C4D /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE037A712082085700956C4D /* CategoryViewController.swift */; };
@@ -57,6 +60,9 @@
 		765FBC9E207EEE4A004920E6 /* ThemeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeTableViewController.swift; sourceTree = "<group>"; };
 		7674B8F22087012300DD31F4 /* ThemeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeTableViewCell.swift; sourceTree = "<group>"; };
 		7674B8F4208702C100DD31F4 /* ThemeDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeDetailTableViewCell.swift; sourceTree = "<group>"; };
+		76B01992208F7E75009F94B6 /* ThemeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeDetail.swift; sourceTree = "<group>"; };
+		76B01994208F7F4A009F94B6 /* BoxofficeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxofficeList.swift; sourceTree = "<group>"; };
+		76B01996208F8493009F94B6 /* BoxofficeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxofficeTableViewCell.swift; sourceTree = "<group>"; };
 		988CA4811CC524384C33DC93 /* Pods-WATCHA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WATCHA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WATCHA/Pods-WATCHA.debug.xcconfig"; sourceTree = "<group>"; };
 		A5C39F096531800B40459C7F /* Pods-WATCHA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WATCHA.release.xcconfig"; path = "Pods/Target Support Files/Pods-WATCHA/Pods-WATCHA.release.xcconfig"; sourceTree = "<group>"; };
 		EB2897062E9C94DCF98D7ABF /* Pods_WATCHA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WATCHA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -203,6 +209,7 @@
 				FE8909512085D3FE00BCA5C9 /* YoutubeCollectionViewCell.swift */,
 				FE8909532085D42800BCA5C9 /* RecommendCollectionViewCell.swift */,
 				FE16A38E208F2120000B004A /* MyPageCollectionViewCell.swift */,
+				76B01996208F8493009F94B6 /* BoxofficeTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -214,6 +221,8 @@
 				0107490120893E7E0009C1BA /* Home.swift */,
 				FEBF9F66207C93A900DD9C3B /* RatingMovie.swift */,
 				76401CF8207F1D2B0025CA30 /* ThemeList.swift */,
+				76B01992208F7E75009F94B6 /* ThemeDetail.swift */,
+				76B01994208F7F4A009F94B6 /* BoxofficeList.swift */,
 				FE037A7320848AA300956C4D /* MovieDetail.swift */,
 				01074903208AF8660009C1BA /* Search.swift */,
 				FE16A38C208F19A9000B004A /* WantMovieList.swift */,
@@ -341,6 +350,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76B01993208F7E75009F94B6 /* ThemeDetail.swift in Sources */,
 				FE8909522085D3FE00BCA5C9 /* YoutubeCollectionViewCell.swift in Sources */,
 				FE8567A5207B15090031E2CB /* User.swift in Sources */,
 				76401CF9207F1D2B0025CA30 /* ThemeList.swift in Sources */,
@@ -351,11 +361,13 @@
 				FE8909542085D42800BCA5C9 /* RecommendCollectionViewCell.swift in Sources */,
 				FE8777E1207CDC0C0096FCD8 /* CosmosDistrib.swift in Sources */,
 				FE55E1E0207F015A00137175 /* BoxOfficeTableViewController.swift in Sources */,
+				76B01997208F8493009F94B6 /* BoxofficeTableViewCell.swift in Sources */,
 				FE85677B207B0FCD0031E2CB /* WelcomeViewController.swift in Sources */,
 				015E8FD82085AC7300BEC5B3 /* HomeViewController.swift in Sources */,
 				765FBC9D207EEDD2004920E6 /* ThemeDetailTableViewController.swift in Sources */,
 				FE8909502085D3C500BCA5C9 /* GalleryCollectionViewCell.swift in Sources */,
 				765FBC9F207EEE4A004920E6 /* ThemeTableViewController.swift in Sources */,
+				76B01995208F7F4A009F94B6 /* BoxofficeList.swift in Sources */,
 				01074904208AF8660009C1BA /* Search.swift in Sources */,
 				7674B8F5208702C100DD31F4 /* ThemeDetailTableViewCell.swift in Sources */,
 				FE856779207B0FCD0031E2CB /* AppDelegate.swift in Sources */,

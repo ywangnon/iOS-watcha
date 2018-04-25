@@ -92,7 +92,7 @@ class SignUpViewController: UIViewController {
                     
                     let plist = UserDefaults.standard
                     plist.set(token_String, forKey: "user_Token")
-                    
+                    plist.set(userInfo.user.pk, forKey: "#$id8461038765")
                     self.performSegue(withIdentifier: "goMain3", sender: nil)
                     print("\n---------- [ Value End ] ----------\n")
                 case .failure(let error):
