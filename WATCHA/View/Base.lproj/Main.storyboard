@@ -29,7 +29,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g2f-PK-Mmm" userLabel="Top View">
                                                 <rect key="frame" x="0.0" y="-20" width="375" height="400"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x9p-bp-zGZ">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x9p-bp-zGZ">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="280"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="280" id="x2s-ls-Iqj"/>
@@ -450,7 +450,7 @@
                                                         <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="X47-Vb-Jlh">
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="X47-Vb-Jlh">
                                                         <rect key="frame" x="0.0" y="20" width="375" height="200"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -798,7 +798,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bCs-da-FkT">
                                             <rect key="frame" x="7" y="7" width="377" height="135.66666666666666"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="박스오피스포스터" translatesAutoresizingMaskIntoConstraints="NO" id="0Ci-7p-voW">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="박스오피스포스터" translatesAutoresizingMaskIntoConstraints="NO" id="0Ci-7p-voW">
                                                     <rect key="frame" x="0.0" y="0.0" width="97" height="135.66666666666666"/>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Ujh-pP-veG">
@@ -1290,7 +1290,7 @@
         <scene sceneID="9eo-44-UGE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d4y-Bu-N6v" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="테마" image="테마" id="gYo-cw-vtC"/>
+                    <tabBarItem key="tabBarItem" title="테마" image="테마" id="gYo-cw-vtC"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wjh-89-9eJ">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -1999,7 +1999,7 @@
         <scene sceneID="YjH-wl-hVW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MvU-ts-bHy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="박스오피스" image="박스오피스" id="wc3-Le-xIX"/>
+                    <tabBarItem key="tabBarItem" title="박스오피스" image="박스오피스" id="wc3-Le-xIX"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IGZ-z0-tEw">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -2018,7 +2018,7 @@
         <scene sceneID="e4H-Yq-ALi">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="22a-b9-Pko" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="홈" image="홈" id="TbP-fa-YcL"/>
+                    <tabBarItem key="tabBarItem" title="홈" image="홈" id="TbP-fa-YcL"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vYf-XD-26z">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -2037,7 +2037,7 @@
         <scene sceneID="JZh-AC-M3I">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="W76-CK-sGG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="평가늘리기" image="평가" id="vO5-RQ-DFL"/>
+                    <tabBarItem key="tabBarItem" title="평가늘리기" image="평가" id="vO5-RQ-DFL"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eve-pv-l9A">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -2057,7 +2057,7 @@
         <scene sceneID="hOP-97-SH5">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XuJ-hY-djR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="마이페이지" image="마이페이지" selectedImage="마이페이지하일라이트" id="6Dj-0a-bqN"/>
+                    <tabBarItem key="tabBarItem" title="마이페이지" image="마이페이지" selectedImage="마이페이지하일라이트" id="6Dj-0a-bqN"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QLI-6y-lUn">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -2080,12 +2080,12 @@
         <image name="CheckIcon" width="879" height="720"/>
         <image name="domesticMovieTopRank" width="375" height="138"/>
         <image name="마이페이지" width="16" height="16"/>
-        <image name="마이페이지하일라이트" width="23" height="23"/>
-        <image name="박스오피스" width="23" height="23"/>
-        <image name="박스오피스포스터" width="97" height="136"/>
-        <image name="테마" width="23" height="23"/>
-        <image name="평가" width="23" height="23"/>
-        <image name="홈" width="23" height="23"/>
+        <image name="마이페이지하일라이트" width="23" height="23"/>
+        <image name="박스오피스" width="23" height="23"/>
+        <image name="박스오피스포스터" width="97" height="136"/>
+        <image name="테마" width="23" height="23"/>
+        <image name="평가" width="23" height="23"/>
+        <image name="홈" width="23" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="3Mq-pf-IIA"/>
