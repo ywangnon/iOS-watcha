@@ -1335,52 +1335,26 @@
                                                     <rect key="frame" x="105" y="0.0" width="309" height="149.66666666666666"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="영화제목" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWi-RL-sn1">
-<<<<<<< HEAD
-                                                            <rect key="frame" x="0.0" y="0.0" width="69.333333333333329" height="41.333333333333336"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-=======
                                                             <rect key="frame" x="0.0" y="0.0" width="69.333333333333329" height="42.333333333333336"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
->>>>>>> 4f8312cf3f974001b0d302d7021bf8d1e4e3176c
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평균 별점" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMa-PX-X3P">
-<<<<<<< HEAD
-                                                            <rect key="frame" x="0.0" y="41.333333333333336" width="48.666666666666664" height="27.333333333333336"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-=======
                                                             <rect key="frame" x="0.0" y="42.333333333333343" width="63.333333333333336" height="35.666666666666657"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
->>>>>>> 4f8312cf3f974001b0d302d7021bf8d1e4e3176c
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="예매율, 누적관객" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0z0-wO-pfU">
-<<<<<<< HEAD
-                                                            <rect key="frame" x="0.0" y="68.666666666666671" width="86.333333333333329" height="27"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-=======
                                                             <rect key="frame" x="0.0" y="78" width="112" height="36"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
->>>>>>> 4f8312cf3f974001b0d302d7021bf8d1e4e3176c
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="감독" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPF-hZ-Fdh">
-<<<<<<< HEAD
-                                                            <rect key="frame" x="0.0" y="95.666666666666671" width="22.666666666666668" height="27"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주연배우" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="do1-ow-iBK">
-                                                            <rect key="frame" x="0.0" y="122.66666666666669" width="45" height="27"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-=======
                                                             <rect key="frame" x="0.0" y="114.00000000000001" width="29.666666666666668" height="35.666666666666671"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
->>>>>>> 4f8312cf3f974001b0d302d7021bf8d1e4e3176c
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
