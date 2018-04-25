@@ -56,11 +56,13 @@ struct StillImage: Codable {
    var id: Int
    var movieId: Int
    var imageUrl: String
+   var imageUrlWeb: String
    
    private enum CodingKeys: String, CodingKey {
       case id
       case movieId = "movie"
-      case imageUrl = "still_img"
+      case imageUrl = "still_img_x3"
+      case imageUrlWeb = "still_img"
    }
 }
 
