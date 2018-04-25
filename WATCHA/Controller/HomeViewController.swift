@@ -3,7 +3,7 @@
 //  WATCHA
 //
 //  Created by Hansub Yoo on 2018. 4. 17..
-//  Copyright © 2018년 Seo Yoo Hansub. All rights reserved.
+//  Copyright © 2018년 Yoo Hansub. All rights reserved.
 //
 
 import UIKit
@@ -73,6 +73,15 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        HometableView.reloadData()
+        navigationController?.navigationBar.isHidden = false
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searchBool {
             return SearchMovies.count
@@ -90,7 +99,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let tapImageGesture = MovieTapGesture(target: self, action: #selector(self.movieTapped))
             tapImageGesture.pkForMovie = movie.id
             
-            
             let url = URL(string: movie.poster_image)
             if let imageData = try? Data(contentsOf: url!, options: []) {
                 cell.movieImage.image = UIImage(data: imageData)
@@ -106,8 +114,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let movie = movies[indexPath.row]
             let tapImageGesture = MovieTapGesture(target: self, action: #selector(self.movieTapped))
             tapImageGesture.pkForMovie = movie.id
+            tapImageGesture.genre = movie.genre[0].name
             
-            let url = URL(string: movie.posterImageX3)
+            let url = URL(string: movie.posterImage)
             if let imageData = try? Data(contentsOf: url!, options: []) {
                 cell.movieImage.image = UIImage(data: imageData)
             }
@@ -127,6 +136,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         loadMovieData()
         
         searchTextField.delegate = self
+        searchTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
         
         HometableView.delegate = self
         HometableView.rowHeight = 256
@@ -134,16 +144,17 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         createToolBar()
     }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    @objc func textFieldDidChange(textField: UITextField){
         
-        let cs = NSCharacterSet.decimalDigits.inverted
+        print("Text changed")
         
-        if string.rangeOfCharacter(from: cs) == nil {
-            return true
-        } else {
-            return false
+        if textField.text == "" || textField.text == nil {
+            searchBool = false
+            loadMovieData()
+            HometableView.reloadData()
         }
     }
+    
     func createToolBar() {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
@@ -171,47 +182,44 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     /// - Parameter textField: 텍스트필드
     /// - Returns: 눌렸는지 안 눌렸는지
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if(textField.isEqual(self.searchTextField)){ //titleField에서 리턴키를 눌렀다면
-            
-            print("\n---------- [ Search ] ----------\n")
-            
-            print("\n---------- [ header ] ----------\n")
-            guard let token = strToken, let searchWord = searchTextField.text else { return false }
-            
-            let headerToken = "token " + token
-            let userToken: HTTPHeaders = ["Authorization": headerToken]
-            print(headerToken)
-            
-            let url = "https://justdo2t.com/api/movie/search/?movie=\(searchWord)" //"&page_size=3"
-            
-            Alamofire.request(url, method: .get, encoding: URLEncoding.default, headers: userToken)
-                .validate(statusCode: 200..<300)
-                .responseJSON { response in
-                    if let error = response.error {
-                        print("\n---------- [ error3 ] ----------\n")
-                        dump(error)
-                        return
-                    }
-                    
-                    do {
-                        print("\n---------- [ Search JSONSerialization ] ----------\n")
-                        let data = try JSONSerialization.data(withJSONObject: response.result.value!, options: .prettyPrinted)
-                        print(data)
-                        let decoder: JSONDecoder = JSONDecoder()
-                        print(decoder)
-                        self.searchResult = try decoder.decode(SearchMovie.self, from: data)
-                        self.SearchMovies = self.searchResult.results
-                        print(self.SearchMovies)
-//                        self.HometableView.reloadData()
-                    } catch {
-                        print("\n---------- [ error4 ] ----------\n")
-                        print(error)
-                    }
-            }
-            searchBool = true
-            HometableView.reloadData()
+        print("\n---------- [ Search ] ----------\n")
+        
+        print("\n---------- [ header ] ----------\n")
+        guard let token = strToken, let searchWord = searchTextField.text else { return false }
+        
+        let headerToken = "token " + token
+        let userToken: HTTPHeaders = ["Authorization": headerToken]
+        print(headerToken)
+        
+        let search = searchWord.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let url = "https://justdo2t.com/api/movie/search/?movie=\(search)" //"&page_size=3"
+        
+        Alamofire.request(url, method: .get, encoding: URLEncoding.default, headers: userToken)
+            .validate(statusCode: 200..<300)
+            .responseJSON { response in
+                if let error = response.error {
+                    print("\n---------- [ error3 ] ----------\n")
+                    dump(error)
+                    return
+                }
+                
+                do {
+                    print("\n---------- [ Search JSONSerialization ] ----------\n")
+                    let data = try JSONSerialization.data(withJSONObject: response.result.value!, options: .prettyPrinted)
+                    print(data)
+                    let decoder: JSONDecoder = JSONDecoder()
+                    print(decoder)
+                    self.searchResult = try decoder.decode(SearchMovie.self, from: data)
+                    self.SearchMovies = self.searchResult.results
+                    print(self.SearchMovies)
+                } catch {
+                    print("\n---------- [ error4 ] ----------\n")
+                    print(error)
+                }
         }
+        searchBool = true
+        HometableView.reloadData()
+        
         return true
     }
-    
 }
