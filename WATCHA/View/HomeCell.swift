@@ -3,7 +3,7 @@
 //  WATCHA
 //
 //  Created by Hansub Yoo on 2018. 4. 17..
-//  Copyright © 2018년 Seo Yoo Hansub. All rights reserved.
+//  Copyright © 2018년 Yoo Hansub. All rights reserved.
 //
 
 import UIKit
