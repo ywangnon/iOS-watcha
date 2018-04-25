@@ -94,13 +94,27 @@ class RatingTableViewController: UITableViewController {
    }
    
    
-   @objc func moreButtonPressed() {
+   @objc func moreButtonPressed(_ sender: UIButton) {
       let alertVC = UIAlertController(title: "WATCHA", message: "", preferredStyle: .actionSheet)
       let likeAction = UIAlertAction(title: "보고싶어요", style: .default) { action in
-         
+         print("보고싶어요")
       }
       let commentAction = UIAlertAction(title: "코멘트", style: .default) { action in
-         print("코멘트")
+         var textField = UITextField()
+         
+         let commentVC = UIAlertController(title: "코멘트 추가", message: "", preferredStyle: .alert)
+         let commentAction = UIAlertAction(title: "확인", style: .default, handler: { action in
+            
+            if let text = textField.text {
+               self.registerComment(with: text, id: sender.tag)
+            }
+         })
+         commentVC.addTextField { commentTf in
+            textField.placeholder = "코멘트를 입력하세요"
+            textField = commentTf
+         }
+         commentVC.addAction(commentAction)
+         self.present(commentVC, animated: true, completion: nil)
       }
       let myCollectionAction = UIAlertAction(title: "내 컬렉션에 담기", style: .default) { action in
          print("내 컬렉션에 담기")
@@ -118,6 +132,33 @@ class RatingTableViewController: UITableViewController {
       alertVC.addAction(noAction)
       alertVC.addAction(cancleAction)
       self.present(alertVC, animated: true, completion: nil)
+   }
+   
+   
+   //코멘트 등록
+   func registerComment(with text: String, id: Int) {
+      DispatchQueue.global().async {
+         print("===== Start Save comment =====")
+         let userToken = "Token \(UserDefaults.standard.string(forKey: "user_Token")!)"
+         let userHeaders: HTTPHeaders = ["Content-Type": "application/json", "Authorization": userToken]
+         let params: Parameters = [
+            "user_want_movie": false,
+            "user_watched_movie": false,
+            "rating": 0.0,
+            "comment": text,
+            "movie": id
+         ]
+         
+         Alamofire.request(API.MyPage.checkCreate, method: .post, parameters: params, encoding: JSONEncoding.default , headers: userHeaders)
+            .validate(statusCode: 200..<300)
+            .responseJSON { response in
+               if let error = response.error {
+                  dump(error)
+                  return
+               }
+               print("Success Save Comment")
+         }
+      }
    }
    
    
@@ -211,6 +252,7 @@ class RatingTableViewController: UITableViewController {
          cell.yearLabel.text = "\(movie.year)"
          cell.update(0)
          
+         cell.moreButton.tag = movie.pk
          cell.moreButton.addTarget(self, action: #selector(self.moreButtonPressed), for: .touchUpInside)
          
          return cell
