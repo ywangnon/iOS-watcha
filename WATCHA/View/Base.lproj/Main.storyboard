@@ -737,8 +737,11 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="129.66666666666666"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+<<<<<<< HEAD
                                         <imageView userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleToFill" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gBA-la-hQj">
                                             <rect key="frame" x="0.0" y="-0.5" width="375" height="129.5"/>
+=======
+>>>>>>> 32c5436f8b0fa9c6643abf904818f47b72730308
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gBA-la-hQj">
                                             <rect key="frame" x="0.0" y="-0.6666666666666714" width="414" height="129.66666666666669"/>
                                         </imageView>
@@ -800,7 +803,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bCs-da-FkT">
                                             <rect key="frame" x="7" y="7" width="377" height="135.66666666666666"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="박스오피스포스터" translatesAutoresizingMaskIntoConstraints="NO" id="0Ci-7p-voW">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="박스오피스포스터" translatesAutoresizingMaskIntoConstraints="NO" id="0Ci-7p-voW">
                                                     <rect key="frame" x="0.0" y="0.0" width="97" height="135.66666666666666"/>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Ujh-pP-veG">
@@ -1292,7 +1295,7 @@
         <scene sceneID="9eo-44-UGE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d4y-Bu-N6v" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="테마" image="테마" id="gYo-cw-vtC"/>
+                    <tabBarItem key="tabBarItem" title="테마" image="테마" id="gYo-cw-vtC"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wjh-89-9eJ">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -1316,26 +1319,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-<<<<<<< HEAD
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="boxofficeCell" rowHeight="150" id="SkE-wT-0fq" customClass="BoxofficeTableViewCell" customModule="WATCHA" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="150"/>
-=======
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="150" id="SkE-wT-0fq">
                                 <rect key="frame" x="0.0" y="28" width="414" height="150"/>
->>>>>>> f85e39f8b6a828976373a111a23aab4e1fc1e8c7
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SkE-wT-0fq" id="hvc-Ub-lbf">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="149.66666666666666"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="woA-S0-axG">
-<<<<<<< HEAD
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
-=======
                                             <rect key="frame" x="20" y="11" width="374" height="128"/>
->>>>>>> f85e39f8b6a828976373a111a23aab4e1fc1e8c7
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" image="박스오피스포스터" translatesAutoresizingMaskIntoConstraints="NO" id="d36-wK-s6s">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" image="박스오피스포스터" translatesAutoresizingMaskIntoConstraints="NO" id="d36-wK-s6s">
                                                     <rect key="frame" x="0.0" y="0.0" width="97" height="149.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="97" id="FEf-Wm-m77"/>
@@ -1343,57 +1337,34 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="kNx-XI-JDX">
-<<<<<<< HEAD
-                                                    <rect key="frame" x="105" y="0.0" width="270" height="149.5"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="영화제목" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWi-RL-sn1">
-                                                            <rect key="frame" x="0.0" y="0.0" width="69.5" height="41"/>
-=======
                                                     <rect key="frame" x="105" y="0.0" width="269" height="128"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="영화제목" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWi-RL-sn1">
                                                             <rect key="frame" x="0.0" y="0.0" width="69.333333333333329" height="35.333333333333336"/>
->>>>>>> f85e39f8b6a828976373a111a23aab4e1fc1e8c7
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평균 별점" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMa-PX-X3P">
-<<<<<<< HEAD
-                                                            <rect key="frame" x="0.0" y="41" width="49" height="27"/>
-=======
                                                             <rect key="frame" x="0.0" y="35.333333333333336" width="48.666666666666664" height="23.333333333333336"/>
->>>>>>> f85e39f8b6a828976373a111a23aab4e1fc1e8c7
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="예매율, 누적관객" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0z0-wO-pfU">
-<<<<<<< HEAD
-                                                            <rect key="frame" x="0.0" y="68" width="86.5" height="27"/>
-=======
                                                             <rect key="frame" x="0.0" y="58.666666666666671" width="86.333333333333329" height="23"/>
->>>>>>> f85e39f8b6a828976373a111a23aab4e1fc1e8c7
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="감독" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPF-hZ-Fdh">
-<<<<<<< HEAD
-                                                            <rect key="frame" x="0.0" y="95" width="22.5" height="27.5"/>
-=======
                                                             <rect key="frame" x="0.0" y="81.666666666666671" width="22.666666666666668" height="23.333333333333329"/>
->>>>>>> f85e39f8b6a828976373a111a23aab4e1fc1e8c7
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주연배우" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="do1-ow-iBK">
-<<<<<<< HEAD
-                                                            <rect key="frame" x="0.0" y="122.5" width="45" height="27"/>
-=======
                                                             <rect key="frame" x="0.0" y="105" width="45" height="23"/>
->>>>>>> f85e39f8b6a828976373a111a23aab4e1fc1e8c7
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -2040,7 +2011,7 @@
         <scene sceneID="YjH-wl-hVW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MvU-ts-bHy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="박스오피스" image="박스오피스" id="wc3-Le-xIX"/>
+                    <tabBarItem key="tabBarItem" title="박스오피스" image="박스오피스" id="wc3-Le-xIX"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IGZ-z0-tEw">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -2059,7 +2030,7 @@
         <scene sceneID="e4H-Yq-ALi">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="22a-b9-Pko" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="홈" image="홈" id="TbP-fa-YcL"/>
+                    <tabBarItem key="tabBarItem" title="홈" image="홈" id="TbP-fa-YcL"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vYf-XD-26z">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -2078,7 +2049,7 @@
         <scene sceneID="JZh-AC-M3I">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="W76-CK-sGG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="평가늘리기" image="평가" id="vO5-RQ-DFL"/>
+                    <tabBarItem key="tabBarItem" title="평가늘리기" image="평가" id="vO5-RQ-DFL"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eve-pv-l9A">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -2098,7 +2069,7 @@
         <scene sceneID="hOP-97-SH5">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XuJ-hY-djR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="마이페이지" image="마이페이지" selectedImage="마이페이지하일라이트" id="6Dj-0a-bqN"/>
+                    <tabBarItem key="tabBarItem" title="마이페이지" image="마이페이지" selectedImage="마이페이지하일라이트" id="6Dj-0a-bqN"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QLI-6y-lUn">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -2121,12 +2092,12 @@
         <image name="CheckIcon" width="879" height="720"/>
         <image name="domesticMovieTopRank" width="375" height="138"/>
         <image name="마이페이지" width="16" height="16"/>
-        <image name="마이페이지하일라이트" width="23" height="23"/>
-        <image name="박스오피스" width="23" height="23"/>
-        <image name="박스오피스포스터" width="97" height="136"/>
-        <image name="테마" width="23" height="23"/>
-        <image name="평가" width="23" height="23"/>
-        <image name="홈" width="23" height="23"/>
+        <image name="마이페이지하일라이트" width="23" height="23"/>
+        <image name="박스오피스" width="23" height="23"/>
+        <image name="박스오피스포스터" width="97" height="136"/>
+        <image name="테마" width="23" height="23"/>
+        <image name="평가" width="23" height="23"/>
+        <image name="홈" width="23" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="NvK-Fq-bKT"/>
