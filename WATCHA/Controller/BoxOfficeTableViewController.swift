@@ -55,12 +55,9 @@ class BoxOfficeTableViewController: UITableViewController {
                 do {
                     print("\n---------- [ JSONSerialization ] ----------\n")
                     let data = try JSONSerialization.data(withJSONObject: response.result.value!, options: .prettyPrinted)
-                    print(data)
                     let decoder: JSONDecoder = JSONDecoder()
-                    print(decoder)
-                    self.result = try decoder.decode(BoxofficeMovies.self, from: data)
-                    self.movies = self.result.results
-                    print(self.movies)
+                    self.movies = try decoder.decode(BoxofficeMovies.self, from: data).results
+                    
                     self.boxofficeTableView.reloadData()
                 } catch {
                     print("\n---------- [ error4 ] ----------\n")
@@ -73,7 +70,7 @@ class BoxOfficeTableViewController: UITableViewController {
         super.viewDidLoad()
         loadMovieData()
     }
-
+    
     
     // MARK: - Table view data source
     
@@ -83,15 +80,39 @@ class BoxOfficeTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return movies.count
+        let numberOfRows = movies.count
+        
+        return numberOfRows
     }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        return "박스오피스 예매율 순위"
+    }
+    
+    //    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    //        let cell = tableView.dequeueReusableCell(withIdentifier: "boxofficeCell", for: indexPath) as! BoxofficeTableViewCell
+    //
+    //        let movie = movies[indexPath.row]
+    //        let rank = indexPath.row + 1
+    //
+    //        cell.titleLabel?.text = movie.title
+    //        cell.posterImage.image = UIImage(named: movie.poster)
+    //        cell.averageRatingLabel?.text = "평균 ★ " + movie.averageRate
+    //        cell.depositAndBoxOfficeLabel?.text = "예매율: " + movie.ticketingRate
+    //        cell.directorLabel?.text = "감독: " + movie.director
+    //        cell.actorsLabel?.text = "주연배우: " + movie.actors
+    //        cell.rankLabel?.text = "\(rank)"
+    //
+    //        return cell
+    //    }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "boxofficeCell", for: indexPath) as! BoxofficeTableViewCell
         
         let movie = movies[indexPath.row]
-        let tapImageGesture = MovieTapGesture(target: self, action: #selector(self.movieTapped))
+        //let tapImageGesture = MovieTapGesture(target: self, action: #selector(self.movieTapped))
         
         let url = URL(string: movie.posterImageX3)
         if let imageData = try? Data(contentsOf: url!, options: []) {
@@ -100,7 +121,9 @@ class BoxOfficeTableViewController: UITableViewController {
         
         cell.titleLabel.text = movie.title
         cell.averageRatingLabel.text = movie.averageRate
+        cell.depositAndBoxOfficeLabel.text = movie.ticketingRate
         
+        //self.boxofficeTableView.reloadData()
         return cell
     }
     

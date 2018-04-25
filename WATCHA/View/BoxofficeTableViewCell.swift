@@ -16,6 +16,7 @@ class BoxofficeTableViewCell: UITableViewCell {
     @IBOutlet weak var depositAndBoxOfficeLabel: UILabel!
     @IBOutlet weak var directorLabel: UILabel!
     @IBOutlet weak var actorsLabel: UILabel!
+    @IBOutlet weak var rankLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
