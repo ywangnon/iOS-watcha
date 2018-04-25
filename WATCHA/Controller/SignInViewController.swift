@@ -101,7 +101,7 @@ class SignInViewController: UIViewController {
         
         // 페이스북 커스텀 로그인 버튼
         let myLoginButton = UIButton(type: .custom)
-        myLoginButton.frame = CGRect(x: 40, y: 487, width: 295, height: 50)
+        myLoginButton.frame = CGRect(x: 40, y: 467, width: 334, height: 50)
         myLoginButton.backgroundColor = UIColor(red: 66/255, green: 103/255, blue: 178/255, alpha: 1.0)
         myLoginButton.layer.cornerRadius = 10
         myLoginButton.setTitle("페북으로 시작하기", for: .normal)

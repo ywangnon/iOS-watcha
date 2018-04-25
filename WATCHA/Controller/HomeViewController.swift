@@ -73,6 +73,15 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        HometableView.reloadData()
+        navigationController?.navigationBar.isHidden = false
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searchBool {
             return SearchMovies.count
@@ -107,7 +116,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             tapImageGesture.pkForMovie = movie.id
             tapImageGesture.genre = movie.genre[0].name
             
-            let url = URL(string: movie.posterImageX3)
+            let url = URL(string: movie.posterImage)
             if let imageData = try? Data(contentsOf: url!, options: []) {
                 cell.movieImage.image = UIImage(data: imageData)
             }
@@ -146,17 +155,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
-//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//
-//        let cs = NSCharacterSet.decimalDigits.inverted
-//
-//        if string.rangeOfCharacter(from: cs) == nil {
-//            return true
-//        } else {
-//            return false
-//        }
-//    }
-    
     func createToolBar() {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
@@ -180,11 +178,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     /// 엔터치면 검색
-    /// (현재 2번 쳐야 검색됨) -> 그냥 속도가 느렸던듯
+    /// (현재 2번 쳐야 검색됨)
     /// - Parameter textField: 텍스트필드
     /// - Returns: 눌렸는지 안 눌렸는지
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        if(textField.isEqual(self.searchTextField)){ //titleField에서 리턴키를 눌렀다면
         print("\n---------- [ Search ] ----------\n")
         
         print("\n---------- [ header ] ----------\n")
@@ -215,7 +212,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     self.searchResult = try decoder.decode(SearchMovie.self, from: data)
                     self.SearchMovies = self.searchResult.results
                     print(self.SearchMovies)
-                    //                        self.HometableView.reloadData()
                 } catch {
                     print("\n---------- [ error4 ] ----------\n")
                     print(error)
