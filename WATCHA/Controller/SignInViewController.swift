@@ -48,7 +48,7 @@ class SignInViewController: UIViewController {
                     plist.set(token_String, forKey: "user_Token")
                     plist.set(userInfo.user.pk, forKey: "#$id8461038765")
                     print("\n---------- [ user_Token ] ----------\n")
-                    print(plist.string(forKey: "user_Token"))
+                    print(plist.string(forKey: "user_Token")!)
                     self.performSegue(withIdentifier: "goMain2", sender: nil)
                 case .failure(let error):
                     print("\n---------- [ data error ] ----------\n")
