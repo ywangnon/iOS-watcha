@@ -66,6 +66,9 @@ class ThemeTableViewController: UITableViewController {
         }
 
         cell.themeImageView.image = UIImage(named: imageList.themeImagelist[indexPath.row])
+        if indexPath.section == 1 {
+            cell.themeImageView.image = UIImage(named: imageList.themeImagelist[indexPath.row + 4])
+        }
         
         return cell
     }
