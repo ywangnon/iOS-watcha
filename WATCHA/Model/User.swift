@@ -30,3 +30,48 @@ struct login_User: Decodable {
     var token: String
     var user: user
 }
+
+
+struct MyPage: Codable {
+   var pk: Int
+   var email: String
+   var nickName: String
+   var profileImage: String?
+   var totalRunnigTime: Int
+   var checkedMovieCount: Int
+   var stillImage: StillImage
+   
+   private enum CodingKeys: String, CodingKey {
+      case pk, email
+      case nickName = "nickname"
+      case profileImage = "img_profile"
+      case totalRunnigTime = "total_running_time"
+      case checkedMovieCount = "interesting_movie_cnt"
+      case stillImage = "still_cut_img"
+   }
+}
+
+
+struct StillImage: Codable {
+   var id: Int
+   var movieId: Int
+   var imageUrl: String
+   
+   private enum CodingKeys: String, CodingKey {
+      case id
+      case movieId = "movie"
+      case imageUrl = "still_img"
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+

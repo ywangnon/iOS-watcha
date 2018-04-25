@@ -28,8 +28,8 @@ class CategoryViewController: UIViewController {
       tableView.separatorStyle = .none
       
       makeCategories()
-
-    }
+      
+   }
    
    
    @objc func cancleButtonPressed() {
@@ -41,20 +41,20 @@ class CategoryViewController: UIViewController {
    @objc func upperViewTapped() {
       self.dismiss(animated: true, completion: nil)
    }
-
-
+   
+   
 }
 
 
 // MARK: - Table view data source
 extension CategoryViewController: UITableViewDelegate, UITableViewDataSource {
    
-    func numberOfSections(in tableView: UITableView) -> Int {
+   func numberOfSections(in tableView: UITableView) -> Int {
       // #warning Incomplete implementation, return the number of sections
       return 2
    }
    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
       
       if section == 1 {
          return categories.count
@@ -64,7 +64,7 @@ extension CategoryViewController: UITableViewDelegate, UITableViewDataSource {
    }
    
    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+   func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
       if section == 1 {
          return 40
       }
@@ -82,7 +82,7 @@ extension CategoryViewController: UITableViewDelegate, UITableViewDataSource {
    }
    
    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
       
       let width = self.view.frame.size.width
       
@@ -119,13 +119,13 @@ extension CategoryViewController: UITableViewDelegate, UITableViewDataSource {
    }
    
    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
       
       return 40
    }
    
    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       
       
       if indexPath.section == 0 {
@@ -173,11 +173,12 @@ extension CategoryViewController: UITableViewDelegate, UITableViewDataSource {
       b.kind = "tag"
       categories.append(a)
       
-//      var c = Category()
-//      c.title = "왓챠 평균별점 TOP 영화"
-//      c.image = "github"
-//      c.pk = 3
-//      categories.append(c)
+      var c = Category()
+      c.title = "슈퍼 히어로 영화"
+      c.image = "github"
+      c.name = "hero"
+      c.kind = "tag"
+      categories.append(c)
       
       var d = Category()
       d.title = "전세계 흥행 TOP 영화"
@@ -185,46 +186,26 @@ extension CategoryViewController: UITableViewDelegate, UITableViewDataSource {
       d.image = "github"
       d.kind = "tag"
       categories.append(d)
+
+      var f = Category()
+      f.title = "스포츠 영화"
+      f.image = "github"
+      f.name = "sports"
+      f.kind = "tag"
+      categories.append(f)
+
+      var g = Category()
+      g.title = "가족"
+      g.image = "github"
+      g.name = "family"
+      g.kind = "tag"
+      categories.append(g)
       
-//      var e = Category()
-      
-//      var f = Category()
-//      f.title = "전문가 고평점 영화"
-//      f.image = "github"
-//      f.pk = 6
-//      categories.append(f)
-      
-//      var g = Category()
-//      g.title = "저예산 독립 영화"
-//      g.image = "github"
-//      g.pk = 7
-//      categories.append(g)
-      
-      var h = Category()
-      h.title = "고전 영화"
-      h.image = "github"
-      h.kind = "genre"
-      categories.append(h)
-      
-      var i = Category()
-      i.title = "느와르 영화"
-      i.image = "github"
-      i.kind = "genre"
-      categories.append(i)
-      
-      var j = Category()
-      j.title = "슈퍼 히어로 영화"
-      j.name = "hero"
-      j.image = "github"
-      j.kind = "genre"
-      categories.append(j)
-      
-      var k = Category()
-      k.title = "스포츠 영화"
-      k.name = "sports"
-      k.image = "github"
-      k.kind = "genre"
-      categories.append(k)
+      var e = Category()
+      e.title = "액션"
+      e.image = "github"
+      e.name = "action"
+      e.kind = "genre"
       
       var l = Category()
       l.title = "범죄"
@@ -275,27 +256,12 @@ extension CategoryViewController: UITableViewDelegate, UITableViewDataSource {
       r.kind = "genre"
       categories.append(r)
       
-      var s = Category()
-      s.title = "가족"
-      s.name = "family"
-      s.image = "github"
-      s.kind = "genre"
-      categories.append(s)
-      
-      
       var t = Category()
       t.title = "판타지"
       t.name = "fantasy"
       t.image = "github"
       t.kind = "genre"
       categories.append(t)
-      
-      var u = Category()
-      u.title = "액션"
-      u.name = "action"
-      u.image = "github"
-      u.kind = "genre"
-      categories.append(u)
       
       var v = Category()
       v.title = "SF"
@@ -324,6 +290,41 @@ extension CategoryViewController: UITableViewDelegate, UITableViewDataSource {
       y.image = "github"
       y.kind = "genre"
       categories.append(y)
+      
+//      var u = Category()
+//      u.title = "서부"
+//      u.name = "western"
+//      u.image = "github"
+//      u.kind = "genre"
+//      categories.append(u)
+//
+//      var h = Category()
+//      h.title = "뮤지컬"
+//      h.name = "musical"
+//      h.image = "github"
+//      h.kind = "genre"
+//      categories.append(h)
+//
+//      var i = Category()
+//      i.title = "무협"
+//      i.image = "github"
+//      i.name = "martial-arts"
+//      i.kind = "genre"
+//      categories.append(i)
+
+      var j = Category()
+      j.title = "미스터리"
+      j.name = "mistery"
+      j.image = "github"
+      j.kind = "genre"
+      categories.append(j)
+
+//      var k = Category()
+//      k.title = "컬트"
+//      k.name = "cult"
+//      k.image = "github"
+//      k.kind = "genre"
+//      categories.append(k)
       
    }
    
