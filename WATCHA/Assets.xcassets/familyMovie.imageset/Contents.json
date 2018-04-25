@@ -2,17 +2,15 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "familyMovie.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "familyMovie 2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "familyMovie 3x.png",
+      "filename" : "familyMovie@3x.png",
       "scale" : "3x"
     }
   ],

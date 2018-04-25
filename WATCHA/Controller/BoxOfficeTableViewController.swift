@@ -16,6 +16,8 @@ class BoxOfficeTableViewController: UITableViewController {
     
     var result: BoxofficeMovies!
     var movies: [BoxofficeMovie] = []
+    var member: [Members] = []
+    
     
     @objc func movieTapped(gesture : MovieTapGesture) {
         print("Rating View Cell for movie Selected")
@@ -57,7 +59,7 @@ class BoxOfficeTableViewController: UITableViewController {
                     let data = try JSONSerialization.data(withJSONObject: response.result.value!, options: .prettyPrinted)
                     let decoder: JSONDecoder = JSONDecoder()
                     self.movies = try decoder.decode(BoxofficeMovies.self, from: data).results
-                    
+                    print(data)
                     self.boxofficeTableView.reloadData()
                 } catch {
                     print("\n---------- [ error4 ] ----------\n")
@@ -94,7 +96,7 @@ class BoxOfficeTableViewController: UITableViewController {
     //        let cell = tableView.dequeueReusableCell(withIdentifier: "boxofficeCell", for: indexPath) as! BoxofficeTableViewCell
     //
     //        let movie = movies[indexPath.row]
-    //        let rank = indexPath.row + 1
+    //
     //
     //        cell.titleLabel?.text = movie.title
     //        cell.posterImage.image = UIImage(named: movie.poster)
@@ -102,7 +104,7 @@ class BoxOfficeTableViewController: UITableViewController {
     //        cell.depositAndBoxOfficeLabel?.text = "예매율: " + movie.ticketingRate
     //        cell.directorLabel?.text = "감독: " + movie.director
     //        cell.actorsLabel?.text = "주연배우: " + movie.actors
-    //        cell.rankLabel?.text = "\(rank)"
+    //
     //
     //        return cell
     //    }
@@ -112,6 +114,18 @@ class BoxOfficeTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "boxofficeCell", for: indexPath) as! BoxofficeTableViewCell
         
         let movie = movies[indexPath.row]
+        var memberName = ""
+        var index = 0
+        
+        for member in movie.members.reversed() {
+            if index < 2 {
+                memberName += "\(member.type): \(member.name) \(index == 0 ? "| " : "")"
+            }
+            index += 1
+        }
+        
+//        let member = Members(from: Decoder)
+        let rank = indexPath.row + 1
         //let tapImageGesture = MovieTapGesture(target: self, action: #selector(self.movieTapped))
         
         let url = URL(string: movie.posterImageX3)
@@ -120,8 +134,10 @@ class BoxOfficeTableViewController: UITableViewController {
         }
         
         cell.titleLabel.text = movie.title
-        cell.averageRatingLabel.text = movie.averageRate
-        cell.depositAndBoxOfficeLabel.text = movie.ticketingRate
+        cell.averageRatingLabel.text = "평균 ★ " + movie.averageRate
+        cell.depositAndBoxOfficeLabel.text = "예매율: " + movie.ticketingRate
+        cell.directorLabel.text = memberName
+        cell.rankLabel?.text = "\(rank)"
         
         //self.boxofficeTableView.reloadData()
         return cell
