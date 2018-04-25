@@ -98,6 +98,8 @@ class SignUpViewController: UIViewController {
                 case .failure(let error):
                     print("\n---------- [ error ] ----------\n")
                     print(error.localizedDescription)
+                    
+
                 }
         }
     }
