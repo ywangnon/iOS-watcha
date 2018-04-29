@@ -1,4 +1,2 @@
-# iOS-watcha
-
-##  목표
+# iOS-watcha team project
 
