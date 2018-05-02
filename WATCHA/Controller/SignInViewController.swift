@@ -19,9 +19,7 @@ class SignInViewController: UIViewController {
     @IBAction func loginBtn(_ sender: UIButton) {
         
         guard let email = emailTextField.text,
-            let password = passwordTextField.text else {
-                return
-        }
+            let password = passwordTextField.text else { return }
         
         let params: Parameters = [
             "email": email,
@@ -78,10 +76,33 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        customTextFieldSetting()
+        customFacebookLoginSetting()
+        createToolBar()
+    }
+    
+    // MARK: - 초기 세팅
+    
+    func customFacebookLoginSetting() {
+        // 페이스북 커스텀 로그인 버튼
+        let myLoginButton = UIButton(type: .custom)
+        myLoginButton.frame = CGRect(x: 40, y: 467, width: 334, height: 50)
+        myLoginButton.backgroundColor = UIColor(red: 66/255, green: 103/255, blue: 178/255, alpha: 1.0)
+        myLoginButton.layer.cornerRadius = 10
+        myLoginButton.setTitle("페북으로 시작하기", for: .normal)
+        
+        // Handle clicks on the button
+        myLoginButton.addTarget(self, action: #selector(self.loginButtonClicked ), for: .touchUpInside)
+        
+        // Add the button to the view
+        view.addSubview(myLoginButton)
+    }
+    
+    func customTextFieldSetting() {
+        // 커스텀 텍스트필드
         let width = CGFloat(2.0)
-
-        // 커스텀 텍스트필드 리팩토링 필요
+        
         let border = CALayer()
         border.borderColor = UIColor(red: 188/255, green: 187/255, blue: 193/255, alpha: 1.0).cgColor
         border.frame = CGRect(x: 0, y: emailTextField.frame.size.height-width, width: emailTextField.frame.size.width, height: emailTextField.frame.size.height)
@@ -97,24 +118,29 @@ class SignInViewController: UIViewController {
         
         passwordTextField.layer.addSublayer(border2)
         passwordTextField.layer.masksToBounds = true
-        
-        
-        // 페이스북 커스텀 로그인 버튼
-        let myLoginButton = UIButton(type: .custom)
-        myLoginButton.frame = CGRect(x: 40, y: 467, width: 334, height: 50)
-        myLoginButton.backgroundColor = UIColor(red: 66/255, green: 103/255, blue: 178/255, alpha: 1.0)
-        myLoginButton.layer.cornerRadius = 10
-        myLoginButton.setTitle("페북으로 시작하기", for: .normal)
-        
-        // Handle clicks on the button
-        myLoginButton.addTarget(self, action: #selector(self.loginButtonClicked ), for: .touchUpInside)
-        
-        // Add the button to the view
-        view.addSubview(myLoginButton)
-        
-        createToolBar()
     }
     
+    // MARK: Navigation 상태
+    
+    /// 이 창에서 navigation bar 띄움
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = false
+        
+        // 버튼 title setting
+        let backButton = UIBarButtonItem()
+        backButton.title = "첫화면"
+        
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+    }
+    
+    /// 메인 창에서 navigation bar 숨김
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    // MARK: 키보드 세팅
+    
+    /// 키보드 Done 버튼 생성
     func createToolBar() {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
@@ -138,20 +164,6 @@ class SignInViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    /// 이 창에서 navigation bar 띄움
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.isHidden = false
-        // 버튼 title setting
-        let backButton = UIBarButtonItem()
-        backButton.title = "첫화면"
-        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
-    }
-    
-    /// 메인 창에서 navigation bar 숨김
-    override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.navigationBar.isHidden = true
-    }
-    
     /// 페이스북 커스텀 로그인 함수
     @objc func loginButtonClicked() {
         let loginManager = FBSDKLoginManager()
@@ -167,9 +179,7 @@ class SignInViewController: UIViewController {
                 print("\n---------- [ Access Token ToString ] ----------\n")
                 print(FBSDKAccessToken.current().tokenString)
                 
-                guard let fbToken = FBSDKAccessToken.current().tokenString else {
-                    return
-                }
+                guard let fbToken = FBSDKAccessToken.current().tokenString else { return }
                 
                 let params: Parameters = [
                     "access_token": fbToken
@@ -200,8 +210,6 @@ class SignInViewController: UIViewController {
                         }
                 }
             }
-        }
-        )}
-    
-    
+        })
+    }
 }
