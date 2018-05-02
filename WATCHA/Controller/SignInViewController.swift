@@ -2,14 +2,13 @@
 //  SignInViewController.swift
 //  WATCHA
 //
-//  Created by Seo JaeHyeong on 09/04/2018.
-//  Copyright © 2018 Yoo Hansub. All rights reserved.
+//  Created by Hansub Yoo on 09/04/2018.
+//  Copyright © 2018 Hansub Yoo. All rights reserved.
 //
 
 import UIKit
 import FBSDKLoginKit
 import Alamofire
-
 
 class SignInViewController: UIViewController {
     
