@@ -2080,8 +2080,8 @@
         <image name="watcha" width="150" height="132"/>
         <image name="마이페이지" width="23" height="23"/>
         <image name="박스오피스" width="23" height="23"/>
-        <image name="박스오피스포스터" width="16" height="16"/>
         <image name="박스오피스포스터" width="97" height="136"/>
+        <image name="박스오피스포스터" width="16" height="16"/>
         <image name="테마" width="23" height="23"/>
         <image name="평가" width="23" height="23"/>
         <image name="홈" width="23" height="23"/>
