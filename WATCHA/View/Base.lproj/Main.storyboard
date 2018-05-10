@@ -940,14 +940,27 @@
                                     <segue destination="wwx-Ri-Ken" kind="show" id="qIO-ud-ZrU"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="54b-2c-QTA">
+                                <rect key="frame" x="40" y="471.33333333333331" width="334" height="49.999999999999943"/>
+                                <color key="backgroundColor" red="0.25882352941176467" green="0.40392156862745099" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="페북으로 시작하기"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="DMi-Sd-lg9" firstAttribute="leading" secondItem="R7c-Tx-CaJ" secondAttribute="leading" constant="40" id="18c-8Q-QT9"/>
                             <constraint firstItem="P1o-mN-ttO" firstAttribute="top" secondItem="dao-eZ-6B4" secondAttribute="bottom" constant="80" id="4xe-LU-c95"/>
+                            <constraint firstItem="54b-2c-QTA" firstAttribute="height" secondItem="DMi-Sd-lg9" secondAttribute="height" id="8cG-Lu-CP3"/>
+                            <constraint firstItem="54b-2c-QTA" firstAttribute="top" secondItem="P1o-mN-ttO" secondAttribute="bottom" constant="30" id="ED9-0e-gsC"/>
                             <constraint firstItem="mIf-nR-hqN" firstAttribute="top" secondItem="R7c-Tx-CaJ" secondAttribute="top" id="Eiv-go-IeU"/>
                             <constraint firstItem="dao-eZ-6B4" firstAttribute="leading" secondItem="R7c-Tx-CaJ" secondAttribute="leading" constant="112" id="POg-OO-AM5"/>
                             <constraint firstItem="mIf-nR-hqN" firstAttribute="trailing" secondItem="R7c-Tx-CaJ" secondAttribute="trailing" id="URz-Vz-AmD"/>
+                            <constraint firstItem="54b-2c-QTA" firstAttribute="trailing" secondItem="DMi-Sd-lg9" secondAttribute="trailing" id="VPJ-dW-qQ8"/>
                             <constraint firstItem="DMi-Sd-lg9" firstAttribute="top" secondItem="P1o-mN-ttO" secondAttribute="bottom" constant="115" id="Ytt-qa-gNd"/>
                             <constraint firstItem="dao-eZ-6B4" firstAttribute="top" secondItem="R7c-Tx-CaJ" secondAttribute="top" constant="100" id="Zyb-8w-biP"/>
                             <constraint firstItem="mIf-nR-hqN" firstAttribute="bottom" secondItem="R7c-Tx-CaJ" secondAttribute="bottom" id="eh4-t2-MaT"/>
@@ -958,6 +971,7 @@
                             <constraint firstItem="mIf-nR-hqN" firstAttribute="leading" secondItem="R7c-Tx-CaJ" secondAttribute="leading" id="kh2-db-C2l"/>
                             <constraint firstItem="R7c-Tx-CaJ" firstAttribute="trailing" secondItem="dao-eZ-6B4" secondAttribute="trailing" constant="112" id="nKc-D0-oHS"/>
                             <constraint firstItem="R7c-Tx-CaJ" firstAttribute="trailing" secondItem="b2q-yX-VAz" secondAttribute="trailing" id="oAw-Ef-QsC"/>
+                            <constraint firstItem="54b-2c-QTA" firstAttribute="leading" secondItem="DMi-Sd-lg9" secondAttribute="leading" id="qbX-Jv-jsb"/>
                             <constraint firstItem="b2q-yX-VAz" firstAttribute="leading" secondItem="R7c-Tx-CaJ" secondAttribute="leading" id="sAo-jn-GHb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="R7c-Tx-CaJ"/>
@@ -966,6 +980,7 @@
                     <connections>
                         <outlet property="backgroundImg" destination="mIf-nR-hqN" id="lWh-ev-ViA"/>
                         <outlet property="centerImg" destination="dao-eZ-6B4" id="Sxd-w3-7bi"/>
+                        <outlet property="myLoginButton" destination="54b-2c-QTA" id="b6s-RT-9lA"/>
                         <segue destination="wrh-5O-Yb9" kind="show" identifier="goMain" id="H7m-Ok-EpA"/>
                     </connections>
                 </viewController>
@@ -1011,13 +1026,13 @@
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="6자 이상" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dEm-8I-BQ6">
-                                <rect key="frame" x="40" y="351" width="334" height="19"/>
+                                <rect key="frame" x="40" y="351" width="334" height="135"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bla-Gn-mk1">
-                                <rect key="frame" x="40" y="530" width="334" height="50"/>
+                                <rect key="frame" x="40" y="636" width="334" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.23921568627450979" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Ye6-kM-jBY"/>
@@ -1035,21 +1050,38 @@
                                     <action selector="loginBtn:" destination="CvG-gR-1iK" eventType="touchUpInside" id="hOQ-64-Zt3"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wwq-rL-e9g">
+                                <rect key="frame" x="40" y="124" width="334" height="50"/>
+                                <color key="backgroundColor" red="0.30588235294117649" green="0.47058823529411764" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="페북으로 시작하기">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="1X0-nB-2xT" firstAttribute="trailing" secondItem="bla-Gn-mk1" secondAttribute="trailing" constant="40" id="1VG-JX-B98"/>
+                            <constraint firstItem="Wwq-rL-e9g" firstAttribute="top" secondItem="1X0-nB-2xT" secondAttribute="top" constant="60" id="1aV-4B-6FA"/>
+                            <constraint firstItem="Wwq-rL-e9g" firstAttribute="height" secondItem="bla-Gn-mk1" secondAttribute="height" id="3mg-ga-Fbt"/>
                             <constraint firstItem="dEm-8I-BQ6" firstAttribute="centerX" secondItem="1X0-nB-2xT" secondAttribute="centerX" id="66Q-ls-ul7"/>
                             <constraint firstItem="MpA-ol-a3z" firstAttribute="leading" secondItem="fu9-bA-dRu" secondAttribute="leading" id="B7g-sL-M9P"/>
                             <constraint firstItem="bla-Gn-mk1" firstAttribute="leading" secondItem="1X0-nB-2xT" secondAttribute="leading" constant="40" id="BxY-en-hYM"/>
-                            <constraint firstItem="bla-Gn-mk1" firstAttribute="top" secondItem="dEm-8I-BQ6" secondAttribute="bottom" constant="160" id="GNv-xy-adM"/>
+                            <constraint firstItem="bla-Gn-mk1" firstAttribute="top" relation="lessThanOrEqual" secondItem="dEm-8I-BQ6" secondAttribute="bottom" constant="150" id="GNv-xy-adM"/>
                             <constraint firstItem="bla-Gn-mk1" firstAttribute="centerX" secondItem="1X0-nB-2xT" secondAttribute="centerX" id="HGi-WH-kDc"/>
+                            <constraint firstItem="Wwq-rL-e9g" firstAttribute="leading" secondItem="bla-Gn-mk1" secondAttribute="leading" id="LfM-uF-tSY"/>
                             <constraint firstItem="fu9-bA-dRu" firstAttribute="top" secondItem="1X0-nB-2xT" secondAttribute="top" constant="195" id="OGW-PM-qW7"/>
                             <constraint firstItem="dEm-8I-BQ6" firstAttribute="top" secondItem="H0y-gx-Wzh" secondAttribute="bottom" id="Tl2-Er-vKX"/>
                             <constraint firstItem="dEm-8I-BQ6" firstAttribute="leading" secondItem="H0y-gx-Wzh" secondAttribute="leading" id="Vzn-en-U5z"/>
+                            <constraint firstItem="Wwq-rL-e9g" firstAttribute="trailing" secondItem="bla-Gn-mk1" secondAttribute="trailing" id="ZuC-6L-ikK"/>
                             <constraint firstItem="H0y-gx-Wzh" firstAttribute="top" secondItem="MpA-ol-a3z" secondAttribute="bottom" constant="30" id="m8c-1j-7cE"/>
                             <constraint firstItem="MpA-ol-a3z" firstAttribute="centerX" secondItem="1X0-nB-2xT" secondAttribute="centerX" id="n6L-ea-guO"/>
                             <constraint firstItem="H0y-gx-Wzh" firstAttribute="leading" secondItem="1X0-nB-2xT" secondAttribute="leading" constant="40" id="sY8-gp-ioU"/>
+                            <constraint firstItem="1X0-nB-2xT" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="bla-Gn-mk1" secondAttribute="bottom" constant="50" id="ukc-t4-jAB"/>
                             <constraint firstItem="fu9-bA-dRu" firstAttribute="leading" secondItem="1X0-nB-2xT" secondAttribute="leading" constant="40" id="vdl-uU-ErO"/>
                             <constraint firstItem="MpA-ol-a3z" firstAttribute="top" secondItem="fu9-bA-dRu" secondAttribute="bottom" id="zYP-zp-rVs"/>
                         </constraints>
@@ -1058,6 +1090,7 @@
                     <navigationItem key="navigationItem" title="로그인" id="gGr-lY-c6n"/>
                     <connections>
                         <outlet property="emailTextField" destination="MpA-ol-a3z" id="2eU-YO-IbK"/>
+                        <outlet property="myLoginButton" destination="Wwq-rL-e9g" id="lfT-Kg-npw"/>
                         <outlet property="passwordTextField" destination="dEm-8I-BQ6" id="kJX-i2-8YA"/>
                         <segue destination="wrh-5O-Yb9" kind="show" identifier="goMain2" id="3Mq-pf-IIA"/>
                     </connections>
@@ -2087,6 +2120,6 @@
         <image name="홈" width="23" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="H7m-Ok-EpA"/>
+        <segue reference="3Mq-pf-IIA"/>
     </inferredMetricsTieBreakers>
 </document>

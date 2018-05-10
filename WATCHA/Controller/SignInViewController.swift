@@ -14,6 +14,7 @@ class SignInViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var myLoginButton: UIButton!
     
     @IBAction func loginBtn(_ sender: UIButton) {
         
@@ -85,17 +86,17 @@ class SignInViewController: UIViewController {
     
     func customFacebookLoginSetting() {
         // 페이스북 커스텀 로그인 버튼
-        let myLoginButton = UIButton(type: .custom)
-        myLoginButton.frame = CGRect(x: 40, y: 467, width: 334, height: 50)
-        myLoginButton.backgroundColor = UIColor(red: 66/255, green: 103/255, blue: 178/255, alpha: 1.0)
-        myLoginButton.layer.cornerRadius = 10
-        myLoginButton.setTitle("페북으로 시작하기", for: .normal)
+//        let myLoginButton = UIButton(type: .custom)
+//        myLoginButton.frame = CGRect(x: 40, y: 467, width: 334, height: 50)
+//        myLoginButton.backgroundColor = UIColor(red: 66/255, green: 103/255, blue: 178/255, alpha: 1.0)
+//        myLoginButton.layer.cornerRadius = 10
+//        myLoginButton.setTitle("페북으로 시작하기", for: .normal)
         
         // Handle clicks on the button
         myLoginButton.addTarget(self, action: #selector(self.loginButtonClicked ), for: .touchUpInside)
         
         // Add the button to the view
-        view.addSubview(myLoginButton)
+//        view.addSubview(myLoginButton)
     }
     
     func customTextFieldSetting() {
