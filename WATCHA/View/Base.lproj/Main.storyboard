@@ -1026,13 +1026,13 @@
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="6자 이상" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dEm-8I-BQ6">
-                                <rect key="frame" x="40" y="351" width="334" height="135"/>
+                                <rect key="frame" x="40" y="351" width="334" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bla-Gn-mk1">
-                                <rect key="frame" x="40" y="636" width="334" height="50"/>
+                                <rect key="frame" x="40" y="531" width="334" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.23921568627450979" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Ye6-kM-jBY"/>
@@ -1071,17 +1071,17 @@
                             <constraint firstItem="dEm-8I-BQ6" firstAttribute="centerX" secondItem="1X0-nB-2xT" secondAttribute="centerX" id="66Q-ls-ul7"/>
                             <constraint firstItem="MpA-ol-a3z" firstAttribute="leading" secondItem="fu9-bA-dRu" secondAttribute="leading" id="B7g-sL-M9P"/>
                             <constraint firstItem="bla-Gn-mk1" firstAttribute="leading" secondItem="1X0-nB-2xT" secondAttribute="leading" constant="40" id="BxY-en-hYM"/>
-                            <constraint firstItem="bla-Gn-mk1" firstAttribute="top" relation="lessThanOrEqual" secondItem="dEm-8I-BQ6" secondAttribute="bottom" constant="150" id="GNv-xy-adM"/>
+                            <constraint firstItem="bla-Gn-mk1" firstAttribute="top" secondItem="dEm-8I-BQ6" secondAttribute="bottom" constant="150" id="GNv-xy-adM"/>
                             <constraint firstItem="bla-Gn-mk1" firstAttribute="centerX" secondItem="1X0-nB-2xT" secondAttribute="centerX" id="HGi-WH-kDc"/>
                             <constraint firstItem="Wwq-rL-e9g" firstAttribute="leading" secondItem="bla-Gn-mk1" secondAttribute="leading" id="LfM-uF-tSY"/>
                             <constraint firstItem="fu9-bA-dRu" firstAttribute="top" secondItem="1X0-nB-2xT" secondAttribute="top" constant="195" id="OGW-PM-qW7"/>
                             <constraint firstItem="dEm-8I-BQ6" firstAttribute="top" secondItem="H0y-gx-Wzh" secondAttribute="bottom" id="Tl2-Er-vKX"/>
                             <constraint firstItem="dEm-8I-BQ6" firstAttribute="leading" secondItem="H0y-gx-Wzh" secondAttribute="leading" id="Vzn-en-U5z"/>
                             <constraint firstItem="Wwq-rL-e9g" firstAttribute="trailing" secondItem="bla-Gn-mk1" secondAttribute="trailing" id="ZuC-6L-ikK"/>
+                            <constraint firstItem="dEm-8I-BQ6" firstAttribute="height" secondItem="MpA-ol-a3z" secondAttribute="height" id="hEw-AM-EGR"/>
                             <constraint firstItem="H0y-gx-Wzh" firstAttribute="top" secondItem="MpA-ol-a3z" secondAttribute="bottom" constant="30" id="m8c-1j-7cE"/>
                             <constraint firstItem="MpA-ol-a3z" firstAttribute="centerX" secondItem="1X0-nB-2xT" secondAttribute="centerX" id="n6L-ea-guO"/>
                             <constraint firstItem="H0y-gx-Wzh" firstAttribute="leading" secondItem="1X0-nB-2xT" secondAttribute="leading" constant="40" id="sY8-gp-ioU"/>
-                            <constraint firstItem="1X0-nB-2xT" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="bla-Gn-mk1" secondAttribute="bottom" constant="50" id="ukc-t4-jAB"/>
                             <constraint firstItem="fu9-bA-dRu" firstAttribute="leading" secondItem="1X0-nB-2xT" secondAttribute="leading" constant="40" id="vdl-uU-ErO"/>
                             <constraint firstItem="MpA-ol-a3z" firstAttribute="top" secondItem="fu9-bA-dRu" secondAttribute="bottom" id="zYP-zp-rVs"/>
                         </constraints>
