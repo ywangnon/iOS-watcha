@@ -23,6 +23,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var searchBool: Bool = false
     
+    
     /// 셀 부분을 클릭하면 디테일로 넘어간다.
     @objc func movieTapped(gesture : MovieTapGesture) {
         print("Rating View Cell for movie Selected")
