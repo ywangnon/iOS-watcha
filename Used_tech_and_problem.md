@@ -4,7 +4,7 @@
 
 - Alamofire와 FacebookLogin
 
-```
+```swift
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let token = strToken, let searchWord = searchTextField.text else { return false }
         
@@ -52,7 +52,7 @@
 
 - 정규식
 
-```
+```swift4
     /// password 형태 검사
     ///
     /// - Parameter password: 입력된 패스워드
@@ -83,7 +83,7 @@
 
 - search
 
-```
+```swift 4
 func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         print("\n---------- [ Search ] ----------\n")
         
@@ -129,7 +129,7 @@ func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 
 - 에러처리 Animation
 
-```
+``` swift
                     if error.localizedDescription == "Response status code was unacceptable: 400." {
                         
                         // 한번밖에 안됨, 리팩토링 필요
@@ -152,7 +152,7 @@ func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 
 - 데이터 모델링
 
-```
+``` swift4
 // API
 // USER
 // SEARCH
