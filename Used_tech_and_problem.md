@@ -52,7 +52,7 @@
 
 - 정규식
 
-```swift4
+```swift 4
     /// password 형태 검사
     ///
     /// - Parameter password: 입력된 패스워드
@@ -152,7 +152,7 @@ func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 
 - 데이터 모델링
 
-``` swift4
+``` swift 4
 // API
 // USER
 // SEARCH
@@ -214,13 +214,6 @@ struct StillImage: Codable {
 }
 
 ```
-
-<!--1. Cocoapods을 이용한 오픈소스 라이브러리 사용--> 
-<!--2. Alamofire 이용한 네트워크 통신 -->
-<!--3. FacebookLogin SDK를 이용한 로그인 방식 적용 -->
-<!--4. 회원가입 에러처리 Animation 적용-->
-<!--5. 회원가입 정규식 처리-->
-<!--6. 데이터 모델링-->
 
 ## 문제점
 
