@@ -16,9 +16,6 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var centerImg: UIImageView!
     @IBOutlet weak var backgroundImg: UIImageView!
     
-
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,7 +25,6 @@ class WelcomeViewController: UIViewController {
     }
     
     // MARK: - 초기 세팅
-    
     // 백그라운드의 회전되는 이미지
     func backgroundIMGSetting() {
         let imgs = [#imageLiteral(resourceName: "book"),#imageLiteral(resourceName: "cinema"),#imageLiteral(resourceName: "film"),#imageLiteral(resourceName: "lake"),#imageLiteral(resourceName: "sky")]
@@ -69,7 +65,6 @@ class WelcomeViewController: UIViewController {
     }
     
     // MARK: - 페이스북 로그인 관련 함수
-    
     /// 페이스북 커스텀 로그인 함수
     @objc func loginButtonClicked() {
         let loginManager = FBSDKLoginManager()
